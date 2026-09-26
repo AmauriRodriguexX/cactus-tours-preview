@@ -1,0 +1,1 @@
+var e=e=>e.replace(/[^\p{L}\s'’.-]/gu,``).replace(/\s{2,}/g,` `),t=(e,t=10)=>e.replace(/\D/g,``).slice(0,t),n=(e,t)=>n=>{let r=n.currentTarget,i=e(r.value);i!==r.value&&(r.value=i),t(i)};export{t as n,e as r,n as t};
