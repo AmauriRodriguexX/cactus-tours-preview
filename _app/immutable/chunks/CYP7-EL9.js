@@ -1,0 +1,1 @@
+import{c as e}from"./C1J9wOt6.js";function t(t,n){throw new e(t,n)}export{t};
