@@ -1,1 +1,0 @@
-import{ct as e,st as t}from"../chunks/DJYjKwQP.js";import"../chunks/xihTtKlq.js";import{t as n}from"../chunks/dwdv2Zcf.js";import{t as r}from"../chunks/BMy58qlQ.js";function i(i,a){e(a,!0),n(i,{title:`Términos y condiciones`,description:`Términos y condiciones de reserva y participación en los tours de Cactus Tours.`,get html(){return r.terminos}}),t()}export{i as component};
