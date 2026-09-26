@@ -1,0 +1,807 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+		<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cactus Tours Diseño</title>
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Caveat+Brush&display=swap">
+<style>
+:root{
+  --white:#FFFFFF;
+  --sun:#F7921E; --sun-400:#FFA83D; --sun-600:#D9760A; --sun-700:#A85A05; --sun-tint:#FFF1E0;
+  --cactus:#63AB45; --cactus-600:#4E8F35; --cactus-700:#3A6E27; --cactus-100:#E6F3DF;
+  --sunset:#E4572E; --ocean:#2A7FB8; --ocean-100:#DCEEF8;
+  --sand-0:#FFFFFF; --sand-50:#FBF8F3; --sand-100:#F3EDE3; --sand-200:#E6DCCB; --sand-300:#CDBFA8;
+  --dune-500:#8C7A62; --dune-700:#5B4E3E;
+  --night:#1C231F; --night-800:#26302B; --night-700:#34413A;
+  --success:#3A9D5D; --warning:#E0A100; --danger:#D64545; --rating:#F5B400; --whatsapp:#25D366;
+  --font:"Archivo","Helvetica Neue",Arial,sans-serif; --brush:"Caveat Brush",cursive;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--white);color:var(--night);font-family:var(--font);font-size:15px;line-height:1.5;font-variation-settings:"wdth" 100}
+a{color:var(--sun-600)}
+.wrap{display:grid;grid-template-columns:220px minmax(0,1fr);gap:48px;max-width:1240px;margin:0 auto;padding:40px 28px 96px}
+nav.toc{position:sticky;top:24px;align-self:start;font-size:13px}
+nav.toc .brandimg{width:150px;display:block;margin:0 0 6px}
+nav.toc .meta{color:var(--dune-500);font-size:12px;margin:2px 0 20px}
+nav.toc ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px;border-left:2px solid var(--sand-200)}
+nav.toc a{display:block;padding:5px 12px;color:var(--dune-700);text-decoration:none;border-left:2px solid transparent;margin-left:-2px}
+nav.toc a:hover,nav.toc a:focus-visible{color:var(--sun-600);border-left-color:var(--sun);outline:none}
+main{max-width:860px}
+.eyebrow{font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--dune-500);margin:0 0 8px}
+h1{font-weight:800;font-size:clamp(36px,5vw,52px);line-height:1.02;letter-spacing:-.02em;margin:0 0 12px;font-variation-settings:"wdth" 112;text-wrap:balance}
+h1 em{font-style:italic;color:var(--sun-600)}
+.mark{background:linear-gradient(transparent 55%,var(--cactus-100) 55%);padding:0 2px}
+.brushword{font-family:var(--brush);font-weight:400;color:var(--sun);font-size:1.15em;display:inline-block;transform:rotate(-3deg);letter-spacing:0}
+h2{font-weight:700;font-size:26px;letter-spacing:-.01em;margin:64px 0 14px;padding-top:24px;border-top:1px solid var(--sand-200);text-wrap:balance}
+h3{font-weight:600;font-size:18px;margin:32px 0 10px}
+p{margin:0 0 14px;max-width:68ch}
+.lede{font-size:18px;color:var(--dune-700);max-width:60ch}
+ul,ol.list{margin:0 0 16px;padding-left:22px;max-width:70ch}
+li{margin:0 0 6px}
+strong{font-weight:600}
+.tbl{overflow-x:auto;margin:16px 0 24px;border:1px solid var(--sand-200);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--sand-200);vertical-align:top}
+th{font-weight:600;font-size:12px;background:var(--sand-50);white-space:nowrap;letter-spacing:.02em}
+tr:last-child td{border-bottom:none}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+code{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;background:var(--sand-100);padding:1px 5px;border-radius:4px}
+.callout{background:var(--sun-tint);border-left:4px solid var(--sun);padding:14px 18px;border-radius:0 12px 12px 0;margin:20px 0 24px;max-width:70ch}
+.callout.green{background:var(--cactus-100);border-left-color:var(--cactus)}
+.callout p{margin:0 0 6px}.callout p:last-child{margin:0}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:16px 0 24px}
+.card{background:var(--white);border:1px solid var(--sand-200);border-radius:16px;padding:16px 18px}
+.card h4{font-weight:600;font-size:15px;margin:0 0 6px}
+.card p{font-size:14px;color:var(--dune-700);margin:0}
+/* sitemap */
+.map{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:16px 0 24px}
+.col{border:1px solid var(--sand-200);border-radius:16px;padding:12px;background:var(--sand-50)}
+.col h4{margin:0 0 10px;font-size:13px;letter-spacing:.04em;text-transform:uppercase;font-weight:700;color:var(--cactus-700);display:flex;align-items:center;gap:8px}
+.col h4 .n{background:var(--cactus);color:#fff;border-radius:999px;font-size:11px;padding:1px 8px}
+.scr{background:#fff;border:1px solid var(--sand-200);border-radius:10px;padding:7px 10px;font-size:12.5px;margin:0 0 6px;display:flex;gap:8px;align-items:baseline}
+.scr .id{font-variation-settings:"wdth" 80;font-weight:600;color:var(--dune-500);font-size:11px;min-width:34px}
+.scr.done{border-left:3px solid #17A34A}
+.scr.wip{border-left:3px solid #E8A317}
+.scr.new{border-left:3px solid var(--ocean)}
+.scr .p0dot{width:6px;height:6px;border-radius:3px;background:var(--sun);display:inline-block;margin-left:auto;align-self:center;flex:none}
+.statelegend{display:flex;gap:18px;flex-wrap:wrap;font-size:12.5px;color:var(--dune-500);margin:0 0 14px}
+.statelegend span{display:flex;gap:7px;align-items:center}
+.statelegend i{width:3px;height:14px;border-radius:2px;display:inline-block}
+.progress{display:flex;gap:10px;align-items:center;margin:0 0 16px;font-size:13px;color:var(--dune-700)}
+.progress .bar{flex:1;height:8px;border-radius:4px;background:var(--sand-100);overflow:hidden;max-width:320px}
+.progress .bar b{display:block;height:100%;background:#17A34A}
+.legend{font-size:12px;color:var(--dune-500);margin:0 0 8px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--sun);vertical-align:middle;margin-right:4px}
+pre.mermaid{background:var(--sand-50);border:1px solid var(--sand-200);border-radius:16px;padding:12px;overflow-x:auto;font-size:13px}
+/* swatches */
+.sw{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:12px 0 20px}
+.s{border-radius:12px;overflow:hidden;border:1px solid var(--sand-200)}
+.s b{display:block;height:64px}
+.s span{display:block;padding:8px 10px;font-size:12px;line-height:1.3}
+.s span small{display:block;color:var(--dune-500);font-variant-numeric:tabular-nums}
+.intens{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 20px}
+.intens div{display:flex;align-items:center;gap:8px;font-size:13px;border:1px solid var(--sand-200);border-radius:999px;padding:6px 12px 6px 8px}
+.intens i{display:inline-flex;gap:2px;align-items:flex-end;height:14px}
+.intens i b{width:3px;background:var(--sand-200);border-radius:1px;display:block}
+/* type specimen */
+.spec{border:1px solid var(--sand-200);border-radius:16px;padding:20px 24px;margin:12px 0 24px;display:flex;flex-direction:column;gap:14px}
+.spec div{display:grid;grid-template-columns:130px 1fr;gap:16px;align-items:baseline}
+.spec .lbl{font-size:11px;color:var(--dune-500);letter-spacing:.04em;text-transform:uppercase;font-weight:600}
+.t-dxl{font-size:44px;line-height:44px;letter-spacing:-.02em;font-weight:900;font-variation-settings:"wdth" 112;text-transform:uppercase}
+.t-dl{font-size:36px;line-height:38px;letter-spacing:-.015em;font-weight:900;font-variation-settings:"wdth" 112}
+.t-h1{font-size:32px;line-height:36px;letter-spacing:-.01em;font-weight:800;font-variation-settings:"wdth" 105}
+.t-h2{font-size:26px;line-height:30px;font-weight:800}
+.t-h3{font-size:20px;line-height:25px;font-weight:700}
+.t-bl{font-size:18px;line-height:28px}
+.t-b{font-size:16px;line-height:25px}
+.t-bs{font-size:14px;line-height:21px;color:var(--dune-700)}
+.t-cap{font-size:12px;line-height:17px;font-weight:500;color:var(--dune-500)}
+.t-ov{font-size:12px;line-height:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--dune-500)}
+.t-price{font-size:28px;line-height:28px;font-weight:900;font-variant-numeric:tabular-nums}
+.t-price small{font-size:14px;font-weight:600;color:var(--dune-500)}
+.t-accent{font-family:var(--brush);font-size:36px;line-height:36px;color:var(--sun);display:inline-block;transform:rotate(-3deg)}
+/* components demo */
+.demo{background:var(--sand-50);border:1px solid var(--sand-200);border-radius:16px;padding:20px;margin:12px 0 24px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.demo.dark{background:var(--night);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M0 60c30-20 60 20 120 0M0 90c30-20 60 20 120 0M0 30c30-20 60 20 120 0' fill='none' stroke='%23fff' stroke-opacity='.06'/%3E%3C/svg%3E")}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;border-radius:12px;font-weight:700;font-size:14px;border:1.5px solid transparent;cursor:pointer;font-family:inherit;letter-spacing:.01em}
+.btn.l{height:56px;font-size:16px;padding:0 24px}.btn.s{height:40px;font-size:13px;padding:0 14px;border-radius:10px}
+.btn.pri{background:var(--sun);color:var(--night)}.btn.pri:hover{background:var(--sun-400)}
+.btn.sec{background:transparent;border-color:var(--night);color:var(--night)}
+.btn.sec.ondark{border-color:var(--sand-50);color:var(--sand-50)}
+.btn.ter{background:var(--sand-100);color:var(--night)}
+.btn.link{background:transparent;color:var(--sun-600);padding:0 8px}
+.btn.glass{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.35);color:#fff;backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);border-radius:999px}
+.btn.wa{background:var(--whatsapp);color:#fff;border-radius:999px}
+.btn.dan{background:var(--danger);color:#fff}
+.btn.ico{width:44px;height:44px;padding:0;background:var(--sand-100);color:var(--night);border-radius:12px}
+.btn.pill{border-radius:999px}
+.btn:focus-visible{outline:3px solid rgba(42,127,184,.5);outline-offset:2px}
+.chip{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:999px;font-size:13px;font-weight:600;border:1px solid transparent;background:var(--sand-100);color:var(--night)}
+.chip.on{background:var(--night);color:var(--sand-50)}
+.badge{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 9px;border-radius:999px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#fff}
+.badge.guinness{background:linear-gradient(135deg,#F7921E,#E4572E)}
+.badge.popular{background:var(--sun);color:var(--night)}
+.badge.familiar{background:var(--cactus)}
+.badge.extremo{background:var(--sunset)}
+.badge.nuevo{background:var(--ocean)}
+.badge.agotado{background:var(--night-700)}
+.badge.gratis{background:var(--cactus-100);color:var(--cactus-700)}
+.time{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;min-width:76px;height:44px;border-radius:10px;border:1px solid var(--sand-300);background:#fff;font-size:13px;font-weight:700;line-height:1.1}
+.time small{font-weight:500;font-size:10.5px;color:var(--dune-500)}
+.time.on{border-color:var(--sun);background:var(--sun-tint)}
+.time.off{color:var(--sand-300);text-decoration:line-through;border-style:dashed}
+.amen{font-size:13px;color:var(--dune-700);display:inline-flex;gap:6px;align-items:center}
+.amen::before{content:"";width:14px;height:14px;border-radius:50%;background:var(--cactus);flex:none;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1.2 14.4-4-4 1.4-1.4 2.6 2.6 5.6-5.6 1.4 1.4-7 7z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1.2 14.4-4-4 1.4-1.4 2.6 2.6 5.6-5.6 1.4 1.4-7 7z'/%3E%3C/svg%3E") center/contain no-repeat}
+.amen.no{color:var(--dune-500)}.amen.no::before{background:var(--sand-300)}
+/* mock cards */
+.mocks{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px;margin:12px 0 24px}
+.mock{background:#fff;border:1px solid var(--sand-200);border-radius:20px;padding:14px;box-shadow:0 2px 8px rgba(28,35,31,.06)}
+.mock.dark{background:var(--night);color:var(--sand-50);border-color:var(--night-700)}
+.tcard{border-radius:20px;overflow:hidden;border:1px solid var(--sand-200);background:#fff}
+.tcard .img{aspect-ratio:4/3;background-size:cover;background-position:center;position:relative;padding:12px;display:flex;flex-direction:column;justify-content:space-between}
+.tcard .img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,35,31,0) 40%,rgba(28,35,31,.55) 100%);pointer-events:none}
+.tcard .img>*{position:relative;z-index:1}
+.tcard .dur{align-self:flex-end;background:rgba(28,35,31,.55);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#fff;font-size:12px;font-weight:600;padding:5px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.25)}
+.tcard .body{padding:16px;display:flex;flex-direction:column;gap:8px}
+.tcard .body h5{margin:0;font-size:20px;line-height:24px;font-weight:700}
+.tcard .meta{font-size:13px;color:var(--dune-500)}
+.tcard .am{display:grid;grid-template-columns:1fr 1fr;gap:4px 8px}
+.tcard .rate{font-size:13px;display:flex;gap:6px;align-items:center}
+.tcard .rate b{color:var(--rating);letter-spacing:-1px}
+.tcard .foot{display:flex;justify-content:space-between;align-items:flex-end;border-top:1px dashed var(--sand-200);padding-top:12px;margin-top:4px}
+.tcard .foot .lbl{font-size:12px;color:var(--dune-500);display:block}
+.tcard .foot .note{font-size:11px;color:var(--dune-500);display:block}
+.herom{border-radius:24px;overflow:hidden;position:relative;aspect-ratio:9/13;background:#000 center/cover;display:flex;flex-direction:column;justify-content:flex-end;padding:18px;color:#fff}
+.herom video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.herom::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,35,31,.1) 30%,rgba(28,35,31,.85) 100%)}
+.herom>*{position:relative;z-index:1}
+.herom .ov{color:var(--sun);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+.herom .ttl{font-size:30px;line-height:30px;font-weight:900;font-variation-settings:"wdth" 110;text-transform:uppercase;margin:6px 0 8px;letter-spacing:-.01em}
+.herom .sub{font-size:13px;color:rgba(255,255,255,.85);margin-bottom:12px}
+.herom .row{display:flex;gap:8px;flex-wrap:wrap}
+.herom .btn{height:44px;font-size:14px}
+.ratings{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.rb{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:999px;padding:5px 10px;font-size:11.5px;font-weight:600}
+.rb b{color:var(--rating);letter-spacing:-1px}
+.price{border:1px solid var(--sand-200);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.price .row{display:flex;justify-content:space-between;font-size:14px;color:var(--dune-700)}
+.price .row.tot{border-top:1px solid var(--sand-200);padding-top:8px;font-weight:700;color:var(--night)}
+.price .prom{font-size:12px;color:var(--dune-500);display:flex;flex-direction:column;gap:3px;margin-top:4px}
+.dock{display:flex;align-items:center;justify-content:space-around;background:rgba(255,255,255,.72);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);border:1px solid rgba(28,35,31,.1);border-radius:999px;padding:8px 10px;box-shadow:0 8px 32px rgba(0,0,0,.14),inset 0 1px 0 rgba(255,255,255,.5)}
+.dock div{font-size:10.5px;color:var(--dune-700);text-align:center;width:64px;font-weight:600}
+.dock .ic{display:block;width:40px;height:40px;border-radius:50%;background:var(--cactus);margin:0 auto 3px}
+.dock .ic.sun{background:var(--sun)}.dock .ic.wa{background:var(--whatsapp)}.dock .ic.dark{background:var(--night)}
+.sticky{display:flex;align-items:center;justify-content:space-between;gap:12px;background:rgba(255,255,255,.8);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(28,35,31,.1);border-radius:20px;padding:10px 10px 10px 16px;box-shadow:0 8px 32px rgba(0,0,0,.14)}
+.sticky .p{display:flex;flex-direction:column;line-height:1.1}
+.sticky .p small{font-size:11px;color:var(--dune-500)}
+.sticky .p b{font-size:20px;font-weight:900;font-variant-numeric:tabular-nums}
+.stepper{display:flex;gap:6px;font-size:11px;font-weight:600;color:var(--dune-500)}
+.stepper span{flex:1;border-top:3px solid var(--sand-200);padding-top:6px}
+.stepper span.on{border-color:var(--sun);color:var(--night)}
+.stepper span.done{border-color:var(--cactus);color:var(--cactus-700)}
+.cal{display:flex;gap:6px;overflow:hidden}
+.cal div{flex:none;width:46px;height:56px;border-radius:12px;border:1px solid var(--sand-200);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:15px;font-weight:700;line-height:1.1}
+.cal div small{font-size:10px;font-weight:600;color:var(--dune-500);text-transform:uppercase}
+.cal div.on{background:var(--sun);border-color:var(--sun)}
+.cal div.on small{color:var(--night)}
+.counter{display:flex;align-items:center;justify-content:space-between;border:1px solid var(--sand-200);border-radius:12px;padding:8px 12px;font-size:14px}
+.counter .c{display:flex;align-items:center;gap:12px;font-weight:700}
+.counter .c i{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--night);display:inline-flex;align-items:center;justify-content:center;font-style:normal;font-size:16px}
+.counter small{display:block;font-size:12px;color:var(--dune-500);font-weight:400}
+.cmp{width:100%;border-collapse:collapse;font-size:12.5px}
+.cmp th{background:transparent;font-size:12px;padding:8px 6px;border-bottom:1px solid var(--sand-200);text-align:center;vertical-align:bottom}
+.cmp th:first-child,.cmp td:first-child{text-align:left;font-weight:500;color:var(--dune-700)}
+.cmp td{text-align:center;padding:7px 6px;border-bottom:1px solid var(--sand-100)}
+.cmp th .pr{display:block;font-size:16px;font-weight:900;font-variant-numeric:tabular-nums}
+.cmp th.best{background:var(--sun-tint);border-radius:12px 12px 0 0}
+.cmp td.best{background:var(--sun-tint)}
+.ok{color:var(--cactus-600);font-weight:800}.nok{color:var(--sand-300)}
+.input{height:52px;background:var(--sand-0);border:1px solid var(--sand-300);border-radius:10px;display:flex;align-items:flex-end;padding:0 14px 8px;color:var(--dune-500);font-size:16px;line-height:20px;position:relative;width:100%}
+.input.focus{border-color:var(--sun);box-shadow:0 0 0 2px var(--sun);color:var(--night)}
+.input .lab{position:absolute;top:7px;left:14px;font-size:11px;line-height:14px;font-weight:600;color:var(--dune-500)}
+.input.err{border-color:var(--danger)}
+.errmsg{font-size:12px;color:var(--danger);margin:-4px 0 0}
+.torn{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:16/10;background:center/cover}
+.torn::before,.torn::after{content:"";position:absolute;left:0;right:0;height:22px;background:#fff}
+.torn::before{top:0;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 22' preserveAspectRatio='none'%3E%3Cpath d='M0 0h400v6l-14 4 8 6-20 2 6-8-22 10 4-9-18 5 2 6-24-3 10-7-26 8 6-10-20 4-4 8-16-9 8-6-30 12 4-9-22 6 10-8-30 2 6 8-20-6 4-8-30 10 4-7-20 3 8 7-30-5 8-8-24 6 4 9-26-6 6-6-22 5 2 6-20-4 4-8-14 2v-6z' fill='%23000'/%3E%3C/svg%3E") 0 0/100% 100% no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 22' preserveAspectRatio='none'%3E%3Cpath d='M0 0h400v6l-14 4 8 6-20 2 6-8-22 10 4-9-18 5 2 6-24-3 10-7-26 8 6-10-20 4-4 8-16-9 8-6-30 12 4-9-22 6 10-8-30 2 6 8-20-6 4-8-30 10 4-7-20 3 8 7-30-5 8-8-24 6 4 9-26-6 6-6-22 5 2 6-20-4 4-8-14 2v-6z' fill='%23000'/%3E%3C/svg%3E") 0 0/100% 100% no-repeat}
+.torn::after{bottom:0;transform:scaleY(-1);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 22' preserveAspectRatio='none'%3E%3Cpath d='M0 0h400v6l-14 4 8 6-20 2 6-8-22 10 4-9-18 5 2 6-24-3 10-7-26 8 6-10-20 4-4 8-16-9 8-6-30 12 4-9-22 6 10-8-30 2 6 8-20-6 4-8-30 10 4-7-20 3 8 7-30-5 8-8-24 6 4 9-26-6 6-6-22 5 2 6-20-4 4-8-14 2v-6z' fill='%23000'/%3E%3C/svg%3E") 0 0/100% 100% no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 22' preserveAspectRatio='none'%3E%3Cpath d='M0 0h400v6l-14 4 8 6-20 2 6-8-22 10 4-9-18 5 2 6-24-3 10-7-26 8 6-10-20 4-4 8-16-9 8-6-30 12 4-9-22 6 10-8-30 2 6 8-20-6 4-8-30 10 4-7-20 3 8 7-30-5 8-8-24 6 4 9-26-6 6-6-22 5 2 6-20-4 4-8-14 2v-6z' fill='%23000'/%3E%3C/svg%3E") 0 0/100% 100% no-repeat}
+.torn .cap{position:absolute;left:16px;bottom:30px;color:#fff;font-weight:800;font-size:22px;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+.torn .cap span{font-family:var(--brush);color:var(--sun);font-size:30px;display:block;transform:rotate(-4deg);transform-origin:left}
+.stat{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.stat div{border:1px solid var(--night-700);border-radius:16px;padding:14px 12px}
+.stat b{display:block;font-size:30px;line-height:1;font-weight:900;font-variation-settings:"wdth" 110;color:var(--sun)}
+.stat small{font-size:12px;color:var(--sand-300)}
+.bento{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:92px;gap:8px}
+.bento div{border-radius:14px;background:center/cover;position:relative;overflow:hidden;color:#fff;font-weight:700;font-size:13px;display:flex;align-items:flex-end;padding:10px}
+.bento div::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,35,31,0) 35%,rgba(28,35,31,.8) 100%)}
+.bento div span{position:relative;z-index:1}
+.bento div small{display:block;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--sun)}
+.bento .big{grid-column:span 2;grid-row:span 2}
+/* spacing */
+.spacing{display:flex;align-items:flex-end;gap:8px;margin:12px 0 24px;flex-wrap:wrap}
+.spacing div{background:var(--sun-tint);border:1px solid var(--sun);border-radius:4px;display:flex;align-items:flex-end;justify-content:center;font-size:11px;color:var(--sun-700);font-variant-numeric:tabular-nums}
+.radii{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0 24px}
+.radii div{width:72px;height:72px;background:var(--sand-100);border:1.5px solid var(--sand-300);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--dune-700);text-align:center;line-height:1.2}
+/* photos */
+.photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin:12px 0 20px}
+.photos figure{margin:0}
+.photos img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block;border:1px solid var(--sand-200)}
+.photos figcaption{font-size:11.5px;color:var(--dune-500);margin-top:4px;line-height:1.3}
+.seals{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin:8px 0 20px}
+.seals img{height:56px;border-radius:8px}
+.seals .txt{font-size:12px;color:var(--dune-500);border:1px dashed var(--sand-300);border-radius:8px;padding:8px 12px}
+.iconrow{display:flex;gap:14px;flex-wrap:wrap;margin:8px 0 20px}
+.iconrow svg{width:28px;height:28px;stroke:var(--night);fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.iconrow figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11px;color:var(--dune-500);width:64px;text-align:center}
+/* concepto */
+.story{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:12px 0 24px}
+.story div{border:1px solid var(--sand-200);border-radius:14px;padding:12px 14px;background:var(--sand-50)}
+.story div b{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--sun-700);margin-bottom:4px}
+.story div span{font-size:14px;font-weight:600}
+.story div small{display:block;color:var(--dune-500);font-size:12px;margin-top:3px}
+.ctmock{border-radius:20px;overflow:hidden;position:relative;aspect-ratio:3/4;background:center/cover;display:flex;flex-direction:column;justify-content:flex-end;padding:16px;color:#fff}
+.ctmock::before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(28,35,31,.96) 0%,rgba(28,35,31,.78) 30%,rgba(28,35,31,.32) 58%,transparent 100%)}
+.ctmock>*{position:relative;z-index:1}
+.ctmock .ttl{font-size:28px;line-height:28px;font-weight:900;font-variation-settings:"wdth" 110;text-transform:uppercase}
+.ctmock .meta{font-size:12px;color:rgba(255,255,255,.8);margin:4px 0 10px}
+.ctmock .card{background:#fff;color:var(--night);border-radius:16px;padding:12px;display:flex;gap:10px;align-items:center;margin:0 -4px -28px}
+.ctmock .card img{width:64px;height:64px;border-radius:10px;object-fit:cover}
+.ctmock .card b{font-size:13px;display:block}.ctmock .card small{font-size:11px;color:var(--dune-500)}
+.gal{display:flex;gap:10px;align-items:center;padding:8px 0}
+.gal img{width:31%;aspect-ratio:1;object-fit:cover;border-radius:10px;box-shadow:0 8px 24px rgba(28,35,31,.18)}
+.gal img:nth-child(1){transform:rotate(-4deg)}.gal img:nth-child(2){transform:rotate(2deg) translateY(-8px)}.gal img:nth-child(3){transform:rotate(-1deg)}
+.refs{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:12px 0 24px}
+.refs figure{margin:0;border:1px solid var(--sand-200);border-radius:14px;overflow:hidden;background:#fff}
+.refs img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;display:block}
+.refs figcaption{padding:10px 12px;font-size:12.5px;line-height:1.4;color:var(--dune-700)}
+.refs figcaption b{display:block;color:var(--night);font-weight:600;margin-bottom:2px}
+.alive{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:12px 0 24px}
+.alive div{border-left:3px solid var(--sun);padding:4px 0 4px 14px;font-size:14px}
+.alive div b{display:block;font-weight:600}
+.alive div small{color:var(--dune-500);font-size:12.5px}
+/* storyboard */
+.story2{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0 24px}
+.story2 figure{margin:0}
+.story2 figcaption{font-size:12px;color:var(--dune-700);margin-top:6px}
+.fr2{aspect-ratio:9/16;border-radius:14px;position:relative;overflow:hidden;background:var(--night) center/cover;color:#fff}
+.fr2 .ttl{position:absolute;left:10px;right:10px;bottom:16px;font-size:14px;line-height:1.05;font-weight:900;text-transform:uppercase;font-variation-settings:"wdth" 110}
+.fr2 .glass{position:absolute;left:8px;right:8px;bottom:8px;height:30px;border-radius:999px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(10px)}
+.fr2 .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,35,31,0),rgba(28,35,31,.85))}
+@media (max-width:820px){.wrap{grid-template-columns:1fr;gap:24px;padding:24px 18px 64px}nav.toc{position:static}nav.toc ol{flex-direction:row;flex-wrap:wrap;border-left:none;gap:4px}nav.toc a{border:1px solid var(--sand-200);border-radius:8px;margin:0;padding:4px 10px}.story2{grid-template-columns:repeat(2,1fr)}.spec div{grid-template-columns:1fr}.stat{grid-template-columns:1fr 1fr}}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="toc" aria-label="Secciones">
+  <img class="brandimg" src="assets/logo.png" alt="Cactus Tours, Outdoor Adventure Park">
+  <p class="meta">Diseño v0.3 · 25 sep 2026</p>
+  <ol>
+    <li><a href="#revision">Revisión del sitio actual</a></li>
+    <li><a href="#mapa">Mapa de pantallas</a></li>
+    <li><a href="#concepto">Concepto: Vive Cactus</a></li>
+    <li><a href="#principios">Principios</a></li>
+    <li><a href="#color">Color</a></li>
+    <li><a href="#tipo">Tipografía</a></li>
+    <li><a href="#espacio">Espaciado y radios</a></li>
+    <li><a href="#componentes">Componentes</a></li>
+    <li><a href="#foto">Fotografía e iconos</a></li>
+    <li><a href="#motion">Video y movimiento</a></li>
+    <li><a href="#copy">Tono y copy</a></li>
+    <li><a href="#referencias">Referencias</a></li>
+    <li><a href="#refsdaniel">Lo que le gusta a Daniel</a></li>
+    <li><a href="#recursos">Recursos</a></li>
+    <li><a href="#siguiente">Siguiente paso</a></li>
+  </ol>
+</nav>
+
+<main>
+<p class="eyebrow">Fase 1 · look and feel · prototipo funcional</p>
+<h1>Blanco que respira, naranja que <em>manda</em> y un desierto que <span class="mark">se lanza al mar</span></h1>
+<p class="lede">Revisión del sitio en producción y del Figma, inventario de las 28 rutas del prototipo y el sistema de diseño con el que se van a construir. Todo lo que ves en esta página ya está renderizado con los tokens propuestos, el logo real y fotos reales del parque.</p>
+
+<h2 id="revision">1. Revisión del sitio actual y del Figma</h2>
+<p>Fuentes: scrape completo de cactustours.com.mx (61 páginas, REST API, CSS del tema Gowilds, 255 imágenes), el Figma Site de la propuesta 2026 (home, listado, ficha y modal de reserva), los dos decks de t2ó (propuesta 2026 y análisis digital) y Capital Trip como referencia propia. El sitio actual es WordPress con Elementor, Slider Revolution y el plugin BA Book Everything; carga en 23.8 s en móvil según el análisis de t2ó.</p>
+<div class="grid2">
+  <div class="card"><h4>Se conserva</h4><p>Las 9 categorías (Sky Bike, ATV, UTV Can-Am, camellos, caballos, combos, Park Pass, niños, Balandra), los precios de producción en USD con tarifa de niño, la estructura de ficha (incluye, cargos, antes de reservar, seguridad, cancelación), el Kids Club, #SoyLocal, Grupos y Partners, el blog con 18 notas, la FAQ de 18 preguntas, la barra inferior de contacto en móvil, el look de los banners (bold con volumen, sello Guinness, cielo y arena) y del Figma: rating Google y TripAdvisor en el hero, trust bar, precio con entrada incluida y reserva en 4 pasos.</p></div>
+  <div class="card"><h4>Se cambia</h4><p>Menú de 20 ítems pasa a 7 más un mega menú. Hero de YouTube en negro pasa a video propio con poster. Banners PNG con texto rasterizado pasan a componentes. Fichas por modelo de vehículo pasan a fichas por experiencia con variantes. Plugin de reservas en tabs pasa a flujo propio. Kumbh Sans y Roboto pasan a Archivo con Caveat Brush de acento. Inglés en otro dominio pasa a <code>/en/</code>. Watermark "TOURS" en brush y papel rasgado dejan de ser imágenes y pasan a CSS.</p></div>
+  <div class="card"><h4>Se descarta</h4><p>El contenido demo del tema ("Discovery Islands", dirección de Nueva York, "Paragliding Tours"), las 3 URLs de bicicletas que muestran el Sky Bike, las 6 fichas #SoyLocal duplicadas, los 10 banners de promoción del home, las 5 familias de iconos, el chat de terceros encimado al dock, la reseña negativa en el carrusel, las mayúsculas sostenidas en H1 y los cargos pre-activados en el checkout.</p></div>
+  <div class="card"><h4>Faltaba</h4><p>Precio en el home y en las tarjetas, comparador de combos, landing de Park Pass, página de familias, seguridad y requisitos en un solo lugar, cómo llegar con tiempos de pickup, confirmación de reserva con QR, sección de guías con nombre (Yohari, Zetina, Adán, Israel, Katia), conservación como autoridad, bolsa de trabajo real, 404, hreflang, schema Product y FAQPage, presupuesto de rendimiento.</p></div>
+</div>
+<div class="callout">
+  <p><strong>Lo que dicen las reseñas (Youscan, t2ó).</strong> Solo 58.8 % positivas. Lo mejor es el personal; lo peor, la transparencia: sorpresa de $150, seguros "obligatorios", retenciones de $15,000 MXN y la política de celulares vista como venta forzada de fotos. Por eso el precio total, los extras opt-in y la página de Seguridad no son estética: son la respuesta al problema número uno de la marca.</p>
+</div>
+<p>Detalle en <code>docs/01-auditoria-sitio-actual.md</code>, <code>docs/02-figma-vs-produccion.md</code> y <code>docs/10-insights-presentaciones-cliente.md</code>.</p>
+
+<h2 id="mapa">2. Mapa de pantallas</h2>
+<p>Un solo sitio para viajero, familia, residente y B2B. Header de 7 destinos, dock inferior en móvil con Reservar, WhatsApp y Llamar, y toggle ES/EN. Cada plantilla se construye una vez con datos reales de producción; solo dos fichas y una nota se pulen completas, el resto se puebla desde JSON.</p>
+<p class="legend"><i></i> Prioridad P0: lo que se construye primero para la presentación al cliente.</p>
+<div class="statelegend">
+  <span><i style="background:#17A34A"></i> Terminada y pulida</span>
+  <span><i style="background:#E8A317"></i> Construida, falta pulir</span>
+  <span><i style="background:#2A7FB8"></i> Nueva, no existe en producción</span>
+  <span><i style="background:#E6DCCB"></i> Sin empezar</span>
+</div>
+<div class="progress">
+  <div class="bar"><b style="width:0%"></b></div>
+  <span>0 de 28 terminadas · 28 construidas, falta pulir · SvelteKit + Tailwind</span>
+</div>
+<div class="map">
+  <div class="col"><h4>Descubrir <span class="n">4</span></h4>
+    <div class="scr wip"><span class="id">H-01</span>Home<span class="p0dot" title="Prioridad P0"></span></div>
+    <div class="scr wip"><span class="id">H-02</span>Menú móvil (bottom sheet)<span class="p0dot" title="Prioridad P0"></span></div>
+    <div class="scr wip"><span class="id">H-03</span>Buscador de tours<span class="p0dot" title="Prioridad P0"></span></div>
+    <div class="scr wip"><span class="id">H-04</span>404 con tours destacados</div>
+  </div>
+  <div class="col"><h4>Tours <span class="n">7</span></h4>
+    <div class="scr wip"><span class="id">T-01</span>Listado con filtros<span class="p0dot" title="Prioridad P0"></span></div>
+    <div class="scr wip"><span class="id">T-02</span>Filtros (bottom sheet)<span class="p0dot" title="Prioridad P0"></span></div>
+    <div class="scr wip"><span class="id">T-03</span>Ficha: Sky Bike<span class="p0dot" title="Prioridad P0"></span></div>
+    <div class="scr wip"><span class="id">T-04</span>Ficha: Migriño ATV con variantes<span class="p0dot" title="Prioridad P0"></span></div>
+    <div class="scr wip"><span class="id">T-05</span>Fichas restantes por plantilla</div>
+    <div class="scr wip"><span class="id">T-06</span>Combos: comparador<span class="p0dot" title="Prioridad P0"></span></div>
+    <div class="scr wip"><span class="id">T-07</span>Park Pass: landing<span class="p0dot" title="Prioridad P0"></span></div>
+  </div>
+  <div class="col"><h4>Reserva <span class="n">7</span></h4>
+    <div class="scr wip"><span class="id">R-01</span>Paso 1: fecha y horario<span class="p0dot" title="Prioridad P0"></span></div>
+    <div class="scr wip"><span class="id">R-02</span>Paso 1b: personas y variante<span class="p0dot" title="Prioridad P0"></span></div>
+    <div class="scr wip"><span class="id">R-03</span>Paso 2: extras opt-in<span class="p0dot" title="Prioridad P0"></span></div>
+    <div class="scr wip"><span class="id">R-04</span>Paso 3: hotel y datos<span class="p0dot" title="Prioridad P0"></span></div>
+    <div class="scr wip"><span class="id">R-05</span>Paso 4: resumen y pago<span class="p0dot" title="Prioridad P0"></span></div>
+    <div class="scr wip"><span class="id">R-06</span>Error de pago</div>
+    <div class="scr wip"><span class="id">R-07</span>Confirmación con QR<span class="p0dot" title="Prioridad P0"></span></div>
+  </div>
+  <div class="col"><h4>Segmentos <span class="n">4</span></h4>
+    <div class="scr wip"><span class="id">S-01</span>Familias y Kids Club<span class="p0dot" title="Prioridad P0"></span></div>
+    <div class="scr wip"><span class="id">S-02</span>Soy Local</div>
+    <div class="scr wip"><span class="id">S-03</span>Grupos y eventos</div>
+    <div class="scr wip"><span class="id">S-04</span>Partners</div>
+  </div>
+  <div class="col"><h4>Confianza <span class="n">6</span></h4>
+    <div class="scr wip"><span class="id">C-01</span>Nosotros<span class="p0dot" title="Prioridad P0"></span></div>
+    <div class="scr wip"><span class="id">C-02</span>Seguridad y requisitos<span class="p0dot" title="Prioridad P0"></span></div>
+    <div class="scr wip"><span class="id">C-06</span>Nuestros guías (cards + perfil)<span class="p0dot" title="Prioridad P0"></span></div>
+    <div class="scr wip"><span class="id">C-03</span>Cómo llegar</div>
+    <div class="scr wip"><span class="id">C-04</span>Preguntas frecuentes</div>
+    <div class="scr wip"><span class="id">C-05</span>Galería y UGC</div>
+  </div>
+  <div class="col"><h4>Contenido <span class="n">2</span></h4>
+    <div class="scr wip"><span class="id">B-01</span>Blog: listado<span class="p0dot" title="Prioridad P0"></span></div>
+    <div class="scr wip"><span class="id">B-02</span>Blog: nota<span class="p0dot" title="Prioridad P0"></span></div>
+  </div>
+  <div class="col"><h4>Contacto y legal <span class="n">6</span></h4>
+    <div class="scr wip"><span class="id">L-01</span>Contacto</div>
+    <div class="scr wip"><span class="id">L-02</span>Únete al equipo: vacantes</div>
+    <div class="scr wip"><span class="id">L-03</span>Términos y condiciones</div>
+    <div class="scr wip"><span class="id">L-04</span>Aviso de privacidad</div>
+    <div class="scr wip"><span class="id">L-05</span>Política de cancelación</div>
+    <div class="scr wip"><span class="id">L-06</span>Inglés: home y Sky Bike</div>
+  </div>
+</div>
+<h3>Flujo del viajero</h3>
+<pre class="mermaid">
+flowchart LR
+  H[H-01 Home] --> T[T-01 Listado] --> F[T-03 Ficha]
+  H --> F
+  H --> CB[T-06 Combos] --> F
+  F --> R1[R-01 Fecha y horario] --> R2[R-02 Personas] --> R3[R-03 Extras] --> R4[R-04 Hotel y datos] --> R5[R-05 Pago]
+  R5 -->|ok| OK[R-07 Confirmación]
+  R5 -->|falla| ER[R-06 Error] --> R5
+  F --> SEG[C-02 Seguridad]
+  OK --> LL[C-03 Cómo llegar]
+</pre>
+<h3>Flujo de familias y B2B</h3>
+<pre class="mermaid">
+flowchart LR
+  H[H-01 Home] --> FA[S-01 Familias] --> F[T-04 Ficha Mini RZR] --> R1[R-01 Reserva]
+  H --> G[S-03 Grupos] --> FO[Formulario] --> WA[WhatsApp con Luis]
+  H --> SL[S-02 Soy Local] --> F
+</pre>
+
+<h2 id="concepto">3. Concepto narrativo: Vive Cactus</h2>
+<p>En Capital Trip la palabra que sostiene todo es <strong>TRIP</strong>: el viaje es el producto, cada parada es un trip y las secciones hablan desde ahí ("El TRIP se vive así", "Miles ya se subieron al TRIP"). Cactus ya tiene su palabra y está en producción: <strong>"Siente Cactus, ¡vive Cactus!"</strong>. Cactus no es una agencia, es un lugar: un parque entre el desierto y el Pacífico que se vive en un día. Todo el sitio habla desde ese verbo.</p>
+<div class="story">
+  <div><b>Hero</b><span>Donde el desierto se lanza al mar.</span><small>Vive Cactus: Sky Bike, ATV, Can-Am, camellos y caballos en un solo parque.</small></div>
+  <div><b>Catálogo</b><span>Elige cómo vivir Cactus</span><small>9 formas, de tranquilo a extremo.</small></div>
+  <div><b>Destacados</b><span>Lo más vivido esta semana</span><small>Cards con precio, intensidad y rating.</small></div>
+  <div><b>Récord</b><span>854 m viviendo el aire</span><small>Sección noche, cifras que cuentan.</small></div>
+  <div><b>Combos</b><span>Vive dos. Paga uno.</span><small>Comparador.</small></div>
+  <div><b>La ruta</b><span>Así se vive Cactus</span><small>Pickup → check-in → aventura → tequila → fotos → regreso.</small></div>
+  <div><b>Guías</b><span>Los que te lo hacen vivir</span><small>Yohari, Zetina, Adán, Israel, Katia.</small></div>
+  <div><b>Reseñas</b><span>3 millones ya lo vivieron</span><small>Google y TripAdvisor con nombre de guía.</small></div>
+  <div><b>Galería</b><span>Cactus se vive así</span><small>Fotos reales inclinadas, como el bloque de Capital Trip.</small></div>
+  <div><b>CTA final</b><span>¿Cuándo lo vives?</span><small>Reservar · WhatsApp.</small></div>
+</div>
+<div class="grid2">
+  <div class="card"><h4>Cómo se siente poderoso sin ser oscuro</h4><p>Red Bull es blanco. La fuerza viene de la foto a sangre, el display grande en mayúsculas, los degradados a tinta sobre las imágenes y el movimiento. Cactus hace lo mismo: fondo blanco y arena, y la noche solo en cuatro lugares: hero, mega menú, sección récord y bloques puntuales tipo "Somos Cactus". Igual que en Capital Trip, la foto lleva el degradado, no la página.</p></div>
+  <div class="card"><h4>Qué se hereda literal de Capital Trip</h4><p>El hero con foto a sangre, degradado a tinta al 96 % abajo y título abajo a la izquierda con meta line; la card blanca que cruza el borde del hero con foto, promesa y dos CTAs; la jump nav que aparece al pasar el hero; la galería con fotos inclinadas; la ruta con paradas que se sellan al hacer scroll; el sticky de precio en móvil.</p></div>
+</div>
+<div class="mocks">
+  <div class="mock">
+    <div class="ctmock" style="background-image:url(assets/canam.jpg)">
+      <div class="ttl">Can-Am X3 Turbo</div>
+      <div class="meta">2 h · Desierto y playa · Intensidad 5/5 · 16+ para manejar</div>
+      <div class="card"><img src="assets/sbs.jpg" alt=""><div><b>Tu aventura, todo resuelto</b><small>Pickup en tu hotel, equipo, guía y tequila. Desde $325 USD por vehículo.</small></div></div>
+    </div>
+    <p class="t-cap" style="margin:36px 0 0">Hero de ficha heredado de Capital Trip: foto a sangre, degradado a tinta, título en display y card que cruza el borde.</p>
+  </div>
+  <div class="mock">
+    <div class="t-ov" style="margin-bottom:8px">Cactus se vive así</div>
+    <div class="gal"><img src="assets/camel.jpg" alt=""><img src="assets/skybike.jpg" alt=""><img src="assets/kids.jpg" alt=""></div>
+    <p class="t-cap" style="margin:8px 0 0">Galería con fotos inclinadas y sombra, como "El TRIP se vive así". Con las fotos reales del parque y, después, con las de los clientes (UGC).</p>
+  </div>
+</div>
+
+<h2 id="principios">4. Principios</h2>
+<ol class="list">
+  <li><strong>Blanco manda, la foto pega.</strong> Fondo blanco y arena como Red Bull; la fuerza viene de la foto a sangre con degradado, el display en mayúsculas y el movimiento. La noche solo en hero, mega menú, récord y un bloque puntual. No es dark mode.</li>
+  <li><strong>Vive Cactus.</strong> Cada sección habla desde el mismo verbo, como el TRIP en Capital Trip. Si un título no se puede decir con "vivir", está mal escrito.</li>
+  <li><strong>El sitio está vivo.</strong> Video en el hero, foto en cada card, títulos que entran por palabra, cards escalonadas, cifras que cuentan, ruta que se sella. Nada estático que pueda respirar. Todo con fallback.</li>
+  <li><strong>Que no parezca hecho por IA.</strong> Fotos reales del parque, nombres reales de guías, cifras reales, copy con voz, degradados sobre imagen y no sobre cajas, cero iconos genéricos en círculos de colores.</li>
+  <li><strong>Precio total siempre.</strong> Ningún precio sin la entrada al parque incluida. Los extras se eligen, no vienen marcados.</li>
+  <li><strong>Una tipografía, tres anchos.</strong> Archivo variable: expandida para display en mayúsculas, normal para cuerpo, y el brush solo como acento.</li>
+  <li><strong>Vidrio donde convierte.</strong> Liquid glass solo en header, dock y barra de precio, siempre sobre fondo difuminado y con fallback opaco. Nunca en cards.</li>
+  <li><strong>Todo en múltiplos de 4.</strong> Gutter de 22 en móvil como única excepción, porque así lo pide el layout.</li>
+  <li><strong>Una sección animada por página.</strong> El resto estático y rápido: LCP menor a 2.5 s en 4G.</li>
+</ol>
+
+<h2 id="color">5. Color</h2>
+<p>En el sitio cerca de 80 % blanco y arena, 10 % fotografía con degradado a tinta, 6 % naranja, 4 % verde. La noche aparece en cuatro lugares (hero, mega menú, sección récord y un bloque "Somos Cactus") y ahí invierte: 80 % noche, 12 % arena, 8 % naranja. Los cinco colores base son los del kit de Elementor en producción; lo demás es nuevo.</p>
+<h3>Marca</h3>
+<div class="sw">
+  <div class="s"><b style="background:#F7921E"></b><span>brand.sun 500 · primario<small>#F7921E</small></span></div>
+  <div class="s"><b style="background:#FFA83D"></b><span>brand.sun 400 · hover<small>#FFA83D</small></span></div>
+  <div class="s"><b style="background:#D9760A"></b><span>brand.sun 600 · texto AA<small>#D9760A</small></span></div>
+  <div class="s"><b style="background:#A85A05"></b><span>brand.sun 700 · texto chico<small>#A85A05</small></span></div>
+  <div class="s"><b style="background:#63AB45"></b><span>brand.cactus 500 · secundario<small>#63AB45</small></span></div>
+  <div class="s"><b style="background:#4E8F35"></b><span>brand.cactus 600<small>#4E8F35</small></span></div>
+  <div class="s"><b style="background:#E6F3DF"></b><span>brand.cactus 100<small>#E6F3DF</small></span></div>
+  <div class="s"><b style="background:#E4572E"></b><span>brand.sunset · extremo<small>#E4572E</small></span></div>
+  <div class="s"><b style="background:#2A7FB8"></b><span>brand.ocean · mar<small>#2A7FB8</small></span></div>
+</div>
+<h3>Neutros "arena y noche"</h3>
+<div class="sw">
+  <div class="s"><b style="background:#1C231F"></b><span>night 900 · texto y dark<small>#1C231F</small></span></div>
+  <div class="s"><b style="background:#26302B"></b><span>night 800<small>#26302B</small></span></div>
+  <div class="s"><b style="background:#34413A"></b><span>night 700<small>#34413A</small></span></div>
+  <div class="s"><b style="background:#5B4E3E"></b><span>dune 700 · secundario<small>#5B4E3E</small></span></div>
+  <div class="s"><b style="background:#8C7A62"></b><span>dune 500 · terciario<small>#8C7A62</small></span></div>
+  <div class="s"><b style="background:#CDBFA8"></b><span>sand 300 · bordes activos<small>#CDBFA8</small></span></div>
+  <div class="s"><b style="background:#E6DCCB"></b><span>sand 200 · bordes<small>#E6DCCB</small></span></div>
+  <div class="s"><b style="background:#F3EDE3"></b><span>sand 100 · alterno<small>#F3EDE3</small></span></div>
+  <div class="s"><b style="background:#FBF8F3"></b><span>sand 50 · fondo<small>#FBF8F3</small></span></div>
+  <div class="s"><b style="background:#FFFFFF"></b><span>sand 0 · cards<small>#FFFFFF</small></span></div>
+</div>
+<h3>Semánticos</h3>
+<div class="sw">
+  <div class="s"><b style="background:#3A9D5D"></b><span>success<small>#3A9D5D</small></span></div>
+  <div class="s"><b style="background:#E0A100"></b><span>warning · requisitos<small>#E0A100</small></span></div>
+  <div class="s"><b style="background:#D64545"></b><span>danger<small>#D64545</small></span></div>
+  <div class="s"><b style="background:#2A7FB8"></b><span>info<small>#2A7FB8</small></span></div>
+  <div class="s"><b style="background:#F5B400"></b><span>rating<small>#F5B400</small></span></div>
+  <div class="s"><b style="background:#25D366"></b><span>whatsapp<small>#25D366</small></span></div>
+</div>
+<h3>Intensidad, de 1 a 5</h3>
+<div class="intens">
+  <div><i><b style="height:4px;background:#2A7FB8"></b><b style="height:6px"></b><b style="height:8px"></b><b style="height:10px"></b><b style="height:12px"></b></i>1 Tranquilo · camello, Balandra</div>
+  <div><i><b style="height:4px;background:#63AB45"></b><b style="height:6px;background:#63AB45"></b><b style="height:8px"></b><b style="height:10px"></b><b style="height:12px"></b></i>2 Familiar · caballo, Mini RZR</div>
+  <div><i><b style="height:4px;background:#F7921E"></b><b style="height:6px;background:#F7921E"></b><b style="height:8px;background:#F7921E"></b><b style="height:10px"></b><b style="height:12px"></b></i>3 Aventura · Sky Bike, combos</div>
+  <div><i><b style="height:4px;background:#E07A1F"></b><b style="height:6px;background:#E07A1F"></b><b style="height:8px;background:#E07A1F"></b><b style="height:10px;background:#E07A1F"></b><b style="height:12px"></b></i>4 Adrenalina · ATV, Side by Side</div>
+  <div><i><b style="height:4px;background:#E4572E"></b><b style="height:6px;background:#E4572E"></b><b style="height:8px;background:#E4572E"></b><b style="height:10px;background:#E4572E"></b><b style="height:12px;background:#E4572E"></b></i>5 Extremo · Can-Am X3, Maverick</div>
+</div>
+<div class="callout">
+  <p><strong>Reglas del naranja.</strong> El #F7921E da 8.9:1 con texto oscuro encima, así que el botón primario lleva texto noche, no blanco. Sobre blanco solo da 2.4:1: nunca como texto de cuerpo; como texto se usa el 600 (4.5:1) y en tamaños chicos el 700. El verde queda para marca, checks de "incluido" y badges familiares; no es botón. El sunset se reserva para intensidad 5 y urgencia honesta ("quedan 3 lugares"), nunca para promociones.</p>
+</div>
+
+<h2 id="tipo">6. Tipografía</h2>
+<p><strong>Archivo</strong> de Google Fonts, variable en peso (100 a 900) y anchura (62 a 125), con itálicas reales. Tiene ADN de señalética y motorsport, que encaja con Baja y el off-road. <strong>Caveat Brush</strong> es el acento: cubre el trazo brush del sitio actual (watermark "TOURS", sello "Record Holder") pero con una regla: una palabra por sección, rotada 3 grados. Números siempre tabulares.</p>
+<div class="spec">
+  <div><span class="lbl">display.xl 44→88</span><span class="t-dxl">Donde el desierto se lanza al mar</span></div>
+  <div><span class="lbl">display.l 36→64</span><span class="t-dl">854 metros sobre el Pacífico</span></div>
+  <div><span class="lbl">h1 32→48</span><span class="t-h1">Tours de aventura en Los Cabos</span></div>
+  <div><span class="lbl">h2 26→36</span><span class="t-h2">Los más reservados esta semana</span></div>
+  <div><span class="lbl">h3 20→24</span><span class="t-h3">Sky Bike Récord Guinness</span></div>
+  <div><span class="lbl">body.l 18/28</span><span class="t-bl">Te recogemos en tu hotel, manejas dos horas entre dunas y playa, y cierras con tequila frente al mar.</span></div>
+  <div><span class="lbl">body 16/25</span><span class="t-b">Tu lugar está apartado. Te esperamos el sábado 3 a las 10:00 AM; el pickup en Pueblo Bonito es a las 9:05.</span></div>
+  <div><span class="lbl">body.s 14/21</span><span class="t-bs">2 h · Desierto y playa · Guía bilingüe · Desde 8 años</span></div>
+  <div><span class="lbl">caption 12/17</span><span class="t-cap">Incluye $25 USD de entrada al parque</span></div>
+  <div><span class="lbl">overline 12/14</span><span class="t-ov">Elige tu aventura</span></div>
+  <div><span class="lbl">price 28 · tabular</span><span class="t-price">$150 <small>USD por persona</small></span></div>
+  <div><span class="lbl">accent · Caveat Brush</span><span class="t-accent">¡Récord Guinness!</span></div>
+</div>
+<p>Alternativa si el cliente pide más contraste entre títulos y cuerpo: Barlow Condensed 800 para display con Barlow para cuerpo, misma lógica de superfamilia. Carga con <code>preconnect</code>, <code>font-display: swap</code> y subset latino: dos requests.</p>
+
+<h2 id="espacio">7. Espaciado y radios</h2>
+<p>Escala de 4, 8, 12, 16, 20, 24, 32, 40, 48 y 64. Márgenes de pantalla de <strong>22</strong> en móvil, 32 en tablet y 48 en desktop. Padding vertical de sección 48 en móvil y 96 en desktop, separación entre bloques de 32, entre elementos de 12, padding de card de 16. Área táctil mínima de 44. Contenedor de 1200 y 1400 para secciones a sangre.</p>
+<div class="spacing">
+  <div style="width:4px;height:4px"></div><div style="width:8px;height:8px"></div><div style="width:12px;height:12px"></div><div style="width:16px;height:16px">16</div><div style="width:20px;height:20px">20</div><div style="width:22px;height:22px;border-style:dashed">22</div><div style="width:24px;height:24px">24</div><div style="width:32px;height:32px">32</div><div style="width:40px;height:40px">40</div><div style="width:48px;height:48px">48</div><div style="width:64px;height:64px">64</div>
+</div>
+<div class="radii">
+  <div style="border-radius:8px">8 chip input</div><div style="border-radius:12px">12 botón</div><div style="border-radius:20px">20 card sheet</div><div style="border-radius:28px">28 glass modal</div><div style="border-radius:999px">999 dock pill</div>
+</div>
+<p>Sombras: card <code>0 4px 16px rgba(28,35,31,.08)</code>, flotante <code>0 12px 32px rgba(28,35,31,.16)</code>, vidrio <code>0 8px 32px rgba(0,0,0,.24)</code> con línea interior blanca al 35 %. Z: dropdown 10, sticky 20, dock 30, backdrop 40, sheet 50, toast 60.</p>
+
+<h2 id="componentes">8. Componentes</h2>
+<h3>Botones</h3>
+<div class="demo">
+  <button class="btn pri l">Reservar · $150 USD</button>
+  <button class="btn pri">Reservar</button>
+  <button class="btn sec">Ver todos los tours</button>
+  <button class="btn ter">Filtros · 2</button>
+  <button class="btn link">Ver detalles →</button>
+  <button class="btn wa">WhatsApp</button>
+  <button class="btn dan">Cancelar reserva</button>
+  <button class="btn ico" aria-label="Compartir">↗</button>
+</div>
+<div class="demo dark">
+  <button class="btn pri pill">Reservar ahora</button>
+  <button class="btn glass">Ver video</button>
+  <button class="btn sec ondark">Ver tours</button>
+  <button class="btn pri s">Pequeño 40</button>
+</div>
+<p>Un primario por pantalla, naranja con texto oscuro. Sobre foto o video, el secundario es vidrio. Tamaños L 56, M 48, S 40 e icono 44. Full width en móvil por defecto para el primario. Deshabilitado al 45 % de opacidad, cargando con spinner y el texto se queda.</p>
+<h3>Chips y badges</h3>
+<div class="demo">
+  <span class="chip on">Todos</span><span class="chip">ATV</span><span class="chip">UTV</span><span class="chip">Sky Bike</span><span class="chip">Familiar</span><span class="chip">Desde 5 años</span>
+</div>
+<div class="demo">
+  <span class="badge guinness">★ Récord Guinness</span><span class="badge popular">Más popular</span><span class="badge familiar">Familiar</span><span class="badge extremo">Extremo</span><span class="badge nuevo">Nuevo</span><span class="badge gratis">Gratis</span><span class="badge agotado">Agotado</span>
+</div>
+<div class="demo">
+  <span class="time">9:00 AM<small>8 lugares</small></span><span class="time on">10:00 AM<small>3 lugares</small></span><span class="time off">12:00 PM<small>agotado</small></span><span class="time">1:00 PM<small>12 lugares</small></span>
+  <span class="amen">Transporte incluido</span><span class="amen">Guía bilingüe</span><span class="amen no">Celulares en el tour</span>
+</div>
+<h3>Cards y bloques</h3>
+<div class="mocks">
+  <div class="mock">
+    <div class="tcard">
+      <div class="img" style="background-image:url(assets/skybike.jpg)"><span class="badge guinness" style="align-self:flex-start">★ Récord Guinness</span><span class="dur">⏱ 2 h</span></div>
+      <div class="body">
+        <h5>Sky Bike</h5>
+        <span class="meta">Pedalea 854 m sobre el Pacífico · Intensidad 3/5 · Desde 8 años</span>
+        <div class="am"><span class="amen">Transporte</span><span class="amen">Guía bilingüe</span><span class="amen">Equipo</span><span class="amen">Fotógrafo</span></div>
+        <div class="rate"><b>★★★★★</b> 4.9 · 312 reseñas</div>
+        <div class="foot"><div><span class="lbl">Desde</span><span class="t-price">$150 <small>USD</small></span><span class="note">por persona, entrada incluida</span></div><button class="btn pri s">Reservar</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="mock">
+    <div class="herom" style="background-image:url(assets/hero-poster.jpg)">
+      <video src="assets/hero-16x9-12s.mp4" poster="assets/hero-poster.jpg" muted autoplay loop playsinline></video>
+      <div class="ov">Migriño · Los Cabos</div>
+      <div class="ttl">Donde el desierto se lanza al mar</div>
+      <div class="sub">Sky Bike Récord Guinness, ATV, Can-Am, camellos y caballos. Un solo parque a 45 min de Cabo.</div>
+      <div class="row"><span class="btn pri pill">Reservar</span><span class="btn glass">Ver tours</span></div>
+      <div class="ratings"><span class="rb">G <b>★★★★★</b> 4.8 · 2,340</span><span class="rb">TripAdvisor <b>★★★★★</b> 4.7 · 1,180</span></div>
+    </div>
+  </div>
+  <div class="mock">
+    <div class="t-ov" style="margin-bottom:8px">Precio claro</div>
+    <div class="price">
+      <div class="row"><span>Sky Bike · adulto</span><span>$125</span></div>
+      <div class="row"><span>Entrada al parque</span><span>$25</span></div>
+      <div class="row"><span>Niño (5 a 11 años)</span><span>$62.50 + $25</span></div>
+      <div class="row tot"><span>Total por adulto</span><span>$150 USD</span></div>
+      <div class="prom"><span>✓ Cancela gratis hasta 48 h antes</span><span>✓ Nada más que pagar al llegar</span><span>✓ Protección del vehículo: opcional, $X o retención en tarjeta</span></div>
+    </div>
+    <p class="t-cap" style="margin:8px 0 0">El desglose vive en la ficha, en el paso 1 y en el resumen. Es la respuesta al 41 % de reseñas negativas.</p>
+  </div>
+  <div class="mock" style="display:flex;flex-direction:column;gap:12px">
+    <div class="stepper"><span class="done">1 Fecha</span><span class="on">2 Extras</span><span>3 Datos</span><span>4 Pago</span></div>
+    <div class="cal"><div class="on"><small>sáb</small>26</div><div><small>dom</small>27</div><div><small>lun</small>28</div><div><small>mar</small>29</div><div><small>mié</small>30</div><div><small>jue</small>1</div></div>
+    <div class="counter"><div>Adultos<small>desde 12 años</small></div><div class="c"><i>−</i>2<i>+</i></div></div>
+    <div class="counter"><div>Niños<small>5 a 11 años, mitad de precio</small></div><div class="c"><i>−</i>1<i>+</i></div></div>
+    <div class="sticky"><div class="p"><small>3 personas · sáb 26 · 10:00 AM</small><b>$362.50 USD</b></div><span class="btn pri">Continuar</span></div>
+  </div>
+  <div class="mock">
+    <div class="t-ov" style="margin-bottom:8px">Comparador de combos</div>
+    <table class="cmp">
+      <tr><th></th><th>2x1<span class="pr">$150</span></th><th class="best">3x1<span class="pr">$200</span></th><th>Premium<span class="pr">$200</span></th></tr>
+      <tr><td>Aventuras</td><td>2</td><td class="best">3</td><td>2</td></tr>
+      <tr><td>Can-Am X3</td><td class="nok">—</td><td class="best nok">—</td><td class="ok">✓</td></tr>
+      <tr><td>Transporte</td><td class="ok">✓</td><td class="best ok">✓</td><td class="ok">✓</td></tr>
+      <tr><td>Tequila</td><td class="ok">✓</td><td class="best ok">✓</td><td class="ok">✓</td></tr>
+      <tr><td>Duración</td><td>2 h</td><td class="best">3 h</td><td>2 h</td></tr>
+    </table>
+    <p class="t-cap" style="margin:8px 0 0">Primera columna fija, scroll horizontal, columna "más elegido" con tinte. Precios de producción con entrada incluida.</p>
+  </div>
+  <div class="mock" style="display:flex;flex-direction:column;gap:10px">
+    <div class="input"><span class="lab">¿En qué hotel te recogemos?</span>Pueblo Bonito Sunset Beach</div>
+    <div class="input focus"><span class="lab">Teléfono</span>+1 (619) 555 0134</div>
+    <div class="input err"><span class="lab">Correo</span>sarah@gmail</div>
+    <p class="errmsg">Revisa el correo, ahí te mandamos la confirmación.</p>
+    <div class="dock"><div><span class="ic sun"></span>Reservar</div><div><span class="ic wa"></span>WhatsApp</div><div><span class="ic dark"></span>Llamar</div></div>
+    <p class="t-cap" style="margin:0">Input de 52 con label arriba. Dock en vidrio con tres acciones; en ficha se convierte en la barra de precio.</p>
+  </div>
+  <div class="mock dark" style="display:flex;flex-direction:column;gap:12px">
+    <div class="t-ov" style="color:var(--sand-300)">Sección récord · fondo noche con textura topográfica</div>
+    <div class="stat"><div><b>854</b><small>metros sobre el Pacífico</small></div><div><b>18</b><small>años en Migriño</small></div><div><b>3M</b><small>visitantes</small></div></div>
+    <div class="t-bs" style="color:var(--sand-300)">La cifra se cuenta al entrar en pantalla, una sola vez. Con reducir movimiento, aparece fija.</div>
+    <span class="btn pri pill" style="align-self:flex-start">Reservar Sky Bike</span>
+  </div>
+  <div class="mock">
+    <div class="t-ov" style="margin-bottom:8px">Bento de categorías</div>
+    <div class="bento">
+      <div class="big" style="background-image:url(assets/parkpass.jpg)"><span><small>Todo incluido</small>Park Pass</span></div>
+      <div style="background-image:url(assets/skybike.jpg)"><span><small>Guinness</small>Sky Bike</span></div>
+      <div style="background-image:url(assets/canam.jpg)"><span><small>Extremo</small>UTV</span></div>
+      <div style="background-image:url(assets/atv.jpg)"><span>ATV</span></div>
+      <div style="background-image:url(assets/camel.jpg)"><span>Camellos</span></div>
+      <div style="background-image:url(assets/kids.jpg)"><span>Niños</span></div>
+    </div>
+  </div>
+  <div class="mock">
+    <div class="torn" style="background-image:url(assets/sbs.jpg)"><div class="cap"><span>Somos Cactus</span>18 años entre el desierto y el mar</div></div>
+    <p class="t-cap" style="margin:8px 0 0">Bloque con borde rasgado hecho con <code>mask-image</code>: reemplaza los PNG recortados del sitio actual y funciona con cualquier foto.</p>
+  </div>
+</div>
+<p>Estados que se diseñan como variantes, no como pantallas: skeleton de cards, vacío de filtros con un chip para limpiar, error de pago con reintento y lugar apartado 10 minutos, horario agotado tachado con el siguiente disponible, toast oscuro con blur, banner sin conexión.</p>
+
+<h2 id="foto">9. Fotografía e iconos</h2>
+<ul>
+  <li><strong>Fotografía:</strong> luz de tarde, cielo azul, arena y polvo en movimiento, gente de espaldas o de perfil sonriendo, encuadre bajo para los vehículos, el horizonte del Pacífico siempre presente. Texto encima solo con degradado a noche. AVIF y WebP en cinco tamaños, nada arriba de 250 KB en card ni 600 KB en hero.</li>
+  <li><strong>Iconos de UI:</strong> Lucide, trazo 1.75 a 24 px. Un solo set; se retiran Font Awesome, Line Awesome, eicons y dashicons.</li>
+  <li><strong>Iconos propios</strong> al mismo grosor: cactus, ATV, UTV, sky bike, camello, caballo, niño con casco, combo, park pass, tequila, pickup, Kids Club.</li>
+  <li><strong>Sellos:</strong> Guinness World Records, TripAdvisor Travelers' Choice, Google, SEMARNAT PIMVS, FCCA. Monocromos en footer y trust bar, a color en Nosotros.</li>
+</ul>
+<h3>Fotos reales del parque ya disponibles</h3>
+<p>255 imágenes descargadas del sitio actual, 45 de ellas a 2560 px. Estas son las que cargan el prototipo:</p>
+<div class="photos">
+  <figure><img src="assets/skybike.jpg" alt=""><figcaption>Sky Bike sobre el Pacífico. Hero de ficha y card.</figcaption></figure>
+  <figure><img src="assets/atv.jpg" alt=""><figcaption>ATV en playa. Card de Migriño ATV.</figcaption></figure>
+  <figure><img src="assets/dunes.jpg" alt=""><figcaption>Dunas. Beach & Dunes ATV.</figcaption></figure>
+  <figure><img src="assets/canam.jpg" alt=""><figcaption>Can-Am X3 en la arena. Sección extremo.</figcaption></figure>
+  <figure><img src="assets/sbs.jpg" alt=""><figcaption>Side by Side. Bloque Somos Cactus.</figcaption></figure>
+  <figure><img src="assets/camel.jpg" alt=""><figcaption>Camellos en la playa. Card y familias.</figcaption></figure>
+  <figure><img src="assets/horse.jpg" alt=""><figcaption>Caballo al atardecer. Card.</figcaption></figure>
+  <figure><img src="assets/kids.jpg" alt=""><figcaption>Kids Club. Página Familias.</figcaption></figure>
+  <figure><img src="assets/minirzr.jpg" alt=""><figcaption>Mini RZR. Card niños.</figcaption></figure>
+  <figure><img src="assets/whale.jpg" alt=""><figcaption>Ballena. Temporada nov a abr en la sección récord.</figcaption></figure>
+  <figure><img src="assets/balandra.jpg" alt=""><figcaption>Balandra. Tour de día completo.</figcaption></figure>
+  <figure><img src="assets/kc.jpg" alt=""><figcaption>Kids Club interior. Familias.</figcaption></figure>
+</div>
+<h3>Sellos y activos de marca existentes</h3>
+<div class="seals">
+  <img src="assets/logo.png" alt="Logo Cactus Tours" style="height:64px">
+  <img src="assets/tripadvisor.jpg" alt="TripAdvisor Travelers' Choice">
+  <img src="assets/guinness.png" alt="Sello Record Holder Guinness" style="height:72px">
+  <span class="txt">Faltan: SEMARNAT PIMVS y FCCA en SVG, íconos 3D por categoría (fase 2)</span>
+</div>
+<h3>Iconos propios, primera pasada</h3>
+<div class="iconrow">
+  <figure><svg viewBox="0 0 24 24"><path d="M12 3v18M12 9c-3 0-4-1-4-3s1-3 1-3M12 12c3 0 4-1 4-3s-1-3-1-3M9 21h6"/></svg>Cactus</figure>
+  <figure><svg viewBox="0 0 24 24"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M6 14l2-6h6l3 6M10 8V5h4"/></svg>ATV</figure>
+  <figure><svg viewBox="0 0 24 24"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M3 14l3-7h10l4 7M7 7V4h8"/></svg>UTV</figure>
+  <figure><svg viewBox="0 0 24 24"><path d="M2 5h20M4 5v3M20 5v3"/><circle cx="8" cy="18" r="3"/><circle cx="16" cy="18" r="3"/><path d="M8 15l2-6h4l2 6M12 9V6"/></svg>Sky Bike</figure>
+  <figure><svg viewBox="0 0 24 24"><path d="M4 20v-6c0-3 2-5 4-5s3 2 3 4 1-4 4-4 4 3 4 5v6M9 20v-4M15 20v-4M4 10V6"/></svg>Camello</figure>
+  <figure><svg viewBox="0 0 24 24"><path d="M5 20v-8l3-4h6l3 3 3-1M8 20v-5M14 20v-5M14 8V5l3-2"/></svg>Caballo</figure>
+  <figure><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M7 8h10M5 21v-2a7 7 0 0 1 14 0v2"/></svg>Niños</figure>
+  <figure><svg viewBox="0 0 24 24"><path d="M4 12h6M14 12h6M12 4v16M8 8l4 4-4 4M16 8l-4 4 4 4"/></svg>Combo</figure>
+  <figure><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 12h18M8 9v6"/></svg>Park Pass</figure>
+  <figure><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v5l-4 9a3 3 0 0 0 3 4h6a3 3 0 0 0 3-4l-4-9V3"/></svg>Tequila</figure>
+  <figure><svg viewBox="0 0 24 24"><rect x="2" y="7" width="15" height="10" rx="2"/><path d="M17 10h3l2 3v4h-5"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>Pickup</figure>
+  <figure><svg viewBox="0 0 24 24"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>Guinness</figure>
+</div>
+
+<h2 id="motion">10. Video y movimiento</h2>
+<p>Duraciones de 180, 320 y 640 ms con <code>cubic-bezier(.22,1,.36,1)</code>. Header que se esconde al bajar y aparece al subir. Bottom sheets con arrastre. Con reducir movimiento activado: sin parallax, sin contador, video en pausa con poster.</p>
+<h3>Qué hace que el sitio se sienta vivo</h3>
+<div class="alive">
+  <div><b>Video en el hero</b><small>12 s en loop, sin audio, poster primero. En ficha, el video del tour dentro de la galería.</small></div>
+  <div><b>Títulos por palabra</b><small>Cada palabra del display entra con 60 ms de escalón, fade y 12 px hacia arriba. El brush entra al final con un pequeño rebote.</small></div>
+  <div><b>Cards escalonadas</b><small>Al entrar en pantalla, 40 ms entre cards; la foto hace un zoom de 1.05 a 1 en 700 ms.</small></div>
+  <div><b>Cifras que cuentan</b><small>854, 18, 3M cuentan una sola vez al entrar en pantalla.</small></div>
+  <div><b>La ruta se sella</b><small>Las paradas de "Así se vive Cactus" se marcan conforme bajas, con el riel que crece, como en Capital Trip.</small></div>
+  <div><b>Línea de lectura</b><small>En blog y ficha, una línea naranja arriba avanza con el scroll, como en las notas de Red Bull.</small></div>
+  <div><b>Degradado que respira</b><small>El degradado sobre el hero se intensifica al hacer scroll para que el texto siga legible y la foto se hunda.</small></div>
+  <div><b>Header que se esconde</b><small>Baja y desaparece, sube y vuelve en pill de vidrio.</small></div>
+  <div><b>Galería inclinada</b><small>Las fotos entran rotando 2 grados hacia su posición final.</small></div>
+</div>
+<p>Degradados heredados de Capital Trip, adaptados a la paleta: sobre foto <code>linear-gradient(to top, rgba(28,35,31,.96) 0%, rgba(28,35,31,.78) 34%, rgba(28,35,31,.32) 62%, transparent 100%)</code>; corte lateral de carrusel <code>mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent)</code>; card sobre foto <code>linear-gradient(to bottom, transparent 55%, rgba(28,35,31,.55))</code>.</p>
+<h3>Hero, 12 segundos en loop</h3>
+<p>Ya está el master de "Expect the Unexpected" descargado del canal (1080p, 51 s). Se cortaron 12 s sin audio en 16:9 para desktop y 9:16 para móvil, 2.4 MB cada uno, con poster AVIF para el LCP. El video arranca después del primer render y nunca bloquea el texto.</p>
+<div class="story2">
+  <figure><div class="fr2" style="background-image:url(assets/hero-poster.jpg)"><div class="shade"></div></div><figcaption><b>0 ms</b><br>Poster con degradado a noche. El display ya es legible.</figcaption></figure>
+  <figure><div class="fr2" style="background-image:url(assets/hero-poster.jpg)"><div class="shade"></div><div class="ttl">Donde el desierto se lanza al mar</div></div><figcaption><b>0 a 320 ms</b><br>Overline, display y subtítulo entran con fade y 12 px hacia arriba, escalonados 60 ms.</figcaption></figure>
+  <figure><div class="fr2" style="background-image:url(assets/skybike.jpg)"><div class="shade"></div><div class="ttl">Donde el desierto se lanza al mar</div><div class="glass"></div></div><figcaption><b>320 a 640 ms</b><br>El video reemplaza al poster con crossfade. Los badges de rating y el dock de vidrio aparecen desde abajo.</figcaption></figure>
+  <figure><div class="fr2" style="background-image:url(assets/canam.jpg)"><div class="shade"></div><div class="ttl">854 m sobre el Pacífico</div></div><figcaption><b>Scroll</b><br>Al bajar, la sección récord en fondo noche cuenta las cifras y las líneas topográficas se desplazan a la mitad de la velocidad.</figcaption></figure>
+</div>
+<div class="grid2">
+  <div class="card"><h4>Vidrio</h4><p>Header, dock y barra de precio con <code>backdrop-filter: blur(16px) saturate(160%)</code>, borde blanco al 35 % y sombra suave. Si el navegador no soporta el filtro, fondo blanco al 92 %. Nunca vidrio sobre vidrio, nunca en cards.</p></div>
+  <div class="card"><h4>Papel rasgado y brush</h4><p>El borde rasgado es una máscara SVG reutilizable arriba o abajo de cualquier bloque fotográfico. La palabra en brush se renderiza con Caveat Brush, así que se traduce, escala y se lee con lector de pantalla. Adiós a las imágenes con texto.</p></div>
+  <div class="card"><h4>Una sección scroll-driven</h4><p>Solo la del récord Guinness usa <code>animation-timeline: scroll()</code> con fallback a estático. El resto del sitio son reveals de 320 ms con IntersectionObserver.</p></div>
+  <div class="card"><h4>Micro</h4><p>Botón primario: hover sube 2 px, active escala .97. Chip de horario seleccionado: pulso de 1 s en el borde, una vez. Contador de personas: el precio de la barra cambia con un tick de 180 ms.</p></div>
+</div>
+
+<h2 id="copy">11. Tono y copy</h2>
+<ul>
+  <li>De tú, cercano, directo. Energía sin gritar: un signo de exclamación por página como máximo, y nunca en botones.</li>
+  <li>Frases cortas con verbo: "Te recogemos en tu hotel." "Tu lugar está apartado."</li>
+  <li>Botones dicen lo que pasa: "Reservar · $150 USD", "Continuar", "Confirmar reserva".</li>
+  <li>Cifras en lugar de adjetivos: 854 m, 18 años, 45 min de Cabo, cancela gratis hasta 48 h antes.</li>
+  <li>Errores explican y resuelven: "No pudimos procesar el pago. Revisa la tarjeta o prueba otra. Tu lugar sigue apartado 10 minutos."</li>
+  <li>Mayúscula inicial solo en la primera palabra y nombres propios; el énfasis visual lo pone el CSS. Sin guiones largos. Sky Bike, Park Pass, Kids Club y Can-Am se quedan en inglés porque son nombres de producto; lo demás se traduce (degustación de tequila, día completo).</li>
+  <li>Estados vacíos con tono: "Con esos filtros no hay tours. Prueba quitando la edad mínima."</li>
+</ul>
+<div class="tbl"><table>
+  <tr><th>Sección</th><th>Actual</th><th>Propuesta</th></tr>
+  <tr><td>Hero</td><td>¡Vive la Adrenalina, Vive Cactus Tours!</td><td>Donde el desierto se lanza al mar.</td></tr>
+  <tr><td>Trust bar</td><td>Transporte gratuito / Sin costos ocultos / Guías expertos / Pago seguro</td><td>Te recogemos en tu hotel · Precio total, sin sorpresas · Cancela gratis hasta 48 h antes · Kids Club gratuito</td></tr>
+  <tr><td>Récord</td><td>Párrafo de 120 palabras</td><td>854 metros pedaleando sobre el Pacífico. Récord Guinness 2025. En temporada, con ballenas abajo.</td></tr>
+  <tr><td>Familias</td><td>Regálale a tus hijos una experiencia que jamás olvidarán</td><td>Los niños también manejan. Mini RZR desde los 10, camellos desde los 5, Kids Club gratis para los más pequeños.</td></tr>
+  <tr><td>Celulares</td><td>250 palabras de política</td><td>Por seguridad no se usan celulares en el tour. Las GoPro sí. En tour privado, sí puedes.</td></tr>
+</table></div>
+
+<h2 id="referencias">12. Qué tomamos de las referencias</h2>
+<p>Benchmark de 23 sitios de tours y 14 referencias visuales, verificado el 25 de septiembre. Detalle en <code>docs/04-benchmark-mundial.md</code> y <code>docs/03-capital-trip-referencia.md</code>.</p>
+<div class="grid2">
+  <div class="card"><h4>Capital Trip (propio)</h4><p>Tokens en oklch con escala mobile a desktop, trip card con link expandido y amenidades 2x2, carrusel sangrado alineado al gutter, ficha con jump nav y sticky CTA, reserva en 4 pasos con resumen sticky, "la ruta" como storytelling del proceso. Se invierte el tema: de noche de festival a arena de día.</p></div>
+  <div class="card"><h4>Cabo Adventures y Wild Canyon</h4><p>Card con precio, duración y edad mínima; trust bar de promesas operativas; Park Pass como producto ancla. Lo que no: countdown de flash sale, precios tachados en todo el catálogo, mega menú.</p></div>
+  <div class="card"><h4>Apple, GoPro, Xcaret</h4><p>Liquid glass solo en navegación; sticky buy bar con precio; selector de fecha y personas inline y "arma tu paquete". Ningún competidor de Cabo tiene sticky bar de reserva en móvil.</p></div>
+  <div class="card"><h4>Tesla, Rivian, Arc'teryx</h4><p>Un panel por vertical con dos CTAs; cifras como prueba; secciones oscuras alternadas con video y storytelling narrativo antes del grid.</p></div>
+  <div class="card"><h4>Antigravity, Linear, Vercel</h4><p>Bento de categorías con un bloque grande, glass cards solo sobre fondo oscuro, hairlines en vez de sombras pesadas en fichas.</p></div>
+  <div class="card"><h4>O.A.R.S. y Much Better Adventures</h4><p>Escala de intensidad por tour, rating con conteo por card, líneas topográficas como textura de desierto y barra inferior de comparar.</p></div>
+</div>
+
+<h2 id="refsdaniel">13. Lo que le gusta a Daniel y dónde entra</h2>
+<p>Referencias que fue compartiendo el 25 de septiembre. No son dark mode: Red Bull es blanco y se siente poderoso por la foto, el display y el movimiento. Capital Trip es la referencia propia y la que más se hereda. Tabla completa en <code>docs/11-referencias-visuales-daniel.md</code>.</p>
+<div class="refs">
+  <figure><img src="assets/refs/01-polaris-about-prensa.jpg" alt=""><figcaption><b>Polaris · bloque + prensa</b>Bloque noche con display y foto a la derecha; franja de logos. → "Somos Cactus" y franja de sellos.</figcaption></figure>
+  <figure><img src="assets/refs/03-polaris-home-hero-buscador.jpg" alt=""><figcaption><b>Polaris · home</b>Hero en contenedor redondeado, barra flotante que cruza el borde, fila de iconos. → Hero del home con barra "Fecha · Personas · Reservar".</figcaption></figure>
+  <figure><img src="assets/refs/02-polaris-categorias-grid.jpg" alt=""><figcaption><b>Polaris · categorías</b>Tiles con foto oscurecida y una palabra. → Bento de categorías.</figcaption></figure>
+  <figure><img src="assets/refs/04-polaris-detalle-galeria-precio.jpg" alt=""><figcaption><b>Polaris · detalle</b>Galería 1+2, panel de precio con cabecera negra. → Ficha de tour.</figcaption></figure>
+  <figure><img src="assets/refs/06-airbnb-experiencias-grid.jpg" alt=""><figcaption><b>Airbnb · filas</b>Filas temáticas, controles en la cabecera, precio + rating en una línea, badge de cupos. → Filas del home y card.</figcaption></figure>
+  <figure><img src="assets/refs/07-airbnb-detalle-experiencia.jpg" alt=""><figcaption><b>Airbnb · detalle</b>Galería 2×2, columna sticky con rating, cancelación, incluye, precio. → Ficha en desktop.</figcaption></figure>
+  <figure><img src="assets/refs/05-carrusel-destinos-verticales.jpg" alt=""><figcaption><b>Carrusel vertical</b>Cards 2:3 y flecha circular flotante a media altura. → Carruseles de tours y blog.</figcaption></figure>
+  <figure><img src="assets/refs/08-redbull-megamenu.jpg" alt=""><figcaption><b>Red Bull · mega menú</b>Panel completo, nav en display a la izquierda, cards a la derecha, fila de fotos. → Mega menú "Tours".</figcaption></figure>
+  <figure><img src="assets/refs/09-redbull-atletas-cards.jpg" alt=""><figcaption><b>Red Bull · atletas</b>Foto de acción + avatar circular + nombre + disciplina. → Sección "Nuestros guías".</figcaption></figure>
+  <figure><img src="assets/refs/10-redbull-atleta-hero.jpg" alt=""><figcaption><b>Red Bull · hero de atleta</b>Foto a sangre, degradado, nombre abajo, nav en pill. → Hero de ficha y perfil de guía; header en pill.</figcaption></figure>
+  <figure><img src="assets/refs/11-redbull-nota-imagenes.jpg" alt=""><figcaption><b>Red Bull · nota</b>Columna estrecha, imágenes en par con pie, citas grandes, línea de progreso. → Blog detalle.</figcaption></figure>
+  <figure><img src="assets/refs/12-redbull-card-leer-mas.jpg" alt=""><figcaption><b>Red Bull · card</b>Imagen, título, extracto, categoría y tiempo de lectura. → Card de blog.</figcaption></figure>
+  <figure><img src="assets/refs/13-redbull-bloque-content-pool.jpg" alt=""><figcaption><b>Red Bull · bloque con collage</b>Texto a la izquierda, fotos inclinadas a la derecha. → Bloque de galería y UGC.</figcaption></figure>
+  <figure><img src="assets/refs/14-neucast-megamenu-imagenes.jpg" alt=""><figcaption><b>Neucast · mega menú (propio)</b>Miniaturas por categoría + panel destacado. → Mega menú en tablet.</figcaption></figure>
+</div>
+<div class="callout">
+  <p><strong>Capital Trip, la referencia propia.</strong> Se hereda el hero (foto a sangre, degradado a tinta, título abajo a la izquierda, card que cruza el borde), la jump nav de ficha, la galería inclinada "El TRIP se vive así", la ruta con paradas que se sellan, el sticky de precio y los reveals. Se cambia el tema: de noche de festival a blanco de día con la noche en cuatro lugares. Ruta local: <code>Desktop/capital-trip/tours/edc-mx-2027-viaje-monterrey-saltillo/</code>.</p>
+</div>
+
+<h2 id="recursos">14. Recursos</h2>
+<p>Todo está en el repositorio <code>Desktop/cactus-tours</code>.</p>
+<h3>Tipografía</h3>
+<p><a href="https://fonts.google.com/specimen/Archivo">Archivo</a> variable para todo, <a href="https://fonts.google.com/specimen/Caveat+Brush">Caveat Brush</a> como acento. Alternativa de más contraste: <a href="https://fonts.google.com/specimen/Barlow+Condensed">Barlow Condensed</a> con <a href="https://fonts.google.com/specimen/Barlow">Barlow</a>.</p>
+<h3>Material propio del cliente</h3>
+<ul>
+  <li><code>research/scrape/media/images/</code>: 255 fotos originales (66 MB), inventario con dimensiones en <code>api/image_inventory.json</code>.</li>
+  <li><code>research/scrape/media/videos/</code>: master del hero (1080p, 51 s), cortes de 12 s en 16:9 y 9:16, poster. Lista de los 15 videos del canal en <code>research/videos-youtube.md</code>.</li>
+  <li><code>data/tours.json</code>: 19 productos con precios de producción, duración, requisitos e inclusiones. Los precios del Figma no se usan.</li>
+  <li><code>research/scrape/text/</code>: el copy real de las 61 páginas en markdown (FAQ, términos, privacidad, blog, fichas).</li>
+  <li><code>research/cliente/</code>: los dos decks de t2ó y su texto extraído.</li>
+</ul>
+<h3>Iconos</h3>
+<p><a href="https://lucide.dev">Lucide</a> como set único de UI. Los iconos de categoría se dibujan al mismo grosor; los de arriba son la primera pasada.</p>
+<h3>Cifras placeholder para la presentación</h3>
+<p>Google 4.8 con 2,340 reseñas; TripAdvisor 4.7 con 1,180 opiniones y Travelers' Choice 2025; 18 años y más de 3 millones de visitantes (estas dos sí son reales). Guías con nombre reales según el análisis de reseñas: Yohari, Zetina, Adán, Israel y Katia. Todo lo inventado lleva un comentario <code>&lt;!-- placeholder --&gt;</code> en el código para reemplazarlo.</p>
+
+<h2 id="siguiente">15. Siguiente paso</h2>
+<p>El sistema ya vive en código: SvelteKit 2 con Svelte 5 y Tailwind 4, estático con adapter-static, publicado en GitHub Pages. Los tokens de esta página están en <code>src/app.css</code> como <code>@theme</code> y utilidades (<code>t-display-xl</code>, <code>btn-pri</code>, <code>glass</code>, <code>grad-dusk</code>, <code>topo</code>, <code>torn-top</code>). Las 28 rutas están construidas con datos reales; sigue la fase de pulido con el feedback de Daniel.</p>
+<div class="grid2">
+  <div class="card"><h4>Orden de construcción</h4><p>1. Tokens, tipografía, header, dock, footer. 2. Home. 3. Listado, ficha Sky Bike y sticky bar. 4. Reserva y confirmación. 5. Ficha ATV con variantes, Combos, Park Pass, Familias. 6. Blog, FAQ, Nosotros, Seguridad, Cómo llegar. 7. Grupos, Partners, Soy Local, Galería, Contacto, Vacantes. 8. Legales, 404, inglés parcial, SEO técnico, QA móvil y GitHub Pages.</p></div>
+  <div class="card"><h4>Datos por preparar</h4><p><code>posts.json</code> con las 18 notas, <code>faq.json</code> con las 18 preguntas, <code>hoteles.json</code> con 40 hoteles por zona para el pickup y <code>vacantes.json</code> con 4 puestos de ejemplo. Todo sale del scrape, sin inventar contenido del cliente.</p></div>
+  <div class="card"><h4>Qué se decide con el cliente después</h4><p>Cifras reales de reseñas, dominio principal, motor de reservas real, si los tres tours nuevos del Figma existen, y la política de celulares que t2ó recomienda revisar.</p></div>
+  <div class="card"><h4>Cómo se va a compartir</h4><p>Repositorio en GitHub con GitHub Pages. Esta página vive en <code>docs/cactus-diseno.html</code> y se publica junto con el prototipo para que el cliente vea el sistema y el sitio en el mismo lugar.</p></div>
+</div>
+<div class="callout green">
+  <p><strong>Estado.</strong> Análisis, benchmark, sitemap, design system, SEO y copy entregados el 25 de septiembre de 2026. Video del hero listo. Esperando el stack para empezar a codear.</p>
+</div>
+</main>
+</div>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+mermaid.initialize({startOnLoad:true,theme:"base",themeVariables:{primaryColor:"#FFF1E0",primaryBorderColor:"#F7921E",primaryTextColor:"#1C231F",lineColor:"#8C7A62",fontFamily:"Archivo, sans-serif",fontSize:"13px"}});
+</script>
+</body>
+</html>
