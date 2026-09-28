@@ -1,1 +1,0 @@
-import"./BiqJ3Ihm.js";
