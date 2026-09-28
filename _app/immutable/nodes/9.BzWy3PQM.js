@@ -1,0 +1,1 @@
+import{_t as e}from"../chunks/Dew15p2H.js";import"../chunks/xihTtKlq.js";import{t}from"../chunks/DRByVC-c.js";var n=e({load:()=>r,prerender:()=>!1,ssr:()=>!1}),r=()=>{t(500,`Error de prueba`)};function i(e){}export{i as component,n as universal};
