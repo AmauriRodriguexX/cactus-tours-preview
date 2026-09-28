@@ -1,0 +1,1 @@
+import{t as e}from"../chunks/BBSxGAHR.js";export{e as component};

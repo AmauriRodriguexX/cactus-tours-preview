@@ -1,0 +1,1 @@
+import{_t as e}from"./Dew15p2H.js";import"./xihTtKlq.js";import{F as t,P as n}from"./jWzqYPPP.js";import{t as r}from"./BF9hfljy.js";var i=e({load:()=>a}),a=()=>({tour:n(`park-pass`),relacionados:t.filter(e=>e.categoria===`combos`&&e.slug!==`combo-balandra`).slice(0,3),combo:void 0});function o(e,t){r(e,{get data(){return t.data}})}export{i as n,a as r,o as t};

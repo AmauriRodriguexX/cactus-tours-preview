@@ -1,1 +1,0 @@
-import{n as e,t}from"../chunks/Bf3bcGWG.js";export{t as component,e as universal};
