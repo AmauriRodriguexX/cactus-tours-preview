@@ -1,0 +1,1 @@
+import{n as e,t}from"../chunks/D1m1I9ae.js";export{t as component,e as universal};

@@ -1,0 +1,1 @@
+import{_t as e}from"../chunks/Dew15p2H.js";import"../chunks/xihTtKlq.js";import{i as t,r as n,t as r}from"../chunks/7O57iBaE.js";var i=e({entries:()=>n,load:()=>t});function a(e,t){r(e,{get data(){return t.data}})}export{a as component,i as universal};
