@@ -1,0 +1,195 @@
+.select-ux-native {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	margin: -1px !important;
+	padding: 0 !important;
+	overflow: hidden !important;
+	clip: rect(0, 0, 0, 0) !important;
+	clip-path: inset(50%) !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+	opacity: 0 !important;
+	pointer-events: none !important;
+}
+
+.select-ux-trigger {
+	position: relative;
+	display: flex !important;
+	width: 100%;
+	min-width: 0;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+	appearance: none !important;
+	background-image: none !important;
+	text-align: left;
+	cursor: pointer;
+	transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+}
+
+.select-ux-trigger:focus-visible {
+	outline: 3px solid rgb(99 171 69 / 34%);
+	outline-offset: 2px;
+}
+
+.select-ux-trigger.control:focus-visible {
+	border-color: var(--color-cactus-500, #63ab45) !important;
+	box-shadow: 0 0 0 3px rgb(99 171 69 / 18%) !important;
+}
+
+.select-ux-value {
+	display: block;
+	min-width: 0;
+	flex: 1 1 auto;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.select-ux-chevron {
+	display: inline-flex;
+	width: 20px;
+	height: 20px;
+	flex: 0 0 auto;
+	align-items: center;
+	justify-content: center;
+	color: var(--color-dune-500, #8c7a62);
+	transition: transform 180ms ease;
+}
+
+.select-ux-trigger[aria-expanded="true"] .select-ux-chevron {
+	transform: rotate(180deg);
+}
+
+.select-ux-legacy-chevron {
+	display: none !important;
+}
+
+.control-select.select-ux-active > .chev {
+	display: none !important;
+}
+
+.select-ux-menu {
+	position: fixed;
+	z-index: 10000;
+	max-height: min(20rem, calc(100vh - 1.5rem));
+	overflow-x: hidden;
+	overflow-y: auto;
+	overscroll-behavior: contain;
+	border: 1px solid var(--color-sand-200, #e6dccb);
+	border-radius: 16px;
+	background: #fff;
+	padding: 6px;
+	color: var(--color-night, #1c231f);
+	box-shadow: 0 18px 48px rgb(28 35 31 / 18%), 0 3px 10px rgb(28 35 31 / 8%);
+	transform-origin: top center;
+	animation: select-ux-enter 130ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.select-ux-menu[hidden] {
+	display: none !important;
+}
+
+.select-ux-option {
+	display: flex;
+	width: 100%;
+	min-height: 42px;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	border: 0;
+	border-radius: 10px;
+	background: transparent;
+	padding: 9px 11px;
+	color: var(--color-night, #1c231f);
+	font: inherit;
+	font-size: 14px;
+	line-height: 1.35;
+	text-align: left;
+	cursor: pointer;
+}
+
+.select-ux-option:hover,
+.select-ux-option.is-active {
+	background: var(--color-sand-50, #fbf8f3);
+}
+
+.select-ux-option[aria-selected="true"] {
+	background: var(--color-cactus-100, #e6f3df);
+	font-weight: 700;
+}
+
+.select-ux-option:focus-visible {
+	outline: 2px solid var(--color-cactus-500, #63ab45);
+	outline-offset: -2px;
+}
+
+.select-ux-option[aria-disabled="true"] {
+	color: var(--color-dune-500, #8c7a62);
+	opacity: 0.58;
+	cursor: not-allowed;
+}
+
+.select-ux-option-label {
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.select-ux-option-check {
+	width: 18px;
+	height: 18px;
+	flex: 0 0 auto;
+	color: var(--color-cactus-700, #3a6e27);
+	opacity: 0;
+}
+
+.select-ux-option[aria-selected="true"] .select-ux-option-check {
+	opacity: 1;
+}
+
+.select-ux-group-label {
+	padding: 9px 11px 5px;
+	color: var(--color-dune-500, #8c7a62);
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+@keyframes select-ux-enter {
+	from { opacity: 0; transform: translateY(-4px) scale(0.99); }
+	to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.select-ux-menu,
+	.select-ux-trigger,
+	.select-ux-chevron {
+		animation: none;
+		transition: none;
+	}
+}
+
+@media (hover: none), (pointer: coarse) {
+	.select-ux-native {
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+		margin: 0 !important;
+		padding: revert !important;
+		overflow: visible !important;
+		clip: auto !important;
+		clip-path: none !important;
+		white-space: normal !important;
+		border: revert !important;
+		opacity: 1 !important;
+		pointer-events: auto !important;
+	}
+	.select-ux-trigger,
+	.select-ux-menu {
+		display: none !important;
+	}
+}
