@@ -1,1 +1,0 @@
-import{n as e,t}from"../chunks/BfFX8g03.js";export{t as component,e as universal};

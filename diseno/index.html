@@ -4,15 +4,15 @@
 		<meta name="robots" content="noindex, nofollow">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Cactus Tours Diseño</title>
-<meta name="robots" content="noindex">
+<title>Cactus Tours Guía de diseño</title>
 <link rel="icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Caveat+Brush&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,0&display=block">
 <style>
 :root{
   --white:#FFFFFF;
-  --sun:#F7921E; --sun-400:#FFA83D; --sun-600:#D9760A; --sun-700:#A85A05; --sun-tint:#FFF1E0;
+  --sun:#F7921E; --sun-400:#FFA83D; --sun-600:#D9760A; --sun-700:#A85A05; --sun-tint:#FFF1E0; --sun-200:#FFDCAE;
   --cactus:#63AB45; --cactus-600:#4E8F35; --cactus-700:#3A6E27; --cactus-100:#E6F3DF;
   --sunset:#E4572E; --ocean:#2A7FB8; --ocean-100:#DCEEF8;
   --sand-0:#FFFFFF; --sand-50:#FBF8F3; --sand-100:#F3EDE3; --sand-200:#E6DCCB; --sand-300:#CDBFA8;
@@ -31,7 +31,7 @@ nav.toc .meta{color:var(--dune-500);font-size:12px;margin:2px 0 20px}
 nav.toc ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px;border-left:2px solid var(--sand-200)}
 nav.toc a{display:block;padding:5px 12px;color:var(--dune-700);text-decoration:none;border-left:2px solid transparent;margin-left:-2px}
 nav.toc a:hover,nav.toc a:focus-visible{color:var(--sun-600);border-left-color:var(--sun);outline:none}
-main{max-width:860px}
+main{max-width:860px;min-width:0}
 .eyebrow{font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--dune-500);margin:0 0 8px}
 h1{font-weight:800;font-size:clamp(36px,5vw,52px);line-height:1.02;letter-spacing:-.02em;margin:0 0 12px;font-variation-settings:"wdth" 112;text-wrap:balance}
 h1 em{font-style:italic;color:var(--sun-600)}
@@ -58,7 +58,24 @@ code{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;background:var(--
 .card{background:var(--white);border:1px solid var(--sand-200);border-radius:16px;padding:16px 18px}
 .card h4{font-weight:600;font-size:15px;margin:0 0 6px}
 .card p{font-size:14px;color:var(--dune-700);margin:0}
-
+/* sitemap */
+.map{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:16px 0 24px}
+.col{border:1px solid var(--sand-200);border-radius:16px;padding:12px;background:var(--sand-50)}
+.col h4{margin:0 0 10px;font-size:13px;letter-spacing:.04em;text-transform:uppercase;font-weight:700;color:var(--cactus-700);display:flex;align-items:center;gap:8px}
+.col h4 .n{background:var(--cactus);color:#fff;border-radius:999px;font-size:11px;padding:1px 8px}
+.scr{background:#fff;border:1px solid var(--sand-200);border-radius:10px;padding:7px 10px;font-size:12.5px;margin:0 0 6px;display:flex;gap:8px;align-items:baseline}
+.scr .id{font-variation-settings:"wdth" 80;font-weight:600;color:var(--dune-500);font-size:11px;min-width:34px}
+.scr.done{border-left:3px solid #17A34A}
+.scr.wip{border-left:3px solid #E8A317}
+.scr.new{border-left:3px solid var(--ocean)}
+.scr .ruta{margin-left:auto;font-family:ui-monospace,Menlo,monospace;font-size:10.5px;color:var(--dune-500);white-space:nowrap}
+.statelegend{display:flex;gap:18px;flex-wrap:wrap;font-size:12.5px;color:var(--dune-500);margin:0 0 14px}
+.statelegend span{display:flex;gap:7px;align-items:center}
+.statelegend i{width:3px;height:14px;border-radius:2px;display:inline-block}
+.progress{display:flex;gap:10px;align-items:center;margin:0 0 16px;font-size:13px;color:var(--dune-700)}
+.progress .bar{flex:1;height:8px;border-radius:4px;background:var(--sand-100);overflow:hidden;max-width:320px}
+.progress .bar b{display:block;height:100%;background:#17A34A}
+pre.mermaid{background:var(--sand-50);border:1px solid var(--sand-200);border-radius:16px;padding:12px;overflow-x:auto;font-size:13px}
 /* swatches */
 .sw{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:12px 0 20px}
 .s{border-radius:12px;overflow:hidden;border:1px solid var(--sand-200)}
@@ -73,307 +90,983 @@ code{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;background:var(--
 .spec{border:1px solid var(--sand-200);border-radius:16px;padding:20px 24px;margin:12px 0 24px;display:flex;flex-direction:column;gap:14px}
 .spec div{display:grid;grid-template-columns:130px 1fr;gap:16px;align-items:baseline}
 .spec .lbl{font-size:11px;color:var(--dune-500);letter-spacing:.04em;text-transform:uppercase;font-weight:600}
-.t-dxl{font-size:44px;line-height:44px;letter-spacing:-.02em;font-weight:900;font-variation-settings:"wdth" 112;}
-.t-dl{font-size:36px;line-height:38px;letter-spacing:-.015em;font-weight:900;font-variation-settings:"wdth" 112}
-.t-h1{font-size:32px;line-height:36px;letter-spacing:-.01em;font-weight:800;font-variation-settings:"wdth" 105}
-.t-h2{font-size:26px;line-height:30px;font-weight:800}
-.t-h3{font-size:20px;line-height:25px;font-weight:700}
-.t-bl{font-size:18px;line-height:28px}
-.t-b{font-size:16px;line-height:25px}
-.t-bs{font-size:14px;line-height:21px;color:var(--dune-700)}
+.t-dxl{font-size:48px;line-height:1.02;letter-spacing:-.02em;font-weight:800;font-variation-settings:"wdth" 105}
+.t-dl{font-size:44px;line-height:1;letter-spacing:-.015em;font-weight:900;font-variation-settings:"wdth" 112}
+.t-dm{font-size:40px;line-height:1.04;letter-spacing:-.015em;font-weight:800;font-variation-settings:"wdth" 105}
+.t-h1{font-size:36px;line-height:1.1;letter-spacing:-.01em;font-weight:800;font-variation-settings:"wdth" 105}
+.t-h2{font-size:30px;line-height:1.15;letter-spacing:-.01em;font-weight:800}
+.t-h3{font-size:20px;line-height:1.25;font-weight:700}
+.t-bl{font-size:17px;line-height:1.5}
+.t-b{font-size:16px;line-height:1.55}
+.t-bs{font-size:14px;line-height:1.45;color:var(--dune-700)}
 .t-cap{font-size:12px;line-height:17px;font-weight:500;color:var(--dune-500)}
-.t-ov{font-size:12px;line-height:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--dune-500)}
-.t-price{font-size:28px;line-height:28px;font-weight:900;font-variant-numeric:tabular-nums}
+.t-ov{font-size:12px;line-height:1.2;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--dune-500)}
+.t-price{font-size:26px;line-height:1;font-weight:900;font-variant-numeric:tabular-nums}
 .t-price small{font-size:14px;font-weight:600;color:var(--dune-500)}
-.t-accent{font-family:var(--brush);font-size:36px;line-height:36px;color:var(--sun);display:inline-block;transform:rotate(-3deg)}
+.t-accent{font-family:var(--brush);font-size:36px;line-height:1;color:var(--sun);display:inline-block;transform:rotate(-3deg)}
+.msym{font-family:"Material Symbols Rounded";font-weight:normal;font-style:normal;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;direction:ltr;font-feature-settings:"liga";-webkit-font-smoothing:antialiased;font-variation-settings:"FILL" 0,"wght" 400,"GRAD" 0,"opsz" 24;vertical-align:middle;font-size:22px}
+.msym.fill{font-variation-settings:"FILL" 1,"wght" 400,"GRAD" 0,"opsz" 24}
 /* components demo */
 .demo{background:var(--sand-50);border:1px solid var(--sand-200);border-radius:16px;padding:20px;margin:12px 0 24px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .demo.dark{background:var(--night);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M0 60c30-20 60 20 120 0M0 90c30-20 60 20 120 0M0 30c30-20 60 20 120 0' fill='none' stroke='%23fff' stroke-opacity='.06'/%3E%3C/svg%3E")}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;border-radius:12px;font-weight:700;font-size:14px;border:1.5px solid transparent;cursor:pointer;font-family:inherit;letter-spacing:.01em}
-.btn.l{height:56px;font-size:16px;padding:0 24px}.btn.s{height:40px;font-size:13px;padding:0 14px;border-radius:10px}
-.btn.pri{background:var(--sun);color:var(--night)}.btn.pri:hover{background:var(--sun-400)}
+/* Botones: valores reales de src/app.css (btn, btn-pri, btn-sec, btn-ter, btn-glass, btn-wa, btn-s, btn-l) */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 22px;border-radius:999px;font-weight:700;font-size:14px;border:1.5px solid transparent;cursor:pointer;font-family:inherit;letter-spacing:.01em;white-space:nowrap;text-decoration:none;transition:transform 180ms cubic-bezier(.22,1,.36,1),background-color 180ms,box-shadow 180ms,border-color 180ms,color 180ms}
+.btn:active,.btn.is-active{transform:scale(.97)}
+.btn:disabled{opacity:.45;pointer-events:none}
+.btn:focus-visible,.btn.is-focus{outline:3px solid rgba(42,127,184,.5);outline-offset:2px}
+.btn.l{height:56px;font-size:16px;padding:0 24px}.btn.s{height:40px;font-size:13px;padding:0 16px}
+.btn.pri{background:var(--sun);color:var(--night)}
+.btn.pri:hover,.btn.pri.is-hover{background:var(--sun-400);transform:translateY(-2px);box-shadow:0 4px 16px rgba(28,35,31,.08)}
+.btn.pri:active,.btn.pri.is-active{background:var(--sun-600);transform:scale(.97);box-shadow:none}
 .btn.sec{background:transparent;border-color:var(--night);color:var(--night)}
-.btn.sec.ondark{border-color:var(--sand-50);color:var(--sand-50)}
+.btn.sec:hover,.btn.sec.is-hover{background:var(--night);color:var(--sand-50)}
 .btn.ter{background:var(--sand-100);color:var(--night)}
-.btn.link{background:transparent;color:var(--sun-600);padding:0 8px}
-.btn.glass{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.35);color:#fff;backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);border-radius:999px}
-.btn.wa{background:var(--whatsapp);color:#fff;border-radius:999px}
-.btn.dan{background:var(--danger);color:#fff}
-.btn.ico{width:44px;height:44px;padding:0;background:var(--sand-100);color:var(--night);border-radius:12px}
-.btn.pill{border-radius:999px}
-.btn:focus-visible{outline:3px solid rgba(42,127,184,.5);outline-offset:2px}
-.chip{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:999px;font-size:13px;font-weight:600;border:1px solid transparent;background:var(--sand-100);color:var(--night)}
-.chip.on{background:var(--night);color:var(--sand-50)}
-.badge{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 9px;border-radius:999px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#fff}
+.btn.ter:hover,.btn.ter.is-hover{background:var(--sand-200)}
+.btn.link{background:transparent;color:var(--cactus-700);padding:0 4px;height:auto;min-height:44px;gap:2px;font-weight:600;font-size:14.5px}
+.btn.link:hover .tx,.btn.link.is-hover .tx{text-decoration:underline;text-underline-offset:3px}
+.btn.link .msym{font-size:20px}
+.btn.glass{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.6);color:#fff;backdrop-filter:blur(16px) saturate(170%);-webkit-backdrop-filter:blur(16px) saturate(170%);box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
+.btn.glass:hover,.btn.glass.is-hover{background:rgba(255,255,255,.28);border-color:rgba(255,255,255,.85)}
+.btn.wa{background:var(--whatsapp);color:#fff}
+.btn.wa:hover,.btn.wa.is-hover{filter:brightness(1.05);transform:translateY(-2px)}
+.btn.wa:active,.btn.wa.is-active{transform:scale(.97)}
+.btn.wa svg{width:1.25em;height:1.25em;fill:currentColor;flex:none}
+.btn.ico{width:44px;height:44px;padding:0;background:var(--sand-100);color:var(--night)}
+.btn.ico:hover,.btn.ico.is-hover{background:var(--sand-200)}
+.btn.ico.plain{background:transparent}.btn.ico.plain:hover,.btn.ico.plain.is-hover{background:var(--sand-100)}
+.paddle{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:999px;border:0;background:rgba(210,210,215,.64);color:rgba(0,0,0,.56);cursor:pointer}
+.paddle:hover,.paddle.is-hover{background:rgba(223,223,227,.698);color:rgba(0,0,0,.64)}
+.paddle:disabled{opacity:.42}
+.bstates{display:grid;grid-template-columns:110px repeat(5,minmax(0,1fr));gap:10px 12px;align-items:center;background:var(--sand-50);border:1px solid var(--sand-200);border-radius:16px;padding:16px;margin:12px 0 8px;overflow-x:auto;min-width:0}
+.bstates .h{font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dune-500)}
+.bstates .r{font-size:13px;font-weight:600}
+.bstates .r small{display:block;font-weight:400;color:var(--dune-500);font-size:11.5px}
+.bstates .btn{padding:0 14px}
+.bstates.dark{background:#000 url(assets/dunes.jpg) center/cover;position:relative;isolation:isolate}
+.bstates.dark::before{content:"";position:absolute;inset:0;background:rgba(20,25,22,.45);border-radius:16px;z-index:-1}
+.bstates.dark .h,.bstates.dark .r,.bstates.dark .r small{color:#fff}
+.bwrap{overflow-x:auto;margin:0 0 16px}.bwrap .bstates{min-width:720px}
+.chip{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:999px;font-size:13px;font-weight:600;border:1px solid transparent;background:var(--sand-100);color:var(--night);white-space:nowrap;cursor:pointer;font-family:inherit}
+.chip:hover,.chip.is-hover{background:var(--sand-200)}
+.chip.on,.chip.on:hover{background:var(--sun-200);border-color:var(--sun);color:var(--night)}
+.chiprow{position:relative;display:flex;gap:8px;overflow:hidden;width:100%;-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 56px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 56px),transparent)}
+.chiprow .chip{flex:none}
+.badge{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 9px;border-radius:999px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#fff;white-space:nowrap}
 .badge.guinness{background:linear-gradient(135deg,#F7921E,#E4572E)}
 .badge.popular{background:var(--sun);color:var(--night)}
 .badge.familiar{background:var(--cactus)}
 .badge.extremo{background:var(--sunset)}
 .badge.nuevo{background:var(--ocean)}
-.badge.agotado{background:var(--night-700)}
-.badge.gratis{background:var(--cactus-100);color:var(--cactus-700)}
-
-/* v1.0 */
-.meta2{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 8px}
-.meta2 a{display:inline-flex;align-items:center;height:36px;padding:0 14px;border-radius:999px;background:var(--sand-100);color:var(--night);font-weight:600;font-size:13px;text-decoration:none}
-.meta2 a.pri{background:var(--sun);color:var(--night)}
-.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0 26px}
-.kpi{border:1px solid var(--sand-200);border-radius:16px;padding:14px 16px;background:var(--sand-50)}
-.kpi b{display:block;font-size:30px;font-weight:900;letter-spacing:-.02em;font-variation-settings:"wdth" 110;line-height:1}
-.kpi span{display:block;font-size:12.5px;color:var(--dune-700);margin-top:6px}
-.par{display:grid;grid-template-columns:minmax(0,1fr) 170px;gap:14px;align-items:start;margin:14px 0 8px}
-.par img{width:100%;display:block;border-radius:12px;border:1px solid var(--sand-200);box-shadow:0 10px 30px -14px rgba(28,35,31,.35);background:var(--sand-50)}
-.par .m img{border-radius:22px;border:5px solid var(--night)}
-.solo-m{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin:14px 0 8px}
-.solo-m img{width:100%;border-radius:20px;border:5px solid var(--night);display:block}
-.solo-m figcaption,.cap{font-size:12px;color:var(--dune-500);margin-top:6px}
-.pant{margin:0 0 34px;padding:0 0 26px;border-bottom:1px solid var(--sand-200)}
-.pant h3{margin-top:10px}
-.pant .mejoras{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
-.pant .mejoras div{font-size:13.5px;color:var(--dune-700);background:var(--sand-50);border-radius:12px;padding:12px 14px}
-.pant .mejoras b{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--dune-500);margin-bottom:6px}
-.pant .mejoras ul{margin:0;padding-left:18px}
-.flujo{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin:14px 0}
-.flujo figure{margin:0}
-.flujo img{width:100%;border-radius:16px;border:4px solid var(--night);display:block}
-.flujo figcaption{font-size:12px;color:var(--dune-700);margin-top:6px;line-height:1.35}
-.flujo figcaption b{display:block;color:var(--night)}
-.chip2{display:inline-flex;align-items:center;height:34px;padding:0 14px;border-radius:999px;font-size:13px;font-weight:600;background:var(--sand-100);color:var(--night);border:1px solid transparent}
-.chip2.on{background:#FFDCAE;border-color:var(--sun);color:var(--night)}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
-.tags code{background:var(--sand-100)}
-@media (max-width:900px){.wrap{grid-template-columns:1fr}nav.toc{position:static}.par{grid-template-columns:1fr 120px}.pant .mejoras{grid-template-columns:1fr}.flujo{grid-template-columns:repeat(3,1fr)}}
+/* Segmentado ES/EN */
+.seg{position:relative;display:inline-grid;grid-template-columns:1fr 1fr;border-radius:999px;padding:2px;background:var(--sand-100);box-shadow:inset 0 0 0 1px rgba(28,35,31,.05)}
+.seg span{position:relative;z-index:1;display:grid;place-items:center;height:32px;min-width:46px;padding:0 10px;font-size:12.5px;font-weight:600;color:var(--dune-500);border-radius:999px}
+.seg span.on{color:var(--night);background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.12),0 2px 8px rgba(0,0,0,.06)}
+/* Logos oficiales */
+.logos{display:flex;gap:18px;flex-wrap:wrap;align-items:center;margin:8px 0 20px}
+.logos figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:11px;color:var(--dune-500);min-width:64px;text-align:center}
+.logos .lg{height:36px;display:flex;align-items:center;justify-content:center}
+.logos .lg img{max-height:32px;max-width:64px;display:block}
+.logos .lg svg{width:30px;height:30px}
+.msrow{display:flex;gap:14px;flex-wrap:wrap;margin:8px 0 20px}
+.msrow figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:11px;color:var(--dune-500);width:78px;text-align:center}
+.msrow .msym{font-size:28px;color:var(--night)}
+.time{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;min-width:76px;height:44px;border-radius:10px;border:1px solid var(--sand-300);background:#fff;font-size:13px;font-weight:700;line-height:1.1}
+.time small{font-weight:500;font-size:10.5px;color:var(--dune-500)}
+.time.on{border-color:var(--sun);background:var(--sun-tint)}
+.time.off{color:var(--sand-300);text-decoration:line-through;border-style:dashed}
+.amen{font-size:13px;color:var(--dune-700);display:inline-flex;gap:6px;align-items:center}
+.amen::before{content:"";width:14px;height:14px;border-radius:50%;background:var(--cactus);flex:none;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1.2 14.4-4-4 1.4-1.4 2.6 2.6 5.6-5.6 1.4 1.4-7 7z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1.2 14.4-4-4 1.4-1.4 2.6 2.6 5.6-5.6 1.4 1.4-7 7z'/%3E%3C/svg%3E") center/contain no-repeat}
+.amen.no{color:var(--dune-500)}.amen.no::before{background:var(--sand-300)}
+/* mock cards */
+.mocks{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px;margin:12px 0 24px}
+.mock{background:#fff;border:1px solid var(--sand-200);border-radius:20px;padding:14px;box-shadow:0 2px 8px rgba(28,35,31,.06)}
+.mock.dark{background:var(--night);color:var(--sand-50);border-color:var(--night-700)}
+.tcard{border-radius:20px;overflow:hidden;border:1px solid var(--sand-200);background:#fff}
+.tcard .img{aspect-ratio:16/10;background-size:cover;background-position:center;position:relative;padding:12px;display:flex;flex-direction:column;justify-content:space-between}
+.tcard .img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,35,31,0) 40%,rgba(28,35,31,.55) 100%);pointer-events:none}
+.tcard .img>*{position:relative;z-index:1}
+.tcard .dur{align-self:flex-end;background:rgba(28,35,31,.55);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#fff;font-size:12px;font-weight:600;padding:5px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.25)}
+.tcard .body{padding:16px;display:flex;flex-direction:column;gap:8px}
+.tcard .body h5{margin:0;font-size:20px;line-height:24px;font-weight:700}
+.tcard .meta{font-size:13px;color:var(--dune-500)}
+.tcard .am{display:grid;grid-template-columns:1fr 1fr;gap:4px 8px}
+.tcard .rate{font-size:13px;display:flex;gap:6px;align-items:center}
+.tcard .rate b{color:var(--rating);letter-spacing:-1px}
+.tcard .foot{display:flex;justify-content:space-between;align-items:flex-end;border-top:1px dashed var(--sand-200);padding-top:12px;margin-top:4px}
+.tcard .foot .lbl{font-size:12px;color:var(--dune-500);display:block}
+.tcard .foot .note{font-size:11px;color:var(--dune-500);display:block}
+.herom{border-radius:24px;overflow:hidden;position:relative;aspect-ratio:9/13;background:#000 center/cover;display:flex;flex-direction:column;justify-content:flex-end;padding:18px;color:#fff}
+.herom video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.herom::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,35,31,.1) 30%,rgba(28,35,31,.85) 100%)}
+.herom>*{position:relative;z-index:1}
+.herom .ov{color:var(--sun);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+.herom .ttl{font-size:32px;line-height:1.04;font-weight:800;font-variation-settings:"wdth" 105;margin:6px 0 8px;letter-spacing:-.02em}
+.herom .sub{font-size:13px;color:rgba(255,255,255,.85);margin-bottom:12px}
+.herom .row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.herom .btn{height:44px;font-size:14px}
+.ratings{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.rb{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:999px;padding:5px 10px;font-size:11.5px;font-weight:600}
+.rb b{color:var(--rating);letter-spacing:-1px}
+.price{border:1px solid var(--sand-200);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.price .row{display:flex;justify-content:space-between;font-size:14px;color:var(--dune-700)}
+.price .row.tot{border-top:1px solid var(--sand-200);padding-top:8px;font-weight:700;color:var(--night)}
+.price .prom{font-size:12px;color:var(--dune-500);display:flex;flex-direction:column;gap:3px;margin-top:4px}
+.dock{display:flex;align-items:center;gap:4px;background:#fff;border:1px solid var(--sand-200);border-radius:999px;padding:6px;box-shadow:0 10px 30px rgba(20,19,17,.18),0 2px 6px rgba(20,19,17,.08)}
+.dock .btn{flex:1;height:48px;font-size:15px;padding:0 16px}
+.dock a{display:grid;place-items:center;width:44px;height:44px;border-radius:999px;color:var(--night);flex:none}
+.dock a svg{width:22px;height:22px;fill:currentColor}
+.sticky{display:flex;align-items:center;justify-content:space-between;gap:12px;background:rgba(255,255,255,.8);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(28,35,31,.1);border-radius:20px;padding:10px 10px 10px 16px;box-shadow:0 8px 32px rgba(0,0,0,.14)}
+.sticky .p{display:flex;flex-direction:column;line-height:1.1}
+.sticky .p small{font-size:11px;color:var(--dune-500)}
+.sticky .p b{font-size:20px;font-weight:900;font-variant-numeric:tabular-nums}
+.stepper{display:flex;gap:6px;font-size:11px;font-weight:600;color:var(--dune-500)}
+.stepper span{flex:1;border-top:3px solid var(--sand-200);padding-top:6px}
+.stepper span.on{border-color:var(--sun);color:var(--night)}
+.stepper span.done{border-color:var(--cactus);color:var(--cactus-700)}
+.cal{display:flex;gap:6px;overflow:hidden}
+.cal div{flex:none;width:46px;height:56px;border-radius:12px;border:1px solid var(--sand-200);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:15px;font-weight:700;line-height:1.1}
+.cal div small{font-size:10px;font-weight:600;color:var(--dune-500);text-transform:uppercase}
+.cal div.on{background:var(--sun);border-color:var(--sun)}
+.cal div.on small{color:var(--night)}
+.counter{display:flex;align-items:center;justify-content:space-between;border:1px solid var(--sand-200);border-radius:12px;padding:8px 12px;font-size:14px}
+.counter .c{display:flex;align-items:center;gap:12px;font-weight:700}
+.counter .c i{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--night);display:inline-flex;align-items:center;justify-content:center;font-style:normal;font-size:16px}
+.counter small{display:block;font-size:12px;color:var(--dune-500);font-weight:400}
+.cmp{width:100%;border-collapse:collapse;font-size:12.5px}
+.cmp th{background:transparent;font-size:12px;padding:8px 6px;border-bottom:1px solid var(--sand-200);text-align:center;vertical-align:bottom}
+.cmp th:first-child,.cmp td:first-child{text-align:left;font-weight:500;color:var(--dune-700)}
+.cmp td{text-align:center;padding:7px 6px;border-bottom:1px solid var(--sand-100)}
+.cmp th .pr{display:block;font-size:16px;font-weight:900;font-variant-numeric:tabular-nums}
+.cmp th.best{background:var(--sun-tint);border-radius:12px 12px 0 0}
+.cmp td.best{background:var(--sun-tint)}
+.ok{color:var(--cactus-600);font-weight:800}.nok{color:var(--sand-300)}
+/* Formularios: campo, control, error y casilla de src/app.css */
+.campo{display:grid;gap:8px;align-content:start}
+.campo label{font-size:14px;font-weight:600;color:var(--night);line-height:1.3}
+.campo .req{color:#c0362c;font-weight:700;margin-left:2px}
+.campo .opcional{color:var(--dune-500);font-weight:400}
+.control{width:100%;min-height:48px;padding:12px 14px;border:1px solid var(--sand-300);border-radius:12px;background:#fff;font:inherit;font-size:16px;line-height:1.4;color:var(--night);transition:border-color .18s,box-shadow .18s}
+.control::placeholder{color:rgba(140,122,98,.75)}
+.control:hover,.control.is-hover{border-color:#ADA08A}
+.control:focus,.control.is-focus{outline:none;border-color:var(--sun);box-shadow:0 0 0 3px rgba(247,146,30,.2)}
+.control:disabled{background:var(--sand-50);color:var(--dune-500);border-color:var(--sand-200);cursor:not-allowed}
+.campo.invalido .control{border-color:#c0362c;box-shadow:0 0 0 3px rgba(192,54,44,.14)}
+.campo-error{margin:0;font-size:13.5px;font-weight:600;color:#c0362c}
+.campo-ayuda{margin:0;font-size:13px;color:var(--dune-500)}
+.check-fila{display:flex;align-items:flex-start;gap:12px;font-size:15px;font-weight:500;line-height:1.45;color:var(--night);cursor:pointer}
+.check{appearance:none;-webkit-appearance:none;flex:none;margin:0;width:22px;height:22px;border:1px solid var(--sand-300);border-radius:6px;background:#fff center/14px no-repeat;cursor:pointer}
+.check:checked{background-color:var(--cactus-700);border-color:var(--cactus-700);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.5 8.5l3 3 6-7'/%3E%3C/svg%3E")}
+.check:focus-visible{outline:none;border-color:var(--sun);box-shadow:0 0 0 3px rgba(247,146,30,.2)}
+.formdemo{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px 14px;background:var(--sand-50);border:1px solid var(--sand-200);border-radius:16px;padding:20px;margin:12px 0 24px}
+/* Hoja inferior y ventana */
+.sheets{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:12px 0 24px}
+.phone{position:relative;aspect-ratio:9/16;max-height:460px;border-radius:28px;overflow:hidden;background:center/cover;border:1px solid var(--sand-200)}
+.phone .veil{position:absolute;inset:0;background:rgba(20,19,17,.4);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.phone .sheet{position:absolute;left:0;right:0;bottom:0;background:#fff;border-radius:28px 28px 0 0;padding:36px 18px 18px;box-shadow:0 12px 32px rgba(28,35,31,.16)}
+.phone .sheet .asa{position:absolute;top:7px;left:50%;translate:-50% 0;width:36px;height:5px;border-radius:999px;background:var(--sand-300)}
+.phone .sheet .hd{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.phone .sheet .hd b{font-size:17px;font-weight:800;line-height:1.2}
+.phone .sheet .hd small{display:block;font-size:12.5px;color:var(--dune-500);font-weight:400;margin-top:3px}
+.phone .sheet .x{width:32px;height:32px;border-radius:999px;background:var(--sand-100);display:grid;place-items:center;flex:none}
+.phone .sheet .x .msym{font-size:18px}
+.phone .sheet ul{list-style:none;margin:10px 0 0;padding:0}
+.phone .sheet li{display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px solid var(--sand-200);font-size:13.5px;font-weight:700}
+.phone .sheet li img{width:44px;height:38px;border-radius:9px;object-fit:cover}
+.phone .sheet li span{flex:1}
+.phone .sheet li small{display:block;font-weight:400;color:var(--dune-500);font-size:11.5px}
+.phone .side{position:absolute;top:0;bottom:0;right:0;width:82%;background:#fff;padding:18px;display:flex;flex-direction:column;gap:2px;box-shadow:-12px 0 32px rgba(28,35,31,.16)}
+.phone .side a{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid var(--sand-100);font-size:15px;font-weight:700;color:var(--night);text-decoration:none}
+.phone .side a .msym{color:var(--dune-500);font-size:20px}
+.phone .side .btn{margin-top:auto}
+.phone.wide{aspect-ratio:16/10}
+.phone .modal{position:absolute;left:50%;top:50%;translate:-50% -50%;width:62%;background:#fff;border-radius:28px;padding:18px;box-shadow:0 12px 32px rgba(28,35,31,.16)}
+.torn{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:16/10;background:center/cover}
+.torn::before,.torn::after{content:"";position:absolute;left:0;right:0;height:22px;background:#fff}
+.torn::before{top:0;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 22' preserveAspectRatio='none'%3E%3Cpath d='M0 0h400v6l-14 4 8 6-20 2 6-8-22 10 4-9-18 5 2 6-24-3 10-7-26 8 6-10-20 4-4 8-16-9 8-6-30 12 4-9-22 6 10-8-30 2 6 8-20-6 4-8-30 10 4-7-20 3 8 7-30-5 8-8-24 6 4 9-26-6 6-6-22 5 2 6-20-4 4-8-14 2v-6z' fill='%23000'/%3E%3C/svg%3E") 0 0/100% 100% no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 22' preserveAspectRatio='none'%3E%3Cpath d='M0 0h400v6l-14 4 8 6-20 2 6-8-22 10 4-9-18 5 2 6-24-3 10-7-26 8 6-10-20 4-4 8-16-9 8-6-30 12 4-9-22 6 10-8-30 2 6 8-20-6 4-8-30 10 4-7-20 3 8 7-30-5 8-8-24 6 4 9-26-6 6-6-22 5 2 6-20-4 4-8-14 2v-6z' fill='%23000'/%3E%3C/svg%3E") 0 0/100% 100% no-repeat}
+.torn::after{bottom:0;transform:scaleY(-1);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 22' preserveAspectRatio='none'%3E%3Cpath d='M0 0h400v6l-14 4 8 6-20 2 6-8-22 10 4-9-18 5 2 6-24-3 10-7-26 8 6-10-20 4-4 8-16-9 8-6-30 12 4-9-22 6 10-8-30 2 6 8-20-6 4-8-30 10 4-7-20 3 8 7-30-5 8-8-24 6 4 9-26-6 6-6-22 5 2 6-20-4 4-8-14 2v-6z' fill='%23000'/%3E%3C/svg%3E") 0 0/100% 100% no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 22' preserveAspectRatio='none'%3E%3Cpath d='M0 0h400v6l-14 4 8 6-20 2 6-8-22 10 4-9-18 5 2 6-24-3 10-7-26 8 6-10-20 4-4 8-16-9 8-6-30 12 4-9-22 6 10-8-30 2 6 8-20-6 4-8-30 10 4-7-20 3 8 7-30-5 8-8-24 6 4 9-26-6 6-6-22 5 2 6-20-4 4-8-14 2v-6z' fill='%23000'/%3E%3C/svg%3E") 0 0/100% 100% no-repeat}
+.torn .cap{position:absolute;left:16px;bottom:30px;color:#fff;font-weight:800;font-size:22px;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+.torn .cap span{font-family:var(--brush);color:var(--sun);font-size:30px;display:block;transform:rotate(-4deg);transform-origin:left}
+.stat{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.stat div{border:1px solid var(--night-700);border-radius:16px;padding:14px 12px}
+.stat b{display:block;font-size:30px;line-height:1;font-weight:900;font-variation-settings:"wdth" 110;color:var(--sun)}
+.stat small{font-size:12px;color:var(--sand-300)}
+.bento{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:92px;gap:8px}
+.bento div{border-radius:14px;background:center/cover;position:relative;overflow:hidden;color:#fff;font-weight:700;font-size:13px;display:flex;align-items:flex-end;padding:10px}
+.bento div::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,35,31,0) 35%,rgba(28,35,31,.8) 100%)}
+.bento div span{position:relative;z-index:1}
+.bento div small{display:block;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--sun)}
+.bento .big{grid-column:span 2;grid-row:span 2}
+/* Variantes de tarjeta */
+.lcard{display:flex;border:1px solid var(--sand-200);border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 4px 16px rgba(28,35,31,.08)}
+.lcard .ph{width:38%;flex:none;background:center/cover;position:relative}
+.lcard .ph .badge{position:absolute;top:8px;left:8px;font-size:9.5px;padding:0 8px}
+.lcard .bd{padding:12px 14px;display:flex;flex-direction:column;gap:6px;min-width:0;flex:1}
+.lcard h5{margin:0;font-size:16px;line-height:1.2;font-weight:700}
+.lcard .mt{display:flex;gap:10px;font-size:12px;color:var(--dune-700)}
+.lcard .mt .msym{font-size:15px}
+.lcard .ft{display:flex;justify-content:space-between;align-items:flex-end;border-top:1px dashed var(--sand-200);padding-top:8px;margin-top:auto}
+.lcard .ft b{font-size:17px;font-weight:900;font-variant-numeric:tabular-nums}
+.lcard .ft .btn{height:36px;padding:0 14px;font-size:13px}
+.gcard{border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(40,30,20,.06),0 10px 28px -16px rgba(40,30,20,.3);text-align:center}
+.gcard .ph{aspect-ratio:16/10;background:center/cover}
+.gcard .av{display:block;width:42%;max-width:140px;aspect-ratio:1;border-radius:50%;margin:-21% auto 0;position:relative;background:center/cover;box-shadow:0 0 0 4px #fff}
+.gcard .bd{padding:10px 14px 20px}
+.gcard .bd small{display:block;font-size:12.5px;font-weight:600;color:var(--dune-500)}
+.gcard .bd b{display:block;font-size:19px;font-weight:800;margin:3px 0}
+.gcard .bd span{font-size:12.5px;color:var(--dune-700)}
+.pcard .im{position:relative;margin:0 10px 10px 0}
+.pcard .im::before{content:"";position:absolute;inset:0;translate:10px 10px;border-radius:18px;background:var(--cactus)}
+.pcard .im div{position:relative;aspect-ratio:4/3;border-radius:18px;background:center/cover}
+.pcard .mt{margin:14px 0 0;font-size:12.5px;font-weight:600}
+.pcard .mt i{font-style:normal;font-weight:400;color:var(--dune-500)}
+.pcard h5{margin:6px 0 0;font-size:18px;line-height:1.3;font-weight:700}
+.pcard h5 span{background:linear-gradient(currentColor,currentColor) 0 100%/0% 2px no-repeat;transition:background-size .9s cubic-bezier(.45,0,.25,1),color .2s}
+.pcard:hover h5 span{background-size:100% 2px;color:var(--cactus-700)}
+.pcard .by{font-size:12.5px;color:var(--dune-500);margin-top:10px}
+.eqrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;align-items:stretch}
+.eqrow .tcard{display:flex;flex-direction:column}
+.eqrow .tcard .body{flex:1}
+/* spacing */
+.spacing{display:flex;align-items:flex-end;gap:8px;margin:12px 0 24px;flex-wrap:wrap}
+.spacing div{background:var(--sun-tint);border:1px solid var(--sun);border-radius:4px;display:flex;align-items:flex-end;justify-content:center;font-size:11px;color:var(--sun-700);font-variant-numeric:tabular-nums}
+.radii{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0 24px}
+.radii div{width:72px;height:72px;background:var(--sand-100);border:1.5px solid var(--sand-300);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--dune-700);text-align:center;line-height:1.2}
+/* photos */
+.photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin:12px 0 20px}
+.photos figure{margin:0}
+.photos img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block;border:1px solid var(--sand-200)}
+.photos figcaption{font-size:11.5px;color:var(--dune-500);margin-top:4px;line-height:1.3}
+.seals{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin:8px 0 20px}
+.seals img{height:56px;border-radius:8px}
+.seals .txt{font-size:12px;color:var(--dune-500);border:1px dashed var(--sand-300);border-radius:8px;padding:8px 12px}
+/* concepto */
+.story{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:12px 0 24px}
+.story div{border:1px solid var(--sand-200);border-radius:14px;padding:12px 14px;background:var(--sand-50)}
+.story div b{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--sun-700);margin-bottom:4px}
+.story div span{font-size:14px;font-weight:600}
+.story div small{display:block;color:var(--dune-500);font-size:12px;margin-top:3px}
+.ctmock{border-radius:20px;overflow:hidden;position:relative;aspect-ratio:3/4;background:center/cover;display:flex;flex-direction:column;justify-content:flex-end;padding:16px;color:#fff}
+.ctmock::before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(28,35,31,.96) 0%,rgba(28,35,31,.78) 30%,rgba(28,35,31,.32) 58%,transparent 100%)}
+.ctmock>*{position:relative;z-index:1}
+.ctmock .ttl{font-size:30px;line-height:1.04;font-weight:800;font-variation-settings:"wdth" 105;letter-spacing:-.02em}
+.ctmock .meta{font-size:12px;color:rgba(255,255,255,.8);margin:4px 0 10px}
+.ctmock .card{background:#fff;color:var(--night);border-radius:16px;padding:12px;display:flex;gap:10px;align-items:center;margin:0 -4px -28px}
+.ctmock .card img{width:64px;height:64px;border-radius:10px;object-fit:cover}
+.ctmock .card b{font-size:13px;display:block}.ctmock .card small{font-size:11px;color:var(--dune-500)}
+.gal{display:flex;gap:10px;align-items:center;padding:8px 0}
+.gal img{width:31%;aspect-ratio:1;object-fit:cover;border-radius:10px;box-shadow:0 8px 24px rgba(28,35,31,.18)}
+.gal img:nth-child(1){transform:rotate(-4deg)}.gal img:nth-child(2){transform:rotate(2deg) translateY(-8px)}.gal img:nth-child(3){transform:rotate(-1deg)}
+.refs{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:12px 0 24px}
+.refs figure{margin:0;border:1px solid var(--sand-200);border-radius:14px;overflow:hidden;background:#fff}
+.refs img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;display:block}
+.refs figcaption{padding:10px 12px;font-size:12.5px;line-height:1.4;color:var(--dune-700)}
+.refs figcaption b{display:block;color:var(--night);font-weight:600;margin-bottom:2px}
+.alive{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:12px 0 24px}
+.alive div{border-left:3px solid var(--sun);padding:4px 0 4px 14px;font-size:14px}
+.alive div b{display:block;font-weight:600}
+.alive div small{color:var(--dune-500);font-size:12.5px}
+/* storyboard */
+.story2{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0 24px}
+.story2 figure{margin:0}
+.story2 figcaption{font-size:12px;color:var(--dune-700);margin-top:6px}
+.fr2{aspect-ratio:9/16;border-radius:14px;position:relative;overflow:hidden;background:var(--night) center/cover;color:#fff}
+.fr2 .ttl{position:absolute;left:10px;right:10px;bottom:16px;font-size:15px;line-height:1.05;font-weight:800;font-variation-settings:"wdth" 105}
+.fr2 .glass{position:absolute;left:8px;right:8px;bottom:8px;height:30px;border-radius:999px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(10px)}
+.fr2 .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,35,31,0),rgba(28,35,31,.85))}
+@media (max-width:820px){.wrap{grid-template-columns:minmax(0,1fr);gap:24px;padding:24px 18px 64px}nav.toc{position:static}nav.toc ol{flex-direction:row;flex-wrap:wrap;border-left:none;gap:4px}nav.toc a{border:1px solid var(--sand-200);border-radius:8px;margin:0;padding:4px 10px}.story2{grid-template-columns:repeat(2,1fr)}.spec div{grid-template-columns:1fr}.stat{grid-template-columns:1fr 1fr}}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol>
+<symbol id="i-ms" viewBox="0 0 24 24"><path d="M.001 11.639C.001 4.949 5.241 0 12.001 0S24 4.95 24 11.639c0 6.689-5.24 11.638-12 11.638-1.21 0-2.38-.16-3.47-.46a.96.96 0 0 0-.64.05l-2.39 1.05a.96.96 0 0 1-1.35-.85l-.07-2.14a.97.97 0 0 0-.32-.68A11.39 11.39 0 0 1 .002 11.64zm8.32-2.19l-3.52 5.6c-.35.53.32 1.139.82.75l3.79-2.87c.26-.2.6-.2.87 0l2.8 2.1c.84.63 2.04.4 2.6-.48l3.52-5.6c.35-.53-.32-1.13-.82-.75l-3.79 2.87c-.25.2-.6.2-.86 0l-2.8-2.1a1.8 1.8 0 0 0-2.61.48z"/></symbol>
+</defs></svg>
 <div class="wrap">
 <nav class="toc" aria-label="Secciones">
   <img class="brandimg" src="assets/logo.png" alt="Cactus Tours, Outdoor Adventure Park">
-  <p class="meta">Diseño y justificación v1.0 · 28 sep 2026</p>
-  <ol><li><a href="#resumen">Resumen</a></li><li><a href="#partida">Punto de partida</a></li><li><a href="#principios">Principios y reglas</a></li><li><a href="#color">Color</a></li><li><a href="#tipo">Tipografía</a></li><li><a href="#espacio">Espaciado, radios y sombras</a></li><li><a href="#componentes">Componentes</a></li><li><a href="#pantallas">Pantallas</a></li><li><a href="#flujos">Flujos</a></li><li><a href="#bilingue">Bilingüe y SEO</a></li><li><a href="#medicion">Medición</a></li><li><a href="#rendimiento">Rendimiento y accesibilidad</a></li><li><a href="#decisiones">Decisiones clave</a></li><li><a href="#pendientes">Pendientes con el cliente</a></li><li><a href="#tecnico">Proyecto y entrega</a></li><li><a href="#referencias">Referencias</a></li></ol>
+  <p class="meta">Guía de diseño v1.0 · 28 sep 2026</p>
+  <ol>
+    <li><a href="#revision">Revisión del sitio actual</a></li>
+    <li><a href="#mapa">Mapa de pantallas</a></li>
+    <li><a href="#concepto">Concepto: Vive Cactus</a></li>
+    <li><a href="#principios">Principios y reglas</a></li>
+    <li><a href="#color">Color</a></li>
+    <li><a href="#tipo">Tipografía</a></li>
+    <li><a href="#espacio">Espaciado y radios</a></li>
+    <li><a href="#componentes">Componentes</a></li>
+    <li><a href="#foto">Fotografía e iconos</a></li>
+    <li><a href="#motion">Video y movimiento</a></li>
+    <li><a href="#copy">Tono y copy</a></li>
+    <li><a href="#referencias">Referencias</a></li>
+    <li><a href="#refsdaniel">Lo que le gusta a Daniel</a></li>
+    <li><a href="#recursos">Recursos</a></li>
+    <li><a href="#checklist">Antes de entregar un diseño</a></li>
+  </ol>
 </nav>
+
 <main>
-<p class="eyebrow">Cactus Tours · Rediseño del sitio web 2026</p>
-<h1>Un sitio que se <span class="brushword">vive</span> antes de llegar al parque</h1>
-<p class="lede">Documento de diseño y justificación del prototipo funcional: qué había en producción, qué proponía el primer rediseño, qué construimos y por qué. Reúne el design system actualizado, todas las pantallas, los flujos y las decisiones.</p>
-<div class="meta2"><a class="pri" href="../">Ver prototipo en español</a><a href="../en/">Ver prototipo en inglés</a></div>
-<h2 id="resumen">1. Resumen</h2>
-<p>Prototipo funcional, mobile first y bilingüe del nuevo sitio de Cactus Tours, construido con datos reales de producción (tours, precios, requisitos, políticas, preguntas frecuentes, vacantes y blog). Se puede navegar completo, incluida la reserva de principio a fin.</p>
-<div class="kpis">
-<div class="kpi"><b>157</b><span>páginas generadas (79 en español y 78 en inglés)</span></div>
-<div class="kpi"><b>16</b><span>tours con ficha completa, combos y Park Pass</span></div>
-<div class="kpi"><b>4</b><span>pasos de reserva con calendario, extras reales y pago</span></div>
-<div class="kpi"><b>2</b><span>idiomas con direcciones traducidas y hreflang</span></div>
-<div class="kpi"><b>43</b><span>componentes reutilizables en Svelte</span></div>
-<div class="kpi"><b>18</b><span>notas del blog migradas y traducidas</span></div>
-</div>
-<div class="callout green"><p><strong>Cómo leer este documento.</strong> Las secciones 4 a 7 son el design system (tokens y componentes). La 8 recorre cada pantalla comparando producción contra el rediseño. De la 9 a la 13 están los flujos, la versión bilingüe, la medición y las decisiones que justifican el sitio.</p></div>
-<h2 id="partida">2. Punto de partida</h2>
-<h3>El sitio en producción</h3>
-<p>WordPress con un tema comercial, Elementor y un plugin genérico de reservas. La oferta está bien definida y tiene diferenciadores reales (Récord Guinness, Kids Club, transporte incluido, centro de conservación), pero el sitio no los convierte en reservas.</p>
+<p class="eyebrow">Guía de diseño · Cactus Tours 2026</p>
+<h1>Blanco que respira, naranja que <em>reserva</em> y un desierto que <span class="mark">se lanza al mar</span></h1>
+<p class="lede">La biblia antes de diseñar cualquier pantalla de Cactus Tours: tipografía, color, iconos, espaciado, fotografía, principios y reglas, componentes con sus estados, flujos y el mapa de pantallas. Todo lo que ves aquí está renderizado con los mismos valores del código, el logo real y fotos reales del parque. Si una decisión no está en esta guía, se consulta antes de inventarla.</p>
+
+<h2 id="revision">1. Revisión del sitio actual y del Figma</h2>
+<p>Fuentes: scrape completo de cactustours.com.mx (REST API, CSS del tema Gowilds e imágenes), el Figma Site de la propuesta 2026 (home, listado, ficha y modal de reserva), los dos decks de t2ó (propuesta 2026 y análisis digital) y Capital Trip como referencia propia. El sitio actual es WordPress con Elementor, Slider Revolution y el plugin BA Book Everything; carga en 23.8 s en móvil según el análisis de t2ó.</p>
 <div class="grid2">
-<div class="card"><h4>Conversión</h4><p>Sin precio ni botón de reservar hasta la ficha. Reserva en un formulario de plugin dentro de una pestaña, sin pasos, sin resumen de precio y sin elegir hotel. Cargos extra que aparecen hasta el check-in.</p></div>
-<div class="card"><h4>Experiencia móvil</h4><p>Hero de YouTube en negro en iOS, logo de 140 px de alto, menú de 20 ítems, tres widgets de contacto encimados sobre el botón de acción.</p></div>
-<div class="card"><h4>Contenido y calidad</h4><p>Contenido demo del tema en producción (Discovery Islands, dirección de Nueva York), precios distintos entre ficha y listado, páginas duplicadas del Sky Bike, títulos en mayúsculas.</p></div>
-<div class="card"><h4>SEO y rendimiento</h4><p>222 peticiones y 89 scripts en el home, banners PNG de hasta 930 KB con el texto dentro de la imagen, inglés en otro dominio sin hreflang, páginas sin H1.</p></div>
+  <div class="card"><h4>Se conserva</h4><p>Las categorías (Sky Bike, ATV, UTV Can-Am, camellos, caballos, combos, Park Pass, niños, Balandra), los precios de producción en USD con tarifa de niño, la estructura de ficha (incluye, cargos, antes de reservar, seguridad, cancelación), el Kids Club, #SoyLocal, Grupos y Partners, el blog, las preguntas frecuentes, la barra inferior de contacto en móvil, el look de los banners (bold con volumen, sello Guinness, cielo y arena) y del Figma: rating Google y TripAdvisor en el hero, barra de beneficios, precio con entrada incluida y reserva en 4 pasos.</p></div>
+  <div class="card"><h4>Se cambia</h4><p>El menú largo pasa a un header corto con mega menú de tours. Hero de YouTube en negro pasa a video propio con poster. Banners PNG con texto rasterizado pasan a promociones escritas en HTML sobre una foto. Fichas por modelo de vehículo pasan a fichas por experiencia con variantes. Plugin de reservas en pestañas pasa a flujo propio en su página. Kumbh Sans y Roboto pasan a Archivo con Caveat Brush de acento. Inglés en otro dominio pasa a <code>/en/</code> con direcciones traducidas. Cinco familias de iconos pasan a una: Material Symbols Rounded.</p></div>
+  <div class="card"><h4>Se descarta</h4><p>El contenido demo del tema ("Discovery Islands", dirección de Nueva York, "Paragliding Tours"), las URLs de bicicletas que muestran el Sky Bike, las fichas #SoyLocal duplicadas, los pósters de promoción con texto pintado, el chat de terceros encimado al dock, la reseña negativa en el carrusel, los títulos en mayúsculas sostenidas y los cargos pre-activados en el checkout.</p></div>
+  <div class="card"><h4>Faltaba</h4><p>Precio en el home y en las tarjetas, comparador de combos, Park Pass como producto reservable, página Para niños con selector de edad, seguridad y requisitos en un solo lugar, cómo llegar con mapa y apps de navegación, cupón en el pago, confirmación tipo pase de abordar, sección de guías con nombre, bolsa de trabajo real, 404 y 500, hreflang, schema Product y FAQPage, presupuesto de rendimiento.</p></div>
 </div>
-<h3>La primera propuesta de rediseño (Figma de la agencia)</h3>
-<p>Cuatro vistas: Home, listado, ficha y un modal de reserva en cuatro pasos. Resolvía bien la jerarquía del hero, la tarjeta de tour con datos duros y el precio transparente. Tomamos esas ideas y las llevamos a un sitio completo:</p>
-<div class="tbl"><table><tr><th>Tema</th><th>Figma de la agencia</th><th>Prototipo final</th></tr>
-<tr><td>Alcance</td><td>4 vistas, sin combos, grupos, Park Pass, niños, blog ni inglés</td><td>Todas las secciones de producción, más reserva, confirmación, 404 y 500, en dos idiomas</td></tr>
-<tr><td>Reserva</td><td>Modal encima de la ficha, tira de 14 días</td><td>Página propia con URL por paso, calendario de dos meses, extras con precios reales</td></tr>
-<tr><td>Extras</td><td>Precios supuestos (fotos $75, privado $85)</td><td>Tabla real de producción: fotos por tamaño de grupo, privado, protección por vehículo, Kids Club</td></tr>
-<tr><td>Móvil</td><td>Sin resumen persistente en el modal</td><td>Barra inferior con total, detalle en hoja inferior y botón siempre visible</td></tr>
-<tr><td>Contenido</td><td>Badge "Más popular" en todos los tours</td><td>Badges con criterio y datos verificados contra producción</td></tr>
-</table></div>
-<h2 id="principios">3. Principios y reglas del sistema</h2>
+<div class="callout">
+  <p><strong>Lo que dicen las reseñas (Youscan, t2ó).</strong> Solo 58.8 % positivas. Lo mejor es el personal; lo peor, la transparencia: cargos sorpresa, seguros que se sienten obligatorios, retenciones en tarjeta y la política de celulares vista como venta forzada de fotos. Por eso el precio total, los extras opt-in y la página de Seguridad no son estética: son la respuesta al problema número uno de la marca.</p>
+</div>
+<p>Detalle en <code>docs/01-auditoria-sitio-actual.md</code>, <code>docs/02-figma-vs-produccion.md</code>, <code>docs/10-insights-presentaciones-cliente.md</code> y <code>docs/13-decisiones-reserva-promos-parkpass.md</code>.</p>
+
+<h2 id="mapa">2. Mapa de pantallas</h2>
+<p>Un solo sitio para viajero, familia, residente y B2B. Header con mega menú de tours y botón Reservar; en móvil, menú en panel lateral y dock inferior con Reservar, WhatsApp, Messenger y Llamar; en escritorio, riel lateral con las mismas acciones. Selector ES/EN en header y menú. Cada pantalla es una plantilla que se puebla con datos de producción: la ficha de tour sirve para todos los tours y para el Park Pass.</p>
+<div class="statelegend">
+  <span><i style="background:#17A34A"></i> Terminada</span>
+</div>
+<div class="progress">
+  <div class="bar"><b style="width:100%"></b></div>
+  <span>Mapa completo terminado · español e inglés · SvelteKit + Tailwind</span>
+</div>
+<div class="map">
+  <div class="col"><h4>Descubrir <span class="n">5</span></h4>
+    <div class="scr done"><span class="id">H-01</span>Home<span class="ruta">/</span></div>
+    <div class="scr done"><span class="id">H-02</span>Menú móvil (panel lateral)</div>
+    <div class="scr done"><span class="id">H-03</span>Hoja "¿Qué quieres reservar?"</div>
+    <div class="scr done"><span class="id">H-04</span>404 con tours destacados</div>
+    <div class="scr done"><span class="id">H-05</span>Error 500</div>
+  </div>
+  <div class="col"><h4>Tours <span class="n">6</span></h4>
+    <div class="scr done"><span class="id">T-01</span>Listado con filtros<span class="ruta">/tours/</span></div>
+    <div class="scr done"><span class="id">T-02</span>Filtros en hoja (panel lateral en escritorio)</div>
+    <div class="scr done"><span class="id">T-03</span>Ficha de tour<span class="ruta">/tours/…/</span></div>
+    <div class="scr done"><span class="id">T-04</span>Park Pass con la plantilla de ficha<span class="ruta">/park-pass/</span></div>
+    <div class="scr done"><span class="id">T-05</span>Comparador de combos estilo Apple<span class="ruta">/combos/</span></div>
+    <div class="scr done"><span class="id">T-06</span>Promociones<span class="ruta">/promociones/</span></div>
+  </div>
+  <div class="col"><h4>Reserva <span class="n">8</span></h4>
+    <div class="scr done"><span class="id">R-01</span>Paso 1: fecha y horario<span class="ruta">/reservar/…/</span></div>
+    <div class="scr done"><span class="id">R-02</span>Paso 1: personas y vehículo</div>
+    <div class="scr done"><span class="id">R-03</span>Paso 2: extras</div>
+    <div class="scr done"><span class="id">R-04</span>Paso 3: recogida y datos</div>
+    <div class="scr done"><span class="id">R-05</span>Paso 4: revisión, cupón y pago</div>
+    <div class="scr done"><span class="id">R-06</span>Error de pago</div>
+    <div class="scr done"><span class="id">R-07</span>Confirmación tipo pase de abordar</div>
+  </div>
+  <div class="col"><h4>Segmentos <span class="n">4</span></h4>
+    <div class="scr done"><span class="id">S-01</span>Para niños: Kids Club y selector de edad<span class="ruta">/ninos/</span></div>
+    <div class="scr done"><span class="id">S-02</span>#SoyLocal<span class="ruta">/soy-local/</span></div>
+    <div class="scr done"><span class="id">S-03</span>Grupos<span class="ruta">/grupos/</span></div>
+    <div class="scr done"><span class="id">S-04</span>Partners<span class="ruta">/partners/</span></div>
+  </div>
+  <div class="col"><h4>Confianza <span class="n">6</span></h4>
+    <div class="scr done"><span class="id">C-01</span>Nosotros<span class="ruta">/nosotros/</span></div>
+    <div class="scr done"><span class="id">C-02</span>Guías y perfil de guía</div>
+    <div class="scr done"><span class="id">C-03</span>Galería<span class="ruta">/galeria/</span></div>
+    <div class="scr done"><span class="id">C-04</span>Seguridad<span class="ruta">/seguridad/</span></div>
+    <div class="scr done"><span class="id">C-05</span>Cómo llegar<span class="ruta">/como-llegar/</span></div>
+    <div class="scr done"><span class="id">C-06</span>Preguntas frecuentes</div>
+  </div>
+  <div class="col"><h4>Contenido <span class="n">2</span></h4>
+    <div class="scr done"><span class="id">B-01</span>Blog<span class="ruta">/blog/</span></div>
+    <div class="scr done"><span class="id">B-02</span>Nota<span class="ruta">/blog/…/</span></div>
+  </div>
+  <div class="col"><h4>Contacto y legal <span class="n">6</span></h4>
+    <div class="scr done"><span class="id">L-01</span>Contacto<span class="ruta">/contacto/</span></div>
+    <div class="scr done"><span class="id">L-02</span>Gracias<span class="ruta">/gracias/</span></div>
+    <div class="scr done"><span class="id">L-03</span>Únete al equipo</div>
+    <div class="scr done"><span class="id">L-04</span>Términos y condiciones</div>
+    <div class="scr done"><span class="id">L-05</span>Aviso de privacidad</div>
+    <div class="scr done"><span class="id">L-06</span>Política de cancelación</div>
+  </div>
+</div>
+<div class="callout green">
+  <p><strong>Todo el sitio existe también en inglés</strong> bajo <code>/en/</code> con direcciones traducidas: <code>/nosotros/</code> es <code>/en/about/</code>, <code>/reservar/</code> es <code>/en/book/</code>, <code>/ninos/</code> es <code>/en/kids/</code>, <code>/como-llegar/</code> es <code>/en/getting-here/</code>. Los nombres de tours y de notas del blog no se traducen en la dirección porque son nombres propios. Cada pantalla se diseña pensando en textos en inglés hasta 30 % más largos.</p>
+</div>
+<h3>Flujo del viajero</h3>
+<pre class="mermaid">
+flowchart LR
+  H[H-01 Home] --> T[T-01 Listado] --> F[T-03 Ficha]
+  H --> F
+  H --> CB[T-05 Combos]
+  H --> PR[T-06 Promociones]
+  T -->|Reservar en la tarjeta| R1
+  CB --> R1
+  PR --> R1
+  F --> R1[R-01 y R-02 Fecha, horario y personas] --> R3[R-03 Extras] --> R4[R-04 Recogida y datos] --> R5[R-05 Revisión, cupón y pago]
+  R5 -->|aprobado| OK[R-07 Confirmación]
+  R5 -->|rechazado| ER[R-06 Error de pago] --> R5
+  F --> SEG[C-04 Seguridad]
+  OK --> LL[C-05 Cómo llegar]
+</pre>
+<h3>Lógica del botón Reservar</h3>
+<pre class="mermaid">
+flowchart TD
+  A{"¿Qué Reservar se tocó?"} -->|El de una tarjeta de tour| D[R-01 Reserva de ese tour]
+  A -->|Uno general: header, dock, riel o menú| B{"¿La página es de un tour o del Park Pass?"}
+  B -->|Sí| D
+  B -->|No| E[H-03 Hoja: ¿Qué quieres reservar?]
+  E -->|Abre filtrada por la categoría de la página: listado filtrado, combos o niños| L[Elige el tour]
+  L --> D
+</pre>
+<h3>Flujo de familias y B2B</h3>
+<pre class="mermaid">
+flowchart LR
+  H[H-01 Home] --> N[S-01 Para niños] --> ED[Selector de edad] --> F[T-03 Ficha Mini RZR] --> R1[R-01 Reserva]
+  N --> KC[Kids Club]
+  H --> SL["S-02 #35;SoyLocal"] --> F
+  H --> G[S-03 Grupos] --> FO[Formulario] --> GR[L-02 Gracias]
+  H --> P[S-04 Partners] --> FO
+</pre>
+<h3>Flujo de idioma</h3>
+<pre class="mermaid">
+flowchart LR
+  ES1["/nosotros/"] <-->|Selector ES EN| EN1["/en/about/"]
+  ES2["/tours/sky-bike/"] <-->|Selector ES EN| EN2["/en/tours/sky-bike/"]
+  ES3["/reservar/sky-bike/"] <-->|Selector ES EN| EN3["/en/book/sky-bike/"]
+</pre>
+<p>El selector ES/EN nunca manda al home: lleva a la misma página en el otro idioma, conservando filtros y parámetros. Cada página declara su par con <code>hreflang</code>.</p>
+
+<h2 id="concepto">3. Concepto narrativo: Vive Cactus</h2>
+<p>En Capital Trip la palabra que sostiene todo es <strong>TRIP</strong>: el viaje es el producto, cada parada es un trip y las secciones hablan desde ahí ("El TRIP se vive así", "Miles ya se subieron al TRIP"). Cactus ya tiene su palabra y está en producción: <strong>"Siente Cactus, ¡vive Cactus!"</strong>. Cactus no es una agencia, es un lugar: un parque entre el desierto y el Pacífico que se vive en un día. Todo el sitio habla desde ese verbo.</p>
+<div class="story">
+  <div><b>Hero</b><span>Donde el desierto se lanza al mar.</span><small>Vive Cactus: Sky Bike, ATV, Can-Am, camellos y caballos en un solo parque.</small></div>
+  <div><b>Catálogo</b><span>Elige cómo vivir Cactus</span><small>De tranquilo a extremo, con precio e intensidad.</small></div>
+  <div><b>Destacados</b><span>Lo más vivido esta semana</span><small>Cards con precio, intensidad y rating.</small></div>
+  <div><b>Récord</b><span>854 m viviendo el aire</span><small>Sección noche, cifras que cuentan.</small></div>
+  <div><b>Combos</b><span>Vive dos. Paga uno.</span><small>Comparador.</small></div>
+  <div><b>La ruta</b><span>Así se vive Cactus</span><small>Recogida, check-in, aventura, tequila, fotos y regreso.</small></div>
+  <div><b>Guías</b><span>Los que te lo hacen vivir</span><small>Yohari, Zetina, Adán, Israel, Katia.</small></div>
+  <div><b>Reseñas</b><span>3 millones ya lo vivieron</span><small>Google y TripAdvisor con nombre de guía.</small></div>
+  <div><b>Galería</b><span>Cactus se vive así</span><small>Fotos reales inclinadas, como el bloque de Capital Trip.</small></div>
+  <div><b>CTA final</b><span>¿Cuándo lo vives?</span><small>Reservar · WhatsApp.</small></div>
+</div>
 <div class="grid2">
-<div class="card"><h4>Naranja solo para reservar</h4><p>El botón naranja es la acción de compra. Todo lo demás es secundario (contorno) o de texto. Así el ojo encuentra siempre el siguiente paso.</p></div>
-<div class="card"><h4>El dato manda</h4><p>Todo precio, edad, requisito y política viene de producción. Lo que no tiene fuente se marca como pendiente con el cliente, nunca se inventa.</p></div>
-<div class="card"><h4>Móvil primero</h4><p>Botones a todo lo ancho (dos acciones, 50/50), ventanas como hojas inferiores con asa y cierre deslizando, filas deslizables con degradado a la derecha.</p></div>
-<div class="card"><h4>Una sola forma de hacer cada cosa</h4><p>Mismos componentes en todo el sitio: tarjeta de tour, hoja, puntos informativos, acordeón, encabezado de página y avisos con asterisco.</p></div>
-<div class="card"><h4>Texto en código, no en imágenes</h4><p>Promociones, títulos y cifras van en HTML: se leen en cualquier pantalla, los indexa Google y se editan sin diseñar banners.</p></div>
-<div class="card"><h4>Tono positivo y claro</h4><p>Entre formal y amigable, sin modismos, sin guiones largos, sin mayúsculas sostenidas. Las dudas se redactan en positivo, nunca a la defensiva.</p></div>
+  <div class="card"><h4>Cómo se siente poderoso sin ser oscuro</h4><p>Red Bull es blanco. La fuerza viene de la foto a sangre, el título grande, los degradados a tinta sobre las imágenes y el movimiento. Cactus hace lo mismo: fondo blanco y arena, y la noche solo en cuatro lugares: hero, mega menú, sección récord y bloques puntuales tipo "Somos Cactus". Igual que en Capital Trip, la foto lleva el degradado, no la página.</p></div>
+  <div class="card"><h4>Qué se hereda literal de Capital Trip</h4><p>El hero con foto a sangre, degradado a tinta al 96 % abajo y título abajo a la izquierda con meta line; la card blanca que cruza el borde del hero con foto, promesa y dos CTAs; la jump nav que aparece al pasar el hero; la galería con fotos inclinadas; la ruta con paradas que se sellan al hacer scroll; el sticky de precio en móvil.</p></div>
 </div>
-<h3>Reglas de interfaz</h3>
-<ul>
-<li>Flechas siempre tipo chevron, nunca flecha con palito. Al pasar el cursor se subraya solo el texto, no el ícono.</li>
-<li>Chip o pestaña seleccionada: relleno naranja claro, borde naranja y texto oscuro. <span class="chip2 on">Seleccionado</span> <span class="chip2">Normal</span></li>
-<li>Toda capa encima del contenido lleva fondo difuminado. Botones de contorno sobre foto con efecto vidrio.</li>
-<li>Tarjetas de una misma fila siempre con la misma altura; textos variables con renglones reservados.</li>
-<li>WhatsApp siempre con su logo oficial y su verde. Dentro de la reserva, solo como ayuda discreta en el resumen.</li>
-<li>Los botones que cambian de página siempre llevan al inicio de la página nueva.</li>
-<li>Avisos al final de página como párrafo con asterisco, a todo el ancho del contenido.</li>
-</ul>
-<h2 id="color">4. Color</h2><p>Naranja del sol para la acción, verde cactus para identidad y confirmación, arena para fondos cálidos y noche para texto y bloques oscuros.</p><h3>Marca</h3><div class="sw"><div class="s"><b style="background:#F7921E"></b><span>sun-500<small>#F7921E · Reservar</small></span></div><div class="s"><b style="background:#FFA83D"></b><span>sun-400<small>#FFA83D · hover</small></span></div><div class="s"><b style="background:#D9760A"></b><span>sun-600<small>#D9760A</small></span></div><div class="s"><b style="background:#A85A05"></b><span>sun-700<small>#A85A05 · etiquetas</small></span></div><div class="s"><b style="background:#FFDCAE"></b><span>sun-200<small>#FFDCAE · seleccionado</small></span></div><div class="s"><b style="background:#FFF1E0"></b><span>sun-100<small>#FFF1E0</small></span></div><div class="s"><b style="background:#63AB45"></b><span>cactus-500<small>#63AB45 · identidad</small></span></div><div class="s"><b style="background:#3A6E27"></b><span>cactus-700<small>#3A6E27 · enlaces y palomitas</small></span></div><div class="s"><b style="background:#E6F3DF"></b><span>cactus-100<small>#E6F3DF</small></span></div><div class="s"><b style="background:#E4572E"></b><span>sunset<small>#E4572E · pocos lugares</small></span></div><div class="s"><b style="background:#2A7FB8"></b><span>ocean<small>#2A7FB8</small></span></div><div class="s"><b style="background:#DCEEF8"></b><span>ocean-100<small>#DCEEF8</small></span></div></div>
-<h3>Neutros arena y noche</h3><div class="sw"><div class="s"><b style="background:#FFFFFF"></b><span>sand-0<small>#FFFFFF</small></span></div><div class="s"><b style="background:#FBF8F3"></b><span>sand-50<small>#FBF8F3 · fondo</small></span></div><div class="s"><b style="background:#F3EDE3"></b><span>sand-100<small>#F3EDE3</small></span></div><div class="s"><b style="background:#E6DCCB"></b><span>sand-200<small>#E6DCCB · bordes</small></span></div><div class="s"><b style="background:#CDBFA8"></b><span>sand-300<small>#CDBFA8</small></span></div><div class="s"><b style="background:#8C7A62"></b><span>dune-500<small>#8C7A62 · texto terciario</small></span></div><div class="s"><b style="background:#5B4E3E"></b><span>dune-700<small>#5B4E3E · texto secundario</small></span></div><div class="s"><b style="background:#1C231F"></b><span>night<small>#1C231F · texto</small></span></div><div class="s"><b style="background:#26302B"></b><span>night-800<small>#26302B</small></span></div><div class="s"><b style="background:#34413A"></b><span>night-700<small>#34413A</small></span></div></div>
-<h3>Semánticos</h3><div class="sw"><div class="s"><b style="background:#3A9D5D"></b><span>success<small>#3A9D5D</small></span></div><div class="s"><b style="background:#E0A100"></b><span>warning<small>#E0A100</small></span></div><div class="s"><b style="background:#D64545"></b><span>danger<small>#D64545 · errores</small></span></div><div class="s"><b style="background:#F5B400"></b><span>rating<small>#F5B400 · estrellas</small></span></div><div class="s"><b style="background:#25D366"></b><span>whatsapp<small>#25D366</small></span></div></div>
-<h2 id="tipo">5. Tipografía</h2>
-<p><strong>Archivo</strong> (variable, ancho y peso) para todo el sitio y <strong>Caveat Brush</strong> para acentos de marca, como en el trazo de producción. Desde el 26 de septiembre ningún título va en mayúsculas: los héroes con foto conservan un tamaño grande y los demás usan el tamaño de título de página.</p>
+<div class="mocks">
+  <div class="mock">
+    <div class="ctmock" style="background-image:url(assets/canam.jpg)">
+      <div class="ttl">Can-Am X3 Turbo</div>
+      <div class="meta">2 h · Desierto y playa · Intensidad 5/5 · 16+ para manejar</div>
+      <div class="card"><img src="assets/sbs.jpg" alt=""><div><b>Tu aventura, todo resuelto</b><small>Pickup en tu hotel, equipo, guía y tequila. Desde $325 USD por vehículo.</small></div></div>
+    </div>
+    <p class="t-cap" style="margin:36px 0 0">Hero de ficha heredado de Capital Trip: foto a sangre, degradado a tinta, título grande sin mayúsculas y card que cruza el borde.</p>
+  </div>
+  <div class="mock">
+    <div class="t-ov" style="margin-bottom:8px">Cactus se vive así</div>
+    <div class="gal"><img src="assets/camel.jpg" alt=""><img src="assets/skybike.jpg" alt=""><img src="assets/kids.jpg" alt=""></div>
+    <p class="t-cap" style="margin:8px 0 0">Galería con fotos inclinadas y sombra, como "El TRIP se vive así". Con las fotos reales del parque y, después, con las de los clientes (UGC).</p>
+  </div>
+</div>
+
+<h2 id="principios">4. Principios y reglas</h2>
+<h3>Principios</h3>
+<ol class="list">
+  <li><strong>Blanco manda, la foto pega.</strong> Fondo blanco y arena como Red Bull; la fuerza viene de la foto a sangre con degradado, el título grande y el movimiento. La noche solo en hero, mega menú, récord y un bloque puntual. No es dark mode.</li>
+  <li><strong>Vive Cactus.</strong> Cada sección habla desde el mismo verbo, como el TRIP en Capital Trip. Si un título no se puede decir con "vivir", se revisa.</li>
+  <li><strong>El sitio está vivo.</strong> Video en el hero, foto en cada card, títulos que entran por palabra, cards escalonadas, cifras que cuentan. Todo con fallback y respetando reducir movimiento.</li>
+  <li><strong>Que no parezca hecho por IA.</strong> Fotos reales del parque, nombres reales de guías, cifras reales, copy con voz, degradados sobre imagen y no sobre cajas, cero iconos genéricos en círculos de colores.</li>
+  <li><strong>Precio total siempre.</strong> Ningún precio sin la entrada al parque incluida. Los extras se eligen, no vienen marcados.</li>
+  <li><strong>Una tipografía, varios anchos.</strong> Archivo variable para todo, títulos con mayúscula solo inicial; Caveat Brush solo como acento de marca.</li>
+  <li><strong>Vidrio con intención.</strong> El header es transparente sobre foto y vidrio blanco con blur al hacer scroll; los botones de contorno sobre foto o video son liquid glass; los overlays llevan velo difuminado. Dock y riel son píldoras blancas sólidas para despegarse de las secciones arena. Nunca vidrio en cards.</li>
+  <li><strong>Todo en múltiplos de 4.</strong> El gutter de 22 en móvil es la única excepción.</li>
+  <li><strong>Mobile first de verdad.</strong> Se diseña primero a 375 px con el pulgar en mente; el escritorio es la expansión, no al revés. LCP menor a 2.5 s en 4G.</li>
+</ol>
+<h3>Reglas que no se rompen</h3>
+<div class="grid2">
+  <div class="card"><h4>Naranja solo para reservar</h4><p>El botón primario naranja se usa únicamente para "Reservar" y los pasos de la reserva ("Continuar", "Pagar"). Cualquier otra acción es secundaria, terciaria, enlace o vidrio. Si en una pantalla hay dos naranjas, uno sobra.</p></div>
+  <div class="card"><h4>Títulos sin mayúsculas sostenidas</h4><p>Ningún título va en mayúsculas: ni el hero, ni las secciones, ni las cards. Mayúscula inicial y nombres propios. Solo el overline y los badges usan versalitas por ser etiquetas de 11 a 12 px.</p></div>
+  <div class="card"><h4>CTAs en móvil</h4><p>Todo CTA ocupa el ancho completo en móvil. Si hay dos, se parten 50/50 en la misma fila con el mismo alto. En escritorio recuperan su ancho natural.</p></div>
+  <div class="card"><h4>Chevron, nunca flecha</h4><p>Para avanzar, ver más o abrir, se usa <code>chevron_right</code>; nunca una flecha con palito (→). Al pasar el cursor se subraya solo el texto, nunca el icono.</p></div>
+  <div class="card"><h4>Overlays con fondo difuminado</h4><p>Todo overlay (hoja, ventana, menú, visor de galería) lleva velo oscuro con blur de 10 px. En móvil todo modal es hoja inferior con asa; el único panel lateral es el menú.</p></div>
+  <div class="card"><h4>Los datos vienen de producción</h4><p>Precios, horarios, edades, requisitos y textos legales salen del sitio actual. Lo que no tiene fuente se marca como pendiente con el cliente y no se inventa, ni en el diseño ni en el copy.</p></div>
+  <div class="card"><h4>Navegar es llegar arriba</h4><p>Todo botón o enlace que lleva a otra página aterriza en la parte superior de la nueva página, nunca a media altura. Los anclas dentro de la misma página son la excepción.</p></div>
+  <div class="card"><h4>WhatsApp en la reserva, discreto</h4><p>Dentro del checkout no hay botón verde: WhatsApp aparece solo como ayuda al final del resumen ("¿Tienes dudas? Escríbenos por WhatsApp"). Fuera del checkout, WhatsApp siempre con su logo oficial y su verde.</p></div>
+  <div class="card"><h4>Promociones en HTML</h4><p>Ninguna promoción es una imagen con texto pintado: foto del parque y el texto (cifra, título, precio, cupón, vigencia) escrito en la página. Se indexa, se traduce y se lee con lector de pantalla.</p></div>
+  <div class="card"><h4>Tarjetas parejas</h4><p>En una fila, todas las cards miden lo mismo. Los textos variables reservan su espacio (dos renglones de subtítulo) y el espacio sobrante se reparte, no se deja al final.</p></div>
+</div>
+
+<h2 id="color">5. Color</h2>
+<p>En el sitio cerca de 80 % blanco y arena, 10 % fotografía con degradado a tinta, 6 % naranja (reservar y selección), 4 % verde. La noche aparece en cuatro lugares (hero, mega menú, sección récord y un bloque "Somos Cactus") y ahí invierte: 80 % noche, 12 % arena, 8 % naranja. Los cinco colores base son los del kit de Elementor en producción; lo demás es nuevo.</p>
+<h3>Marca</h3>
+<div class="sw">
+  <div class="s"><b style="background:#F7921E"></b><span>brand.sun 500 · primario<small>#F7921E</small></span></div>
+  <div class="s"><b style="background:#FFA83D"></b><span>brand.sun 400 · hover<small>#FFA83D</small></span></div>
+  <div class="s"><b style="background:#FFDCAE"></b><span>brand.sun 200 · chip elegido<small>#FFDCAE</small></span></div>
+  <div class="s"><b style="background:#FFF1E0"></b><span>brand.sun 100 · tinte<small>#FFF1E0</small></span></div>
+  <div class="s"><b style="background:#D9760A"></b><span>brand.sun 600 · texto AA<small>#D9760A</small></span></div>
+  <div class="s"><b style="background:#A85A05"></b><span>brand.sun 700 · texto chico<small>#A85A05</small></span></div>
+  <div class="s"><b style="background:#63AB45"></b><span>brand.cactus 500 · secundario<small>#63AB45</small></span></div>
+  <div class="s"><b style="background:#4E8F35"></b><span>brand.cactus 600<small>#4E8F35</small></span></div>
+  <div class="s"><b style="background:#3A6E27"></b><span>brand.cactus 700 · enlaces, casilla<small>#3A6E27</small></span></div>
+  <div class="s"><b style="background:#E6F3DF"></b><span>brand.cactus 100<small>#E6F3DF</small></span></div>
+  <div class="s"><b style="background:#E4572E"></b><span>brand.sunset · extremo<small>#E4572E</small></span></div>
+  <div class="s"><b style="background:#2A7FB8"></b><span>brand.ocean · mar<small>#2A7FB8</small></span></div>
+</div>
+<h3>Neutros "arena y noche"</h3>
+<div class="sw">
+  <div class="s"><b style="background:#1C231F"></b><span>night 900 · texto y dark<small>#1C231F</small></span></div>
+  <div class="s"><b style="background:#26302B"></b><span>night 800<small>#26302B</small></span></div>
+  <div class="s"><b style="background:#34413A"></b><span>night 700<small>#34413A</small></span></div>
+  <div class="s"><b style="background:#5B4E3E"></b><span>dune 700 · secundario<small>#5B4E3E</small></span></div>
+  <div class="s"><b style="background:#8C7A62"></b><span>dune 500 · terciario<small>#8C7A62</small></span></div>
+  <div class="s"><b style="background:#CDBFA8"></b><span>sand 300 · bordes activos<small>#CDBFA8</small></span></div>
+  <div class="s"><b style="background:#E6DCCB"></b><span>sand 200 · bordes<small>#E6DCCB</small></span></div>
+  <div class="s"><b style="background:#F3EDE3"></b><span>sand 100 · alterno<small>#F3EDE3</small></span></div>
+  <div class="s"><b style="background:#FBF8F3"></b><span>sand 50 · fondo<small>#FBF8F3</small></span></div>
+  <div class="s"><b style="background:#FFFFFF"></b><span>sand 0 · cards<small>#FFFFFF</small></span></div>
+</div>
+<h3>Semánticos</h3>
+<div class="sw">
+  <div class="s"><b style="background:#3A9D5D"></b><span>success<small>#3A9D5D</small></span></div>
+  <div class="s"><b style="background:#E0A100"></b><span>warning · requisitos<small>#E0A100</small></span></div>
+  <div class="s"><b style="background:#D64545"></b><span>danger<small>#D64545</small></span></div>
+  <div class="s"><b style="background:#2A7FB8"></b><span>info<small>#2A7FB8</small></span></div>
+  <div class="s"><b style="background:#F5B400"></b><span>rating<small>#F5B400</small></span></div>
+  <div class="s"><b style="background:#25D366"></b><span>whatsapp<small>#25D366</small></span></div>
+</div>
+<h3>Intensidad, de 1 a 5</h3>
+<div class="intens">
+  <div><i><b style="height:4px;background:#2A7FB8"></b><b style="height:6px"></b><b style="height:8px"></b><b style="height:10px"></b><b style="height:12px"></b></i>1 Tranquilo · camello, Balandra</div>
+  <div><i><b style="height:4px;background:#63AB45"></b><b style="height:6px;background:#63AB45"></b><b style="height:8px"></b><b style="height:10px"></b><b style="height:12px"></b></i>2 Familiar · caballo, Mini RZR</div>
+  <div><i><b style="height:4px;background:#F7921E"></b><b style="height:6px;background:#F7921E"></b><b style="height:8px;background:#F7921E"></b><b style="height:10px"></b><b style="height:12px"></b></i>3 Aventura · Sky Bike, combos</div>
+  <div><i><b style="height:4px;background:#E07A1F"></b><b style="height:6px;background:#E07A1F"></b><b style="height:8px;background:#E07A1F"></b><b style="height:10px;background:#E07A1F"></b><b style="height:12px"></b></i>4 Adrenalina · ATV, Side by Side</div>
+  <div><i><b style="height:4px;background:#E4572E"></b><b style="height:6px;background:#E4572E"></b><b style="height:8px;background:#E4572E"></b><b style="height:10px;background:#E4572E"></b><b style="height:12px;background:#E4572E"></b></i>5 Extremo · Can-Am X3, Maverick</div>
+</div>
+<div class="callout">
+  <p><strong>Reglas del naranja.</strong> El naranja de relleno es exclusivo del botón Reservar y de los pasos de la reserva; en el resto del sitio el naranja solo aparece como selección (chip o pestaña elegida: relleno sun 200 con borde sun 500 y texto noche), en el día elegido del calendario y como acento brush. El #F7921E da 8.9:1 con texto oscuro encima, así que el botón primario lleva texto noche, no blanco. Sobre blanco solo da 2.4:1: nunca como texto de cuerpo.</p>
+  <p><strong>Reglas del verde y del resto.</strong> El verde cactus 700 es el color de los enlaces con chevron ("Ver todos los tours"), de la casilla marcada y de los checks de "incluido"; no es botón. El sunset se reserva para intensidad 5 y urgencia honesta, nunca para promociones. El error usa #C0362C en formularios.</p>
+</div>
+
+<h2 id="tipo">6. Tipografía</h2>
+<p><strong>Archivo</strong> de Google Fonts, variable en peso (100 a 900) y anchura (62 a 125), con itálicas reales. Tiene ADN de señalética y motorsport, que encaja con Baja y el off-road. <strong>Caveat Brush</strong> es el acento de marca: cubre el trazo brush del sitio actual (watermark "TOURS", sello "Record Holder") con una regla: solo para acentos de marca, una palabra o frase corta por sección, rotada 3 grados, nunca para títulos, botones ni texto de lectura. Números siempre tabulares.</p>
+<div class="callout">
+  <p><strong>Ningún título en mayúsculas.</strong> Hero, secciones, cards, hojas y botones van con mayúscula inicial. El énfasis lo dan el peso (800 a 900), el ancho (<code>wdth</code> 105 a 112) y el tamaño, no las versalitas. Solo el overline y los badges son mayúsculas, porque son etiquetas chicas.</p>
+</div>
 <div class="spec">
-<div><span class="lbl">t-display-xl · héroes con foto</span><span style="font-size:48px;line-height:1.04;font-weight:800;letter-spacing:-.02em;font-variation-settings:'wdth' 105">Donde el desierto se lanza al mar</span></div>
-<div><span class="lbl">t-display-l · nombre del tour</span><span style="font-size:40px;line-height:1;font-weight:900;letter-spacing:-.015em;font-variation-settings:'wdth' 112">Sky Bike</span></div>
-<div><span class="lbl">t-h1 · título de página</span><span style="font-size:36px;line-height:1.1;font-weight:800;font-variation-settings:'wdth' 105">Compara los combos</span></div>
-<div><span class="lbl">t-h2 · sección</span><span class="t-h2">Tu día, paso a paso</span></div>
-<div><span class="lbl">t-h3 · tarjeta</span><span class="t-h3">Paseo en camello</span></div>
-<div><span class="lbl">t-lead · 17 px</span><span class="t-bl">Estamos a 40 minutos de Cabo San Lucas.</span></div>
-<div><span class="lbl">t-body · 16 a 17 px</span><span class="t-b">Guía bilingüe, equipo de seguridad y degustación de tequila.</span></div>
-<div><span class="lbl">t-small · 13 a 14 px</span><span class="t-bs">Precio por persona con entrada al parque.</span></div>
-<div><span class="lbl">t-overline</span><span class="t-ov">Para niños</span></div>
-<div><span class="lbl">t-price</span><span class="t-price">$150 <small>USD</small></span></div>
-<div><span class="lbl">t-accent · Caveat Brush</span><span class="t-accent">¡Sin costo!</span></div>
+  <div><span class="lbl">display.xl · hero con foto</span><span class="t-dxl">Donde el desierto<br>se lanza al mar</span></div>
+  <div><span class="lbl">display.l · cifras</span><span class="t-dl">854 metros sobre el Pacífico</span></div>
+  <div><span class="lbl">display.m</span><span class="t-dm">Vive dos, paga uno</span></div>
+  <div><span class="lbl">h1 · páginas sin foto</span><span class="t-h1">Cómo llegar al parque</span></div>
+  <div><span class="lbl">h2 · sección</span><span class="t-h2">Los más reservados esta semana</span></div>
+  <div><span class="lbl">h3 · card</span><span class="t-h3">Sky Bike Récord Guinness</span></div>
+  <div><span class="lbl">lead</span><span class="t-bl">Te recogemos en tu hotel, manejas dos horas entre dunas y playa, y cierras con tequila frente al mar.</span></div>
+  <div><span class="lbl">body</span><span class="t-b">Tu lugar está apartado. Te esperamos el sábado 3 a las 10:00 AM; la recogida en Pueblo Bonito es a las 9:05.</span></div>
+  <div><span class="lbl">small</span><span class="t-bs">2 h · Desierto y playa · Guía bilingüe · Desde 8 años</span></div>
+  <div><span class="lbl">caption</span><span class="t-cap">Incluye $25 USD de entrada al parque</span></div>
+  <div><span class="lbl">overline</span><span class="t-ov">Elige tu aventura</span></div>
+  <div><span class="lbl">price · tabular</span><span class="t-price">$150 <small>USD por persona</small></span></div>
+  <div><span class="lbl">accent · Caveat Brush</span><span class="t-accent">¡Récord Guinness!</span></div>
 </div>
-<div class="tbl"><table><tr><th>Estilo</th><th>Celular</th><th>Tableta</th><th>Escritorio</th><th>Peso y ancho</th></tr>
-<tr><td>t-display-xl</td><td class="num">38</td><td class="num">48</td><td class="num">60 (hero del home: 66 a 72)</td><td>800 · wdth 105</td></tr>
-<tr><td>t-display-l</td><td class="num">38</td><td class="num">56</td><td class="num">76</td><td>900 · wdth 112</td></tr>
-<tr><td>t-display-m</td><td class="num">30</td><td class="num">40</td><td class="num">56</td><td>800 · wdth 105</td></tr>
-<tr><td>t-h1</td><td class="num">28</td><td class="num">36</td><td class="num">48</td><td>800 · wdth 105</td></tr>
-<tr><td>t-h2</td><td class="num">24</td><td class="num">30</td><td class="num">36</td><td>800</td></tr>
-<tr><td>t-h3</td><td class="num">18</td><td class="num">20</td><td class="num">24</td><td>700</td></tr>
-<tr><td>t-lead · t-body</td><td class="num">15</td><td class="num">17 · 16</td><td class="num">17</td><td>400</td></tr>
-<tr><td>t-small · t-overline</td><td class="num">13 · 11</td><td class="num">14 · 12</td><td class="num">14 · 12</td><td>400 · 700 +12% tracking</td></tr>
+<h3>Escala por dispositivo</h3>
+<p>Tres escalones: móvil (menos de 768 px), tablet (<code>md</code>, 768) y escritorio (<code>lg</code>, 1024). En móvil el espacio es oro: títulos compactos, texto de lectura de 15 px e interlineado cómodo.</p>
+<div class="tbl"><table>
+  <tr><th>Estilo</th><th>Móvil</th><th>Tablet</th><th>Escritorio</th><th>Peso · ancho · interlínea</th><th>Uso</th></tr>
+  <tr><td><code>t-display-xl</code></td><td class="num">38</td><td class="num">48</td><td class="num">60 (home 66 a 72)</td><td>800 · 105 · 1.04</td><td>Hero con foto o video. En el home, dos renglones fijos en escritorio: "Donde el desierto / se lanza al mar".</td></tr>
+  <tr><td><code>t-display-l</code></td><td class="num">38</td><td class="num">56</td><td class="num">76</td><td>900 · 112 · 1</td><td>Cifras protagonistas (854 m, récord).</td></tr>
+  <tr><td><code>t-display-m</code></td><td class="num">30</td><td class="num">40</td><td class="num">56</td><td>800 · 105 · 1.06</td><td>Títulos de bloque inmersivo (combos, Kids Club).</td></tr>
+  <tr><td><code>t-h1</code></td><td class="num">28</td><td class="num">36</td><td class="num">48</td><td>800 · 105 · 1.12</td><td>Título de páginas sin foto de portada, igual que Promociones y Cómo llegar.</td></tr>
+  <tr><td><code>t-h2</code></td><td class="num">24</td><td class="num">30</td><td class="num">36</td><td>800 · 100 · 1.15</td><td>Título de sección.</td></tr>
+  <tr><td><code>t-h3</code></td><td class="num">18</td><td class="num">20</td><td class="num">24</td><td>700 · 100 · 1.25</td><td>Título de card y subsección.</td></tr>
+  <tr><td><code>t-lead</code></td><td class="num">15</td><td class="num">17</td><td class="num">17</td><td>400 · 1.5</td><td>Entradilla bajo un título.</td></tr>
+  <tr><td><code>t-body</code></td><td class="num">15</td><td class="num">16</td><td class="num">17</td><td>400 · 1.55</td><td>Texto de lectura. El blog usa 17 con interlínea 1.7.</td></tr>
+  <tr><td><code>t-small</code></td><td class="num">13</td><td class="num">14</td><td class="num">14</td><td>400 · 1.45</td><td>Meta de cards, notas.</td></tr>
+  <tr><td><code>t-overline</code></td><td class="num">11</td><td class="num">12</td><td class="num">12</td><td>700 · tracking .12em · mayúsculas</td><td>Etiqueta sobre un título.</td></tr>
+  <tr><td><code>t-price</code></td><td class="num">22</td><td class="num">26</td><td class="num">28</td><td>900 · tabular</td><td>Precios.</td></tr>
+  <tr><td><code>t-accent</code></td><td colspan="3">Según el contexto</td><td>Caveat Brush 400 · rotado −3°</td><td>Acento de marca, nunca título.</td></tr>
 </table></div>
-<h2 id="espacio">6. Espaciado, radios y sombras</h2>
-<div class="tbl"><table><tr><th>Token</th><th>Valor</th><th>Uso</th></tr>
-<tr><td>Margen lateral</td><td class="num">22 px celular · 32 px tableta · contenedor 1240 px</td><td>Clase <code>wrap</code> en todas las páginas</td></tr>
-<tr><td>Escala de espaciado</td><td class="num">Múltiplos de 4</td><td>Secciones: 64 px celular, 96 px escritorio (<code>section-y</code>)</td></tr>
-<tr><td>Separación header y título</td><td class="num">48 · 72 px + barra de promoción</td><td>Clase <code>pt-cabecera</code></td></tr>
-<tr><td>radius-s / m / l / xl</td><td class="num">8 · 12 · 20 · 28 px</td><td>Chips y campos · botones · tarjetas · hojas y bloques grandes</td></tr>
-<tr><td>shadow-card</td><td><code>0 4px 16px rgba(28,35,31,.08)</code></td><td>Tarjetas en reposo</td></tr>
-<tr><td>shadow-float</td><td><code>0 12px 32px rgba(28,35,31,.16)</code></td><td>Hover, menús y resumen de reserva</td></tr>
-<tr><td>Vidrio</td><td>blanco 60% + blur 20 px + saturación 160%</td><td>Botones y tarjetas sobre foto (Kids Club, héroes)</td></tr>
-<tr><td>Movimiento</td><td><code>cubic-bezier(.22,1,.36,1)</code></td><td>Entradas, hojas y acordeones; respeta "reducir movimiento"</td></tr>
-</table></div>
-<h2 id="componentes">7. Componentes</h2><p>Todo el sitio se arma con estos componentes en Svelte 5. Un cambio en el componente se refleja en todas las páginas y en los dos idiomas.</p><div class="grid2"><div class="card"><h4>Header y mega menú</h4><p>Barra fija que se oculta al bajar y reaparece al subir, con mega menú de tours con imágenes, selector ES/EN y USD/MXN, y botón Reservar.</p></div><div class="card"><h4>Menú móvil</h4><p>Panel lateral en dos niveles (patrón Apple y Nike), con CTA 50/50 de Reservar y WhatsApp.</p></div><div class="card"><h4>Barra de promoción</h4><p>Promo vigente en el header; se pliega al hacer scroll.</p></div><div class="card"><h4>Dock y riel de contacto</h4><p>Píldora inferior en celular (Reservar, WhatsApp, Messenger, llamar) y riel lateral en escritorio. Se ocultan donde estorban.</p></div><div class="card"><h4>Hoja (bottom sheet)</h4><p>Ventana que en celular sube desde abajo con asa y cierre deslizando, y en escritorio es modal centrado.</p></div><div class="card"><h4>Tarjeta de tour</h4><p>Variantes: vertical, horizontal compacta en celular (listado), con imagen, precio o enlace propios. Botón Reservar directo a la reserva.</p></div><div class="card"><h4>¿Qué quieres reservar?</h4><p>Hoja que abren los Reservar generales: tours por categoría, abre filtrada según la página y en ficha de tour entra directo.</p></div><div class="card"><h4>Calendario</h4><p>Dos meses en escritorio y uno en celular, con días agotados y pocos lugares.</p></div><div class="card"><h4>Fila deslizable</h4><p>Carrusel con snap en celular y cuadrícula en escritorio, con degradado cuando hay más.</p></div><div class="card"><h4>Acordeón</h4><p>Preguntas con enlaces internos que respetan el idioma.</p></div><div class="card"><h4>Puntos</h4><p>Línea, ícono en círculo, título y texto: el mismo patrón en Seguridad, Cómo llegar y Kids Club.</p></div><div class="card"><h4>Visor de galería</h4><p>Visor a pantalla completa estilo Neucast, con miniaturas y teclado.</p></div><div class="card"><h4>Mapa de llegada</h4><p>Mapa satelital con zonas, ruta y hoja para abrir en Google Maps, Apple Maps o Waze.</p></div><div class="card"><h4>Tarjeta de guía</h4><p>Estilo atletas de Red Bull, en home, Nosotros y fichas.</p></div><div class="card"><h4>Tarjeta de nota</h4><p>Estilo Later, con categoría de color y tiempo de lectura.</p></div><div class="card"><h4>Formulario de contacto</h4><p>Validación en vivo, filtros de captura (solo letras, 10 dígitos), aviso de privacidad y página de gracias.</p></div><div class="card"><h4>Plantilla de contacto</h4><p>Contacto, Grupos y Partners con la misma estructura.</p></div><div class="card"><h4>Legal e índice móvil</h4><p>Documentos legales con pestañas y el botón "Ir a una sección" en celular.</p></div><div class="card"><h4>Comparador</h4><p>Columnas elegibles estilo Apple: 3 en escritorio y 2 en celular.</p></div><div class="card"><h4>Encabezado de página</h4><p>Título, texto y foto opcional, igual en todas las secciones internas.</p></div></div>
+<p>Los títulos llevan <code>text-wrap: balance</code> y tracking de −0.01em a −0.02em. Los títulos de páginas sin foto arrancan con el mismo aire bajo el header fijo (<code>pt-cabecera</code>: 112, 136 y 144 px más la barra de promociones si está abierta), así todas las páginas empiezan a la misma altura.</p>
+
+<h2 id="espacio">7. Espaciado y radios</h2>
+<p>Escala de 4, 8, 12, 16, 20, 24, 32, 40, 48 y 64. Márgenes de pantalla (<code>wrap</code>) de <strong>22</strong> en móvil, 32 en tablet y 48 en escritorio. Padding vertical de sección (<code>section-y</code>) de 44 en móvil, 64 en tablet y 96 en escritorio; separación entre bloques de 32, entre elementos de 12, padding de card de 16 a 20. Formularios: 8 entre etiqueta y campo, 16 entre campos, 10 entre campos en la misma fila. Área táctil mínima de 44. Contenedor de 1200 y 1400 (<code>wrap-wide</code>) para secciones a sangre.</p>
+<div class="spacing">
+  <div style="width:4px;height:4px"></div><div style="width:8px;height:8px"></div><div style="width:12px;height:12px"></div><div style="width:16px;height:16px">16</div><div style="width:20px;height:20px">20</div><div style="width:22px;height:22px;border-style:dashed">22</div><div style="width:24px;height:24px">24</div><div style="width:32px;height:32px">32</div><div style="width:40px;height:40px">40</div><div style="width:48px;height:48px">48</div><div style="width:64px;height:64px">64</div>
+</div>
+<div class="radii">
+  <div style="border-radius:6px">6 casilla</div><div style="border-radius:8px">8 miniatura</div><div style="border-radius:12px">12 campo</div><div style="border-radius:20px">20 card</div><div style="border-radius:28px">28 hoja modal</div><div style="border-radius:999px">999 botón chip dock</div>
+</div>
+<p>Sombras: card <code>0 4px 16px rgba(28,35,31,.08)</code>, flotante <code>0 12px 32px rgba(28,35,31,.16)</code>, vidrio <code>0 8px 32px rgba(0,0,0,.24)</code> con línea interior blanca al 35 %. Z: dropdown 10, sticky 20, dock y riel 30, hojas y ventanas 90 con su velo.</p>
+
+<h2 id="componentes">8. Componentes</h2>
+<p>Todos los componentes están renderizados con los valores reales de <code>src/app.css</code>. Los estados hover, presionado y foco se muestran forzados para poder compararlos; pasa el cursor sobre la columna "Normal" para verlos en vivo.</p>
 <h3>Botones</h3>
-<div class="demo"><button class="btn pri pill">Reservar</button><button class="btn sec pill">Ver detalle</button><button class="btn wa">WhatsApp</button><span class="chip2 on">Cuatrimotos (ATV)</span><span class="chip2">Sky Bike</span><span class="badge popular">Más popular</span><span class="badge guinness">Récord Guinness</span><span class="badge gratis">Sin costo</span></div>
-<h2 id="pantallas">8. Pantallas</h2><p>Capturas reales del prototipo en escritorio (1440 px) y celular (390 px). Cada pantalla compara lo que hay en producción contra lo que resuelve el rediseño.</p>
-<div class="pant"><h3>Home <code>/</code></h3><div class="par"><div><img src="assets/pantallas/desk-home.webp" alt="Home, escritorio" loading="lazy"></div><div class="m"><img src="assets/pantallas/mob-home.webp" alt="Home, celular" loading="lazy"></div></div>
-<div class="mejoras"><div><b>En producción</b><ul><li>Hero de YouTube que queda en negro en iOS</li><li>Sin precios ni botón de reservar</li><li>Tours destacados con contenido demo del tema</li><li>Banners con el texto dentro de la imagen</li></ul></div><div><b>En el rediseño</b><ul><li>Video propio en loop con buscador de reserva dentro del hero</li><li>Categorías con precio "desde" y ventana de detalle</li><li>Combos, ruta del día, guías, reseñas y preguntas</li><li>Todo en HTML, en dos idiomas</li></ul></div></div></div>
-<div class="pant"><h3>Listado de tours <code>/tours/</code></h3><div class="par"><div><img src="assets/pantallas/desk-tours.webp" alt="Listado de tours, escritorio" loading="lazy"></div><div class="m"><img src="assets/pantallas/mob-tours.webp" alt="Listado de tours, celular" loading="lazy"></div></div>
-<div class="mejoras"><div><b>En producción</b><ul><li>Precio regular y final sin contexto</li><li>Solo botón "Ver más"</li><li>Sin filtros</li></ul></div><div><b>En el rediseño</b><ul><li>Búsqueda, categorías visuales y filtros tipo Neucast</li><li>Cada botón de filtro abre solo su grupo</li><li>Tarjeta horizontal compacta en celular con Reservar directo</li></ul></div></div></div>
-<div class="pant"><h3>Filtros <code>/tours/</code></h3><div class="par"><div><img src="assets/pantallas/desk-tours-filtros.webp" alt="Filtros, escritorio" loading="lazy"></div><div class="m"><img src="assets/pantallas/mob-tours-filtros.webp" alt="Filtros, celular" loading="lazy"></div></div>
-<div class="mejoras"><div><b>En producción</b><ul><li>No existen</li></ul></div><div><b>En el rediseño</b><ul><li>Panel lateral en escritorio y hoja inferior en celular</li><li>Varios grupos abiertos a la vez, con conteo por opción</li><li>Restablecer y "Mostrar N" siempre visibles</li></ul></div></div></div>
-<div class="pant"><h3>Detalle de tour <code>/tours/sky-bike/</code></h3><div class="par"><div><img src="assets/pantallas/desk-detalle.webp" alt="Detalle de tour, escritorio" loading="lazy"></div><div class="m"><img src="assets/pantallas/mob-detalle.webp" alt="Detalle de tour, celular" loading="lazy"></div></div>
-<div class="mejoras"><div><b>En producción</b><ul><li>Pestañas con mucho texto y requisitos dispersos</li><li>Reserva con plugin dentro de la pestaña</li><li>Cargos extra que aparecen hasta el check-in</li></ul></div><div><b>En el rediseño</b><ul><li>Hero con fotos y video, pestañas fijas que siguen el scroll</li><li>Resumen, qué incluye, precio desglosado, tu día, requisitos, bueno saber, reseñas y preguntas</li><li>Tarjeta de reserva fija en escritorio y barra en celular</li></ul></div></div></div>
-<div class="pant"><h3>Precio transparente <code>/tours/migrino-atv/</code></h3><div class="par"><div><img src="assets/pantallas/desk-detalle-precio.webp" alt="Precio transparente, escritorio" loading="lazy"></div><div class="m"><img src="assets/pantallas/mob-detalle-precio.webp" alt="Precio transparente, celular" loading="lazy"></div></div>
-<div class="mejoras"><div><b>En producción</b><ul><li>Precio sin la entrada al parque</li><li>Extras sin precio a la vista</li></ul></div><div><b>En el rediseño</b><ul><li>Elige tu opción con precio de cada variante</li><li>Desglose con entrada al parque</li><li>"Puedes sumar" con los extras reales</li></ul></div></div></div>
-<div class="pant"><h3>Park Pass <code>/park-pass/</code></h3><div class="par"><div><img src="assets/pantallas/desk-parkpass.webp" alt="Park Pass, escritorio" loading="lazy"></div><div class="m"><img src="assets/pantallas/mob-parkpass.webp" alt="Park Pass, celular" loading="lazy"></div></div>
-<div class="mejoras"><div><b>En producción</b><ul><li>Página aparte con su propio diseño</li></ul></div><div><b>En el rediseño</b><ul><li>Misma plantilla del detalle de tour</li><li>Arma tu día, duraciones y preguntas propias</li><li>Sin transporte, como en producción</li></ul></div></div></div>
-<div class="pant"><h3>Comparador de combos <code>/combos/</code></h3><div class="par"><div><img src="assets/pantallas/desk-combos.webp" alt="Comparador de combos, escritorio" loading="lazy"></div><div class="m"><img src="assets/pantallas/mob-combos.webp" alt="Comparador de combos, celular" loading="lazy"></div></div>
-<div class="mejoras"><div><b>En producción</b><ul><li>Combos sueltos, sin forma de compararlos</li></ul></div><div><b>En el rediseño</b><ul><li>Comparador estilo Apple con columnas elegibles</li><li>Crece a 10 combos sin crecer la página</li><li>Barra fija con los combos elegidos</li></ul></div></div></div>
-<div class="pant"><h3>Promociones <code>/promociones/</code></h3><div class="par"><div><img src="assets/pantallas/desk-promociones.webp" alt="Promociones, escritorio" loading="lazy"></div><div class="m"><img src="assets/pantallas/mob-promociones.webp" alt="Promociones, celular" loading="lazy"></div></div>
-<div class="mejoras"><div><b>En producción</b><ul><li>Pósters PNG con el texto dentro de la imagen</li></ul></div><div><b>En el rediseño</b><ul><li>Foto del parque y promoción escrita en la página</li><li>Filtro por público y cupón tipo boleto que se copia</li><li>Reservar directo al tour de la promo</li></ul></div></div></div>
-<div class="pant"><h3>Para niños <code>/ninos/</code></h3><div class="par"><div><img src="assets/pantallas/desk-ninos.webp" alt="Para niños, escritorio" loading="lazy"></div><div class="m"><img src="assets/pantallas/mob-ninos.webp" alt="Para niños, celular" loading="lazy"></div></div>
-<div class="mejoras"><div><b>En producción</b><ul><li>Mezcla de niños y familias sin jerarquía</li></ul></div><div><b>En el rediseño</b><ul><li>Solo para ellos, video, en familia y como acompañantes</li><li>Kids Club inmersivo</li><li>¿Desde qué edad? interactivo</li></ul></div></div></div>
-<div class="pant"><h3>Kids Club <code>/ninos/#kids-club</code></h3><div class="par"><div><img src="assets/pantallas/desk-ninos-kidsclub.webp" alt="Kids Club, escritorio" loading="lazy"></div><div class="m"><img src="assets/pantallas/mob-ninos-kidsclub.webp" alt="Kids Club, celular" loading="lazy"></div></div>
-<div class="mejoras"><div><b>En producción</b><ul><li>Texto corrido al final de la página</li></ul></div><div><b>En el rediseño</b><ul><li>Foto del club a sangre con tarjeta de vidrio</li><li>Fotos de niños y actividades del club</li><li>Datos clave: edades, niñeras en RCP, cámaras, sin costo</li></ul></div></div></div>
-<div class="pant"><h3>¿Desde qué edad? <code>/ninos/#edades</code></h3><div class="par"><div><img src="assets/pantallas/desk-ninos-edades.webp" alt="¿Desde qué edad?, escritorio" loading="lazy"></div><div class="m"><img src="assets/pantallas/mob-ninos-edades.webp" alt="¿Desde qué edad?, celular" loading="lazy"></div></div>
-<div class="mejoras"><div><b>En producción</b><ul><li>Edades en párrafos por ficha</li></ul></div><div><b>En el rediseño</b><ul><li>Eliges la edad de tu hijo y ves qué puede vivir</li><li>Tarjetas bloqueadas con la edad mínima</li><li>Cada tarjeta lleva a su tour</li></ul></div></div></div>
-<div class="pant"><h3>Nosotros <code>/nosotros/</code></h3><div class="par"><div><img src="assets/pantallas/desk-nosotros.webp" alt="Nosotros, escritorio" loading="lazy"></div><div class="m"><img src="assets/pantallas/mob-nosotros.webp" alt="Nosotros, celular" loading="lazy"></div></div>
-<div class="mejoras"><div><b>En producción</b><ul><li>Placeholder del tema ("Paragliding Tours")</li></ul></div><div><b>En el rediseño</b><ul><li>Historia en capítulos con foto rasgada</li><li>Cifras, misión, visión y certificaciones</li><li>Guías estilo Red Bull</li></ul></div></div></div>
-<div class="pant"><h3>Guías <code>/nosotros/guias/</code></h3><div class="par"><div><img src="assets/pantallas/desk-guias.webp" alt="Guías, escritorio" loading="lazy"></div><div class="m"><img src="assets/pantallas/mob-guias.webp" alt="Guías, celular" loading="lazy"></div></div>
-<div class="mejoras"><div><b>En producción</b><ul><li>Nombres solo en reseñas</li></ul></div><div><b>En el rediseño</b><ul><li>Listado de guías y perfil de cada uno</li><li>Tours que guía y enlace a vacantes</li></ul></div></div></div>
-<div class="pant"><h3>Perfil de guía <code>/nosotros/guias/zetina/</code></h3><div class="par"><div><img src="assets/pantallas/desk-guia.webp" alt="Perfil de guía, escritorio" loading="lazy"></div><div class="m"><img src="assets/pantallas/mob-guia.webp" alt="Perfil de guía, celular" loading="lazy"></div></div>
-<div class="mejoras"><div><b>En producción</b><ul><li>No existe</li></ul></div><div><b>En el rediseño</b><ul><li>Hero con retrato, datos y cita</li><li>Tours que guía con Reservar</li></ul></div></div></div>
-<div class="pant"><h3>Galería <code>/galeria/</code></h3><div class="par"><div><img src="assets/pantallas/desk-galeria.webp" alt="Galería, escritorio" loading="lazy"></div><div class="m"><img src="assets/pantallas/mob-galeria.webp" alt="Galería, celular" loading="lazy"></div></div>
-<div class="mejoras"><div><b>En producción</b><ul><li>Página de fotos sin filtros</li></ul></div><div><b>En el rediseño</b><ul><li>#ViveCactus inmersivo con filtros por actividad</li><li>Visor a pantalla completa</li></ul></div></div></div>
-<div class="pant"><h3>Contacto <code>/contacto/</code></h3><div class="par"><div><img src="assets/pantallas/desk-contacto.webp" alt="Contacto, escritorio" loading="lazy"></div><div class="m"><img src="assets/pantallas/mob-contacto.webp" alt="Contacto, celular" loading="lazy"></div></div>
-<div class="mejoras"><div><b>En producción</b><ul><li>Dirección y correo falsos de Nueva York</li></ul></div><div><b>En el rediseño</b><ul><li>Datos reales a la izquierda y formulario a la derecha</li><li>Validación en vivo y aviso de privacidad</li></ul></div></div></div>
-<div class="pant"><h3>Gracias <code>/gracias/</code></h3><div class="par"><div><img src="assets/pantallas/desk-gracias.webp" alt="Gracias, escritorio" loading="lazy"></div><div class="m"><img src="assets/pantallas/mob-gracias.webp" alt="Gracias, celular" loading="lazy"></div></div>
-<div class="mejoras"><div><b>En producción</b><ul><li>No existe</li></ul></div><div><b>En el rediseño</b><ul><li>Foto a pantalla completa, confirmación y dos acciones</li><li>Título según el formulario enviado</li></ul></div></div></div>
-<div class="pant"><h3>Cómo llegar <code>/como-llegar/</code></h3><div class="par"><div><img src="assets/pantallas/desk-como-llegar.webp" alt="Cómo llegar, escritorio" loading="lazy"></div><div class="m"><img src="assets/pantallas/mob-como-llegar.webp" alt="Cómo llegar, celular" loading="lazy"></div></div>
-<div class="mejoras"><div><b>En producción</b><ul><li>Dirección en el footer</li></ul></div><div><b>En el rediseño</b><ul><li>Mapa satelital con ruta desde cada zona</li><li>Abrir en Google Maps, Apple Maps o Waze</li><li>Hoteles con recogida por zona</li></ul></div></div></div>
-<div class="pant"><h3>Seguridad <code>/seguridad/</code></h3><div class="par"><div><img src="assets/pantallas/desk-seguridad.webp" alt="Seguridad, escritorio" loading="lazy"></div><div class="m"><img src="assets/pantallas/mob-seguridad.webp" alt="Seguridad, celular" loading="lazy"></div></div>
-<div class="mejoras"><div><b>En producción</b><ul><li>Requisitos repetidos en cada ficha</li></ul></div><div><b>En el rediseño</b><ul><li>Tabla de requisitos por tour (edad, estatura, peso)</li><li>Bueno saber y preguntas de seguridad</li></ul></div></div></div>
-<div class="pant"><h3>Preguntas frecuentes <code>/preguntas-frecuentes/</code></h3><div class="par"><div><img src="assets/pantallas/desk-faq.webp" alt="Preguntas frecuentes, escritorio" loading="lazy"></div><div class="m"><img src="assets/pantallas/mob-faq.webp" alt="Preguntas frecuentes, celular" loading="lazy"></div></div>
-<div class="mejoras"><div><b>En producción</b><ul><li>5 preguntas en el home</li></ul></div><div><b>En el rediseño</b><ul><li>33 preguntas por tema, con búsqueda</li><li>Enlaces internos solo donde suman</li></ul></div></div></div>
-<div class="pant"><h3>Blog <code>/blog/</code></h3><div class="par"><div><img src="assets/pantallas/desk-blog.webp" alt="Blog, escritorio" loading="lazy"></div><div class="m"><img src="assets/pantallas/mob-blog.webp" alt="Blog, celular" loading="lazy"></div></div>
-<div class="mejoras"><div><b>En producción</b><ul><li>Fichas sin categoría ni tiempo de lectura</li><li>"Latest news" en inglés sin posts</li></ul></div><div><b>En el rediseño</b><ul><li>Portada estilo Later con destacada y categorías</li><li>Notas con índice, compartir y "Sigue leyendo"</li></ul></div></div></div>
-<div class="pant"><h3>Nota del blog <code>/blog/que-hacer-en-familia-en-los-cabos/</code></h3><div class="par"><div><img src="assets/pantallas/desk-nota.webp" alt="Nota del blog, escritorio" loading="lazy"></div><div class="m"><img src="assets/pantallas/mob-nota.webp" alt="Nota del blog, celular" loading="lazy"></div></div>
-<div class="mejoras"><div><b>En producción</b><ul><li>Diseño del tema</li></ul></div><div><b>En el rediseño</b><ul><li>Lectura cómoda con índice lateral</li><li>Ir a una sección en celular</li></ul></div></div></div>
-<div class="pant"><h3>Únete al equipo <code>/unete-al-equipo/</code></h3><div class="par"><div><img src="assets/pantallas/desk-vacantes.webp" alt="Únete al equipo, escritorio" loading="lazy"></div><div class="m"><img src="assets/pantallas/mob-vacantes.webp" alt="Únete al equipo, celular" loading="lazy"></div></div>
-<div class="mejoras"><div><b>En producción</b><ul><li>Vacantes en texto corrido</li></ul></div><div><b>En el rediseño</b><ul><li>Bolsa de trabajo tipo Computrabajo con búsqueda y áreas</li><li>Postulación en panel lateral</li></ul></div></div></div>
-<div class="pant"><h3>#SoyLocal <code>/soy-local/</code></h3><div class="par"><div><img src="assets/pantallas/desk-soylocal.webp" alt="#SoyLocal, escritorio" loading="lazy"></div><div class="m"><img src="assets/pantallas/mob-soylocal.webp" alt="#SoyLocal, celular" loading="lazy"></div></div>
-<div class="mejoras"><div><b>En producción</b><ul><li>6 fichas casi iguales a las normales</li></ul></div><div><b>En el rediseño</b><ul><li>Una página con beneficios, paquetes y pasos</li><li>Tarjeta de tour reutilizada con precio especial</li></ul></div></div></div>
-<div class="pant"><h3>Página 404 <code>/no-existe/</code></h3><div class="par"><div><img src="assets/pantallas/desk-error-404.webp" alt="Página 404, escritorio" loading="lazy"></div><div class="m"><img src="assets/pantallas/mob-error-404.webp" alt="Página 404, celular" loading="lazy"></div></div>
-<div class="mejoras"><div><b>En producción</b><ul><li>Página del tema</li></ul></div><div><b>En el rediseño</b><ul><li>Misma plantilla que gracias, con brújula animada</li><li>Ver tours e Ir al inicio</li></ul></div></div></div>
-<div class="pant"><h3>Versión en inglés <code>/en/</code></h3><div class="par"><div><img src="assets/pantallas/desk-en-home.webp" alt="Versión en inglés, escritorio" loading="lazy"></div><div class="m"><img src="assets/pantallas/mob-en-home.webp" alt="Versión en inglés, celular" loading="lazy"></div></div>
-<div class="mejoras"><div><b>En producción</b><ul><li>Otro dominio, sin hreflang</li></ul></div><div><b>En el rediseño</b><ul><li>Todo el sitio bajo /en/ con direcciones traducidas</li><li>Selector ES/EN a la misma página</li></ul></div></div></div>
-<h3>Solo en celular</h3><div class="solo-m"><figure><img src="assets/pantallas/mob-menu.webp" alt="Menú en dos niveles" loading="lazy"><figcaption>Menú en dos niveles</figcaption></figure><figure><img src="assets/pantallas/mob-elegir-tour.webp" alt="¿Qué quieres reservar?" loading="lazy"><figcaption>¿Qué quieres reservar?</figcaption></figure><figure><img src="assets/pantallas/mob-detalle-dia.webp" alt="Tu día, paso a paso" loading="lazy"><figcaption>Tu día, paso a paso</figcaption></figure><figure><img src="assets/pantallas/mob-home-categorias.webp" alt="Categorías con precio" loading="lazy"><figcaption>Categorías con precio</figcaption></figure></div>
-<h2 id="flujos">9. Flujos</h2>
-<h3>Reserva, como en una aerolínea</h3>
-<p>Página propia sin menú ni footer, con barra de pasos, resumen fijo en escritorio y barra inferior con el total en celular. Cada paso tiene su URL (<code>?paso=1</code> a <code>?paso=4</code>) y el botón atrás regresa un paso.</p>
-<div class="flujo"><figure><img src="assets/pantallas/mob-reserva-1.webp" alt="1. Fecha" loading="lazy"><figcaption><b>1. Fecha</b>Calendario con disponibilidad por día.</figcaption></figure><figure><img src="assets/pantallas/mob-reserva-1b.webp" alt="1. Horario y personas" loading="lazy"><figcaption><b>1. Horario y personas</b>Horarios con cupos, vehículo y personas.</figcaption></figure><figure><img src="assets/pantallas/mob-reserva-2.webp" alt="2. Extras" loading="lazy"><figcaption><b>2. Extras</b>Fotos por grupo, privado, protección y Kids Club.</figcaption></figure><figure><img src="assets/pantallas/mob-reserva-3.webp" alt="3. Tus datos" loading="lazy"><figcaption><b>3. Tus datos</b>Recogida en hotel o por tu cuenta, contacto.</figcaption></figure><figure><img src="assets/pantallas/mob-reserva-4.webp" alt="4. Revisa y paga" loading="lazy"><figcaption><b>4. Revisa y paga</b>Resumen con Editar, cupón y forma de pago.</figcaption></figure><figure><img src="assets/pantallas/mob-confirmacion.webp" alt="Confirmación" loading="lazy"><figcaption><b>Confirmación</b>Pase de abordar con QR y calendario.</figcaption></figure></div>
-<div class="par"><div><img src="assets/pantallas/desk-reserva-2.webp" alt="Extras de la reserva en escritorio" loading="lazy"></div><div class="m"><img src="assets/pantallas/mob-reserva-4b.webp" alt="Pago en celular" loading="lazy"></div></div>
-<ul>
-<li><strong>Extras reales de producción:</strong> paquete de fotos según el tamaño del grupo, tour privado, protección por vehículo con la nota de retención en tarjeta, y Kids Club sin costo.</li>
-<li><strong>En UTV</strong> la opción de vehículo y el número de pasajeros se mueven juntos, para no vender "2 adultos en 1 pasajero".</li>
-<li><strong>Park Pass</strong> no ofrece recogida en hotel, porque no incluye transporte.</li>
-<li><strong>Campos que solo aceptan lo que corresponde:</strong> tarjeta de 16 dígitos, vencimiento MM/AA válido, CVC de 3 (4 en Amex), nombres solo con letras.</li>
-<li><strong>Cupón</strong> NACIONAL30 aplicado al tour, con la línea de descuento en el resumen.</li>
-</ul>
-<h3>Botón Reservar</h3>
-<p>"Reservar" siempre lleva a reservar. En la tarjeta de tour entra directo a la reserva de ese tour. Los Reservar generales (header, dock, menú y riel) entran directo si la página ya es de un tour; si no, abren la hoja "¿Qué quieres reservar?", filtrada por la categoría de la página. "Ver tours" siempre lleva al listado.</p>
-<h3>Filtros del listado</h3>
-<p>El botón Filtros abre el panel con "Tipo de aventura" desplegado; Nivel, Edad, Duración y Precio abren el panel solo con su grupo. En celular el panel es una hoja inferior.</p>
-<h2 id="bilingue">10. Bilingüe y SEO</h2>
-<p>Un solo sitio en dos idiomas. El selector ES/EN lleva a la misma página en el otro idioma y la navegación se queda en el idioma elegido.</p>
-<div class="tbl"><table><tr><th>Español</th><th>Inglés</th></tr>
-<tr><td><code>/nosotros/</code> · <code>/nosotros/guias/</code></td><td><code>/en/about/</code> · <code>/en/about/guides/</code></td></tr>
-<tr><td><code>/reservar/&lt;tour&gt;/</code> · <code>/reservar/confirmacion/</code></td><td><code>/en/book/&lt;tour&gt;/</code> · <code>/en/book/confirmation/</code></td></tr>
-<tr><td><code>/preguntas-frecuentes/</code> · <code>/como-llegar/</code> · <code>/seguridad/</code></td><td><code>/en/faq/</code> · <code>/en/getting-here/</code> · <code>/en/safety/</code></td></tr>
-<tr><td><code>/ninos/</code> · <code>/promociones/</code> · <code>/galeria/</code></td><td><code>/en/kids/</code> · <code>/en/promotions/</code> · <code>/en/gallery/</code></td></tr>
-<tr><td><code>/contacto/</code> · <code>/grupos/</code> · <code>/unete-al-equipo/</code> · <code>/gracias/</code></td><td><code>/en/contact/</code> · <code>/en/groups/</code> · <code>/en/careers/</code> · <code>/en/thank-you/</code></td></tr>
-<tr><td><code>/terminos/</code> · <code>/privacidad/</code> · <code>/cancelaciones/</code></td><td><code>/en/terms/</code> · <code>/en/privacy/</code> · <code>/en/cancellations/</code></td></tr>
-<tr><td>Tours, combos, Park Pass, blog, #SoyLocal y partners</td><td>Mismo slug bajo <code>/en/</code> (nombres propios)</td></tr>
-</table></div>
-<ul>
-<li>Título, descripción, <code>lang</code>, <code>og:locale</code>, canonical y <code>hreflang</code> (es-MX, en-US, x-default) en cada página.</li>
-<li>Sitemap con cada página en los dos idiomas.</li>
-<li>Datos estructurados: TouristAttraction y LocalBusiness, Product con Offer y AggregateRating por tour, FAQPage, BreadcrumbList, BlogPosting y JobPosting.</li>
-<li>Un H1 por página, textos en HTML en lugar de imágenes y enlaces internos con sentido.</li>
-</ul>
-<h2 id="medicion">11. Medición</h2><p>El prototipo empuja eventos a <code>dataLayer</code> listos para GA4 y Google Tag Manager. La reserva usa los eventos estándar de ecommerce y cada paso es una página vista con su URL, así el embudo sale solo.</p><div class="tags"><code>begin_checkout</code><code>checkout_step</code><code>add_to_cart</code><code>add_extra</code><code>add_shipping_info</code><code>apply_coupon</code><code>add_payment_info</code><code>purchase</code><code>view_item</code><code>select_item</code><code>reservar_general</code><code>filter</code><code>comparador_cambio</code><code>promo_click</code><code>promo_cupon</code><code>ninos_edad</code><code>video_play</code><code>generate_lead</code><code>click_whatsapp</code><code>click_call</code><code>click_messenger</code><code>menu_categoria</code></div><p>Cada clic de WhatsApp registra desde dónde se hizo (dock, riel, resumen de reserva y en qué paso), para saber dónde surgen las dudas.</p>
-<h2 id="rendimiento">12. Rendimiento y accesibilidad</h2>
-<ul>
-<li>Sitio estático (SvelteKit con adapter-static): HTML listo desde el servidor, sin plugins de WordPress.</li>
-<li>Imágenes WebP en tres tamaños (480, 960 y 1600 px) con <code>srcset</code> y carga diferida; el video del hero es un MP4 propio de 12 segundos con póster.</li>
-<li>Una sola familia tipográfica variable y un set de íconos (Material Symbols).</li>
-<li>Contraste AA en textos, <code>alt</code> en todas las imágenes, foco visible, <code>aria</code> en pestañas, hojas y acordeones, y animaciones que respetan "reducir movimiento".</li>
-</ul>
-<h2 id="decisiones">13. Decisiones clave</h2>
-<div class="grid2">
-<div class="card"><h4>Reserva en página aparte, no modal</h4><p>Medición por URL de cada paso, botón atrás que regresa un paso, enlaces directos desde promociones y combos, y pantalla completa para calendario y pago.</p></div>
-<div class="card"><h4>WhatsApp discreto en la reserva</h4><p>En la barra superior era un punto de fuga a media compra. Se conserva como ayuda al final del resumen.</p></div>
-<div class="card"><h4>Promociones en código</h4><p>Google no lee texto dentro de imágenes. En código se indexan, se traducen y se editan sin diseñar un banner nuevo.</p></div>
-<div class="card"><h4>Park Pass con la plantilla del tour</h4><p>Un solo componente para todos los productos, con los textos propios del pase de día.</p></div>
-<div class="card"><h4>Confirmación en una pantalla</h4><p>Tranquilidad y comprobante (pase de abordar con QR). Lo demás llega en el correo de confirmación.</p></div>
-<div class="card"><h4>Comparador estilo Apple</h4><p>Columnas elegibles en lugar de una tabla que crece con cada combo nuevo.</p></div>
-<div class="card"><h4>Para niños, no familias</h4><p>Como en producción: la sección gira alrededor de qué puede hacer cada edad, con la familia como contexto.</p></div>
-<div class="card"><h4>Sin mayúsculas sostenidas</h4><p>Títulos más legibles y cercanos; el trazo de brocha queda para acentos de marca.</p></div>
+<div class="bwrap"><div class="bstates"><div class="h"></div><div class="h">Normal</div><div class="h">Hover</div><div class="h">Presionado</div><div class="h">Foco</div><div class="h">Deshabilitado</div><div class="r">Primario<small>solo Reservar</small></div><div><button class="btn pri" tabindex="-1">Reservar</button></div><div><button class="btn pri is-hover" tabindex="-1">Reservar</button></div><div><button class="btn pri is-active" tabindex="-1">Reservar</button></div><div><button class="btn pri is-focus" tabindex="-1">Reservar</button></div><div><button class="btn pri" disabled tabindex="-1">Reservar</button></div><div class="r">Secundario<small>contorno</small></div><div><button class="btn sec" tabindex="-1">Ver detalles</button></div><div><button class="btn sec is-hover" tabindex="-1">Ver detalles</button></div><div><button class="btn sec is-active" tabindex="-1">Ver detalles</button></div><div><button class="btn sec is-focus" tabindex="-1">Ver detalles</button></div><div><button class="btn sec" disabled tabindex="-1">Ver detalles</button></div><div class="r">Terciario<small>relleno arena</small></div><div><button class="btn ter" tabindex="-1">Filtros</button></div><div><button class="btn ter is-hover" tabindex="-1">Filtros</button></div><div><button class="btn ter is-active" tabindex="-1">Filtros</button></div><div><button class="btn ter is-focus" tabindex="-1">Filtros</button></div><div><button class="btn ter" disabled tabindex="-1">Filtros</button></div><div class="r">Enlace<small>texto + chevron</small></div><div><button class="btn link" tabindex="-1"><span class="tx">Ver todos</span><span class="msym">chevron_right</span></button></div><div><button class="btn link is-hover" tabindex="-1"><span class="tx">Ver todos</span><span class="msym">chevron_right</span></button></div><div><button class="btn link is-active" tabindex="-1"><span class="tx">Ver todos</span><span class="msym">chevron_right</span></button></div><div><button class="btn link is-focus" tabindex="-1"><span class="tx">Ver todos</span><span class="msym">chevron_right</span></button></div><div><button class="btn link" disabled tabindex="-1"><span class="tx">Ver todos</span><span class="msym">chevron_right</span></button></div><div class="r">WhatsApp<small>logo oficial</small></div><div><button class="btn wa" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</button></div><div><button class="btn wa is-hover" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</button></div><div><button class="btn wa is-active" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</button></div><div><button class="btn wa is-focus" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</button></div><div><button class="btn wa" disabled tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</button></div><div class="r">Icono<small>44 px</small></div><div><button class="btn ico" tabindex="-1"><span class="msym">share</span></button></div><div><button class="btn ico is-hover" tabindex="-1"><span class="msym">share</span></button></div><div><button class="btn ico is-active" tabindex="-1"><span class="msym">share</span></button></div><div><button class="btn ico is-focus" tabindex="-1"><span class="msym">share</span></button></div><div><button class="btn ico" disabled tabindex="-1"><span class="msym">share</span></button></div></div></div>
+<div class="bwrap"><div class="bstates dark"><div class="h"></div><div class="h">Normal</div><div class="h">Hover</div><div class="h">Presionado</div><div class="h">Foco</div><div class="h">Deshabilitado</div><div class="r">Vidrio<small>contorno sobre foto</small></div><div><button class="btn glass" tabindex="-1">Ver el Sky Bike</button></div><div><button class="btn glass is-hover" tabindex="-1">Ver el Sky Bike</button></div><div><button class="btn glass is-active" tabindex="-1">Ver el Sky Bike</button></div><div><button class="btn glass is-focus" tabindex="-1">Ver el Sky Bike</button></div><div><button class="btn glass" disabled tabindex="-1">Ver el Sky Bike</button></div></div></div>
+<div class="demo">
+  <button class="btn pri l">Reservar · $150 USD</button>
+  <button class="btn pri">Reservar</button>
+  <button class="btn pri s">Reservar</button>
+  <button class="btn sec s">Ver detalles</button>
+  <button class="paddle" aria-label="Anterior"><span class="msym">chevron_left</span></button>
+  <button class="paddle" aria-label="Siguiente"><span class="msym">chevron_right</span></button>
+  <button class="btn ico plain" aria-label="Llamar"><span class="msym">call</span></button>
 </div>
-<p>El detalle de estas decisiones está en <code>docs/13-decisiones-reserva-promos-parkpass.md</code>.</p>
-<h2 id="pendientes">14. Pendientes con el cliente</h2>
-<ul>
-<li>Datos y fotos definitivas de los guías; lista de hoteles con horario de recogida; uso del logo de SEMARNAT; precios de #SoyLocal.</li>
-<li>Correo de contacto de Luis (hay dos versiones) y coordenadas exactas del pin del parque.</li>
-<li>Edad mínima del caballo (6 o 7 años) y del acompañante en ATV y UTV (5 o 7 años); existencia de la bici eléctrica.</li>
-<li>Si la entrada al parque se cobra en línea o en el check-in, y si Park Pass se paga en línea o se aparta sin tarjeta.</li>
-<li>Combo Premium (qué actividades incluye), Combo 3x1 ("al precio de una" con precio mayor), Park Pass (Can-Am RC y seguro de colisión).</li>
-<li>Disponibilidad real por horario (en el prototipo es simulada) y pasarela de pago definitiva.</li>
-</ul>
-<h2 id="tecnico">15. Proyecto y entrega</h2>
-<div class="tbl"><table><tr><th>Tema</th><th>Detalle</th></tr>
-<tr><td>Stack</td><td>SvelteKit 2, Svelte 5 (runes), Tailwind CSS 4, TypeScript, adapter-static, Leaflet para el mapa</td></tr>
-<tr><td>Estructura</td><td><code>src/routes</code> páginas (las de <code>/en/</code> reutilizan las mismas) · <code>src/lib/components</code> componentes · <code>src/lib/data</code> contenido (tours, FAQ, guías, vacantes, blog, legales) · <code>src/lib/i18n.ts</code> y <code>rutas-en.ts</code> idioma · <code>docs/</code> documentación</td></tr>
-<tr><td>Idioma</td><td><code>t('Español', 'English')</code> para textos, <code>lhref('/ruta-en-español/')</code> para enlaces, <code>L()</code>, <code>Lx()</code> y <code>LPost()</code> para contenido con versión en inglés</td></tr>
-<tr><td>Correr</td><td><code>npm install</code> y <code>npm run dev</code>; compilación estática con <code>npm run build</code> (incluye este documento en <code>/diseno/</code>)</td></tr>
-<tr><td>Imágenes</td><td><code>node scripts/images.mjs</code> genera los tamaños y el manifiesto desde las fotos originales</td></tr>
-<tr><td>Vista previa</td><td>GitHub Pages; la página de prueba <code>/demo/error-500/</code> existe solo para revisar el error 500</td></tr>
+<div class="tbl"><table>
+  <tr><th>Variante</th><th>Cuándo se usa</th><th>Estados</th></tr>
+  <tr><td><strong>Primario</strong> <code>btn-pri</code></td><td>Únicamente para reservar: "Reservar", "Continuar" y "Pagar" dentro de la reserva. Naranja con texto noche.</td><td>Hover sun 400, sube 2 px y sombra de card. Presionado sun 600 y escala .97.</td></tr>
+  <tr><td><strong>Secundario</strong> <code>btn-sec</code></td><td>Cualquier acción que no es reservar sobre fondo claro: "Ver detalles", "Conocer al equipo", "Ver preguntas frecuentes".</td><td>Hover se rellena de noche con texto arena. Presionado escala .97.</td></tr>
+  <tr><td><strong>Terciario</strong> <code>btn-ter</code></td><td>Controles de apoyo: filtros, ordenar, acciones dentro de una hoja.</td><td>Hover sand 200.</td></tr>
+  <tr><td><strong>Enlace</strong></td><td>"Ver todos los tours", "Ver más": texto verde cactus 700 con <code>chevron_right</code>.</td><td>Hover subraya solo el texto; el chevron no se subraya.</td></tr>
+  <tr><td><strong>Vidrio</strong> <code>btn-glass</code></td><td>Todo botón de contorno sobre foto, video o fondo noche. Liquid glass tipo Apple: fondo blanco al 16 % con blur 16 y saturación 170, borde blanco al 60 %.</td><td>Hover fondo al 28 % y borde al 85 %.</td></tr>
+  <tr><td><strong>WhatsApp</strong> <code>btn-wa</code></td><td>Contacto por WhatsApp fuera de la reserva. Siempre verde y con el logo oficial.</td><td>Hover brillo 1.05 y sube 2 px.</td></tr>
+  <tr><td><strong>Icono</strong></td><td>Cerrar, compartir, llamar, flechas de carrusel (paddle estilo Apple de 36 px). Área táctil de 44 aunque el círculo sea menor.</td><td>Hover sand 200; paddle deshabilitado al 42 %.</td></tr>
 </table></div>
-<h2 id="referencias">16. Referencias</h2><p>Polaris Adventures, Airbnb Experiences, Red Bull, Neucast, Later y Apple (comparador). De cada una se tomó un patrón concreto: mega menú con imágenes, tarjetas de atleta para los guías, portada del blog, comparador de productos y visor de galería.</p><div class="solo-m"><figure><img style="border:1px solid var(--sand-200);border-radius:12px" src="assets/refs/03-polaris-home-hero-buscador.jpg" alt="Polaris: hero con buscador" loading="lazy"><figcaption>Polaris: hero con buscador</figcaption></figure><figure><img style="border:1px solid var(--sand-200);border-radius:12px" src="assets/refs/06-airbnb-experiencias-grid.jpg" alt="Airbnb: experiencias" loading="lazy"><figcaption>Airbnb: experiencias</figcaption></figure><figure><img style="border:1px solid var(--sand-200);border-radius:12px" src="assets/refs/09-redbull-atletas-cards.jpg" alt="Red Bull: atletas" loading="lazy"><figcaption>Red Bull: atletas</figcaption></figure><figure><img style="border:1px solid var(--sand-200);border-radius:12px" src="assets/refs/14-neucast-megamenu-imagenes.jpg" alt="Neucast: mega menú" loading="lazy"><figcaption>Neucast: mega menú</figcaption></figure></div>
+<p><strong>Tamaños:</strong> L 56 px (16 px de texto), M 48 px (14 px), S 40 px (13 px) para tarjetas, filtros y el Reservar del header. En móvil todos los botones de sección van en L; en escritorio todos en M. Todos son píldora (radio 999). <strong>Foco:</strong> contorno azul de 3 px al 50 % con 2 px de separación, solo con teclado (<code>:focus-visible</code>). <strong>Deshabilitado:</strong> opacidad 45 % y sin interacción. <strong>Cargando:</strong> spinner a la izquierda y el texto se queda.</p>
+<div class="grid2">
+  <div class="card"><h4>Ancho completo en móvil</h4><p>Todo CTA ocupa el ancho de la pantalla menos el gutter. Dos CTAs se parten 50/50 en la misma fila, como "Reservar Sky Bike" y "Ver el Sky Bike" en el hero.</p></div>
+  <div class="card"><h4>Chevrons, nunca flechas</h4><p>Material Symbols <code>chevron_right</code>, <code>chevron_left</code> y <code>expand_more</code>. Nunca "→" ni <code>arrow_forward</code>. En hover solo se subraya el texto.</p></div>
+</div>
+<h3>Chips, pestañas y badges</h3>
+<p>Chip de 36 px, radio píldora, 13 px semibold. <strong>Elegido:</strong> relleno naranja claro (sun 200), contorno naranja de marca (sun 500) y texto noche. Sin elegir: arena 100, hover arena 200. Las filas de chips se deslizan con el dedo y se desvanecen solo a la derecha mientras haya más; en escritorio suman paddles.</p>
+<div class="demo">
+  <div class="chiprow"><span class="chip on">Todos</span><span class="chip">Sky Bike</span><span class="chip">ATV</span><span class="chip">UTV</span><span class="chip">Camellos</span><span class="chip">Caballos</span><span class="chip">Combos</span><span class="chip">Park Pass</span><span class="chip">Niños</span><span class="chip">Balandra</span></div>
+</div>
+<div class="demo">
+  <span class="chip">Normal</span><span class="chip is-hover">Hover</span><span class="chip on">Elegido</span>
+  <span class="seg" role="group" aria-label="Idioma"><span class="on">ES</span><span>EN</span></span>
+  <span class="seg" role="group" aria-label="Moneda"><span class="on">USD</span><span>MXN</span></span>
+</div>
+<div class="demo">
+  <span class="badge guinness">★ Récord Guinness</span><span class="badge popular">Más popular</span><span class="badge familiar">Familiar</span><span class="badge extremo">Extremo</span><span class="badge nuevo">Nuevo</span>
+</div>
+<div class="demo">
+  <span class="time">9:00 AM<small>8 lugares</small></span><span class="time on">10:00 AM<small>3 lugares</small></span><span class="time off">12:00 PM<small>agotado</small></span><span class="time">1:00 PM<small>12 lugares</small></span>
+  <span class="amen">Transporte incluido</span><span class="amen">Guía bilingüe</span><span class="amen no">Celulares en el tour</span>
+</div>
+<p>El control segmentado (idioma y moneda) es estilo iOS: pista arena y un indicador blanco que se desliza. Las opciones elegidas en tarjetas grandes (vehículo, duración del Park Pass) siguen la misma regla que el chip: borde sun 500 y fondo sun 200.</p>
+
+<h3>Formularios</h3>
+<div class="formdemo">
+  <div class="campo"><label for="d1">Nombre <span class="req">*</span></label><input id="d1" class="control" placeholder="Tu nombre y apellido" value="Sarah Miller"></div>
+  <div class="campo"><label for="d2">Teléfono <span class="req">*</span></label><input id="d2" class="control is-focus" inputmode="numeric" placeholder="10 dígitos" value="6241234"></div>
+  <div class="campo invalido"><label for="d3">Correo <span class="req">*</span></label><input id="d3" class="control" value="sarah@gmail" aria-invalid="true"><p class="campo-error">Revisa tu correo, parece incompleto.</p></div>
+  <div class="campo"><label for="d4">Empresa <span class="opcional">(opcional)</span></label><input id="d4" class="control" placeholder="Nombre de tu empresa"><p class="campo-ayuda">Solo si viajan como grupo corporativo.</p></div>
+  <div class="campo"><label for="d5">Hotel</label><input id="d5" class="control" value="Llego por mi cuenta" disabled></div>
+  <div class="campo" style="align-content:center"><label class="check-fila"><input type="checkbox" class="check" checked> Acepto los términos y la política de cancelación</label><label class="check-fila"><input type="checkbox" class="check"> Quiero recibir promociones</label></div>
+</div>
+<ul>
+  <li><strong>Anatomía:</strong> etiqueta arriba (14 px semibold), campo de 48 px mínimo con borde sand 300 y radio 12, texto de 16 px para que iOS no haga zoom, placeholder de ejemplo en gris suave. Obligatorio con asterisco rojo; opcional dicho en texto.</li>
+  <li><strong>Estados:</strong> hover oscurece el borde; foco en naranja con halo de 3 px al 20 %; error con borde #C0362C, halo rojo y mensaje debajo en 13.5 px; deshabilitado con fondo arena 50 y texto dune 500.</li>
+  <li><strong>Validación al salir del campo</strong> (on blur), nunca mientras la persona escribe. Al intentar enviar se validan todos y se lleva el foco al primer error.</li>
+  <li><strong>Filtros de escritura:</strong> nombres y titular de tarjeta solo aceptan letras; teléfono, tarjeta, vencimiento y CVC solo dígitos, con formato automático (espacios en la tarjeta, MM/AA). El cupón solo letras y números, en mayúsculas.</li>
+  <li><strong>Casilla:</strong> 22 px, radio 6, borde sand 300; marcada en verde cactus 700 con palomita blanca. El texto de la casilla es parte del área táctil.</li>
+  <li><strong>Mensajes de error</strong> en positivo y con la solución: "Revisa el mes y el año de vencimiento", no "Fecha inválida".</li>
+</ul>
+
+<h3>Overlays, hojas y ventanas</h3>
+<div class="sheets">
+  <figure style="margin:0"><div class="phone" style="background-image:url(assets/skybike.jpg)"><div class="veil"></div><div class="sheet"><span class="asa"></span><div class="hd"><div><b>¿Qué quieres reservar?</b><small>Elige tu aventura y reserva en unos pasos.</small></div><span class="x"><span class="msym">close</span></span></div><div class="chiprow" style="margin-top:12px"><span class="chip on">Todos</span><span class="chip">Sky Bike</span><span class="chip">ATV</span><span class="chip">UTV</span><span class="chip">Camellos</span></div><ul><li><img src="assets/skybike.jpg" alt=""><span>Sky Bike<small>854 m sobre el Pacífico</small></span><span class="msym">chevron_right</span></li><li><img src="assets/atv.jpg" alt=""><span>Migriño ATV<small>Desierto y playa</small></span><span class="msym">chevron_right</span></li></ul></div></div><figcaption class="t-cap" style="margin-top:8px">Móvil: todo modal es hoja inferior. Asa centrada, 24 px de aire bajo el asa, se cierra deslizando hacia abajo, con Esc o tocando el velo.</figcaption></figure>
+  <figure style="margin:0"><div class="phone" style="background-image:url(assets/dunes.jpg)"><div class="veil"></div><div class="side"><a href="#componentes">Tours<span class="msym">chevron_right</span></a><a href="#componentes">Park Pass<span class="msym">chevron_right</span></a><a href="#componentes">Para niños<span class="msym">chevron_right</span></a><a href="#componentes">Nosotros<span class="msym">chevron_right</span></a><a href="#componentes">Ayuda<span class="msym">chevron_right</span></a><span class="btn pri">Reservar</span></div></div><figcaption class="t-cap" style="margin-top:8px">El menú es el único panel lateral. Dos niveles (raíz y detalle de tours), patrón Apple y Nike.</figcaption></figure>
+  <figure style="margin:0"><div class="phone wide" style="background-image:url(assets/canam.jpg)"><div class="veil"></div><div class="modal"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px"><b style="font-size:15px">¿Qué quieres reservar?</b><span class="x" style="width:28px;height:28px;border-radius:999px;background:var(--sand-100);display:grid;place-items:center"><span class="msym" style="font-size:16px">close</span></span></div><p class="t-cap" style="margin:6px 0 0">Ventana centrada de 480 a 600 px</p></div></div><figcaption class="t-cap" style="margin-top:8px">Escritorio: ventana centrada con radio 28, o panel lateral para filtros (patrón Neucast).</figcaption></figure>
+</div>
+<ul>
+  <li><strong>Velo:</strong> <code>rgba(20,19,17,.4)</code> con <code>backdrop-filter: blur(10px)</code>. Ningún overlay sin fondo difuminado.</li>
+  <li><strong>Hoja:</strong> radio 28 arriba, alto máximo 85 % de la pantalla, asa de 36 × 5 px en sand 300 a 7 px del borde, título a 36 px del borde (24 px bajo el asa), botón cerrar de 36 px en arena 100. Entra en 340 ms con <code>cubicOut</code>; el scroll del fondo se bloquea.</li>
+  <li><strong>Cuándo:</strong> "¿Qué quieres reservar?", filtros, detalle del precio en la reserva, categorías del home, visor de galería. El menú es panel lateral; nada más lo es en móvil.</li>
+</ul>
+
+<h3>Cards</h3>
+<p>Regla general: en una fila, todas las cards miden lo mismo. El subtítulo reserva siempre dos renglones y el espacio sobrante se reparte arriba y abajo de las estrellas. Toda la card es clicable (enlace expandido) y el botón Reservar va directo a la reserva de ese tour.</p>
+<div class="eqrow">
+  <div class="tcard">
+    <div class="img" style="background-image:url(assets/skybike.jpg)"><span class="badge guinness" style="align-self:flex-start">★ Récord Guinness</span><span class="dur"><span class="msym" style="font-size:14px">schedule</span> 2 h</span></div>
+    <div class="body">
+      <h5>Sky Bike</h5>
+      <span class="meta">Pedalea 854 m sobre el Pacífico · Desde 8 años</span>
+      <div class="am"><span class="amen">Transporte</span><span class="amen">Guía bilingüe</span><span class="amen">Equipo</span><span class="amen">Tequila</span></div>
+      <div class="rate"><b>★★★★★</b> 4.9 (312)</div>
+      <div class="foot"><div><span class="lbl">Desde</span><span class="t-price">$150 <small>USD</small></span><span class="note">por persona, entrada incluida</span></div><button class="btn pri s">Reservar</button></div>
+    </div>
+  </div>
+  <div class="tcard">
+    <div class="img" style="background-image:url(assets/camel.jpg)"><span class="badge familiar" style="align-self:flex-start">Familiar</span><span class="dur"><span class="msym" style="font-size:14px">schedule</span> 2 h</span></div>
+    <div class="body">
+      <h5>Paseo en camello</h5>
+      <span class="meta">Playa · Desde 5 años</span>
+      <div class="am"><span class="amen">Transporte</span><span class="amen">Guía bilingüe</span></div>
+      <div class="rate"><b>★★★★★</b> 4.9 (680)</div>
+      <div class="foot"><div><span class="lbl">Desde</span><span class="t-price">$150 <small>USD</small></span><span class="note">por persona, entrada incluida</span></div><button class="btn pri s">Reservar</button></div>
+    </div>
+  </div>
+</div>
+<p class="t-cap" style="margin:8px 0 20px">Tarjeta vertical: foto 16:10 con degradado, badge arriba a la izquierda y duración en vidrio oscuro abajo a la derecha. Las dos miden lo mismo aunque la segunda tenga menos contenido. Precios con entrada incluida, de producción.</p>
+<div class="mocks">
+  <div class="mock" style="display:flex;flex-direction:column;gap:10px">
+    <div class="t-ov">Variante lista, solo en móvil</div>
+    <div class="lcard"><div class="ph" style="background-image:url(assets/atv.jpg)"><span class="badge popular">Más popular</span></div><div class="bd"><h5>Migriño ATV</h5><div class="mt"><span><span class="msym">schedule</span> 2 h</span><span><span class="msym">person</span> 16+ años</span></div><div class="rate" style="font-size:12px"><b style="color:var(--rating)">★★★★★</b> 4.8</div><div class="ft"><div><small class="t-cap">Desde</small><br><b>$150</b></div><span class="btn pri">Reservar</span></div></div></div>
+    <div class="lcard"><div class="ph" style="background-image:url(assets/horse.jpg)"></div><div class="bd"><h5>Paseo a caballo</h5><div class="mt"><span><span class="msym">schedule</span> 2 h</span><span><span class="msym">person</span> 6+ años</span></div><div class="rate" style="font-size:12px"><b style="color:var(--rating)">★★★★★</b> 4.8</div><div class="ft"><div><small class="t-cap">Desde</small><br><b>$150</b></div><span class="btn pri">Reservar</span></div></div></div>
+    <p class="t-cap" style="margin:0">Horizontal y compacta (foto al 38 %) para ver más tours por pantalla en el listado. De 640 px en adelante vuelve la vertical.</p>
+  </div>
+  <div class="mock">
+    <div class="gcard"><div class="ph" style="background-image:url(assets/skybike.jpg)"></div><span class="av" style="background-image:url(assets/guia-yohari.webp)"></span><div class="bd"><small>Sky Bike</small><b>Yohari</b><span>6 años en Cactus · Español e inglés</span></div></div>
+    <p class="t-cap" style="margin:10px 0 0">Guía estilo atleta de Red Bull: foto de acción arriba, retrato circular encimado con aro blanco, actividad, nombre y datos centrados. Una sola card para home, Nosotros y guías.</p>
+  </div>
+  <div class="mock">
+    <div class="pcard"><div class="im"><div style="background-image:url(assets/whale.jpg)"></div></div><p class="mt">Los Cabos <i>· 6 min de lectura</i></p><h5><span>Temporada de ballenas en Los Cabos: cuándo y dónde verlas</span></h5><p class="by">Cactus Tours · 12 sep 2026</p></div>
+    <p class="t-cap" style="margin:10px 0 0">Nota estilo Later: sombra sólida del color de la categoría, meta, título y autor. En hover el subrayado recorre el título renglón por renglón y el texto se pone verde.</p>
+  </div>
+  <div class="mock">
+    <div class="herom" style="background-image:url(assets/hero-poster.jpg)">
+      <video src="assets/hero-16x9-12s.mp4" poster="assets/hero-poster.jpg" muted autoplay loop playsinline></video>
+      <div class="ov">Migriño · Los Cabos</div>
+      <div class="ttl">Donde el desierto se lanza al mar</div>
+      <div class="sub">Sky Bike Récord Guinness, ATV, Can-Am, camellos y caballos. Un solo parque a 45 min de Cabo.</div>
+      <div class="row"><span class="btn pri">Ver tours</span><span class="btn glass">Ver el Sky Bike</span></div>
+      <div class="ratings"><span class="rb">G <b>★★★★★</b> 4.8</span><span class="rb">Tripadvisor <b>★★★★★</b> 4.7</span></div>
+    </div>
+    <p class="t-cap" style="margin:8px 0 0">Hero con video: título grande sin mayúsculas, dos CTAs 50/50 en móvil, el secundario en vidrio.</p>
+  </div>
+  <div class="mock">
+    <div class="t-ov" style="margin-bottom:8px">Precio claro</div>
+    <div class="price">
+      <div class="row"><span>Sky Bike · adulto</span><span>$125</span></div>
+      <div class="row"><span>Entrada al parque</span><span>$25</span></div>
+      <div class="row"><span>Niño (5 a 11 años)</span><span>$62.50 + $25</span></div>
+      <div class="row tot"><span>Total por adulto</span><span>$150 USD</span></div>
+      <div class="prom"><span>✓ Reembolso con 48 h de anticipación, según la política</span><span>✓ Nada más que pagar al llegar</span><span>✓ Extras opcionales, nunca marcados</span></div>
+    </div>
+    <p class="t-cap" style="margin:8px 0 0">El desglose vive en la ficha, en el paso 1 y en el resumen. Es la respuesta a las reseñas negativas por cargos sorpresa.</p>
+  </div>
+  <div class="mock" style="display:flex;flex-direction:column;gap:12px">
+    <div class="stepper"><span class="done">1 Fecha y personas</span><span class="on">2 Extras</span><span>3 Tus datos</span><span>4 Revisa y paga</span></div>
+    <div class="cal"><div class="on"><small>sáb</small>26</div><div><small>dom</small>27</div><div><small>lun</small>28</div><div><small>mar</small>29</div><div><small>mié</small>30</div><div><small>jue</small>1</div></div>
+    <div class="counter"><div>Adultos<small>desde 12 años</small></div><div class="c"><i>−</i>2<i>+</i></div></div>
+    <div class="counter"><div>Niños<small>5 a 11 años</small></div><div class="c"><i>−</i>1<i>+</i></div></div>
+    <div class="sticky"><div class="p"><small>3 personas · sáb 26 · 10:00 AM</small><b>$362.50 USD</b></div><span class="btn pri">Continuar</span></div>
+  </div>
+  <div class="mock">
+    <div class="t-ov" style="margin-bottom:8px">Comparador de combos</div>
+    <table class="cmp">
+      <tr><th></th><th>2x1<span class="pr">$150</span></th><th class="best">3x1<span class="pr">$200</span></th><th>Premium<span class="pr">$200</span></th></tr>
+      <tr><td>Aventuras</td><td>2</td><td class="best">3</td><td>2</td></tr>
+      <tr><td>Can-Am X3</td><td class="nok"><span class="msym" style="font-size:18px">remove</span></td><td class="best nok"><span class="msym" style="font-size:18px">remove</span></td><td class="ok"><span class="msym fill" style="font-size:18px">check_circle</span></td></tr>
+      <tr><td>Transporte</td><td class="ok"><span class="msym fill" style="font-size:18px">check_circle</span></td><td class="best ok"><span class="msym fill" style="font-size:18px">check_circle</span></td><td class="ok"><span class="msym fill" style="font-size:18px">check_circle</span></td></tr>
+      <tr><td>Duración</td><td>2 h</td><td class="best">3 h</td><td>2 h</td></tr>
+    </table>
+    <p class="t-cap" style="margin:8px 0 0">Comparador estilo Apple: columnas por combo, lo que incluye cada uno con el mismo icono, "más elegido" con tinte. Precios de producción con entrada incluida.</p>
+  </div>
+  <div class="mock" style="display:flex;flex-direction:column;gap:10px;justify-content:flex-end;background:var(--sand-50)">
+    <div class="dock"><span class="btn pri">Reservar</span><a href="#componentes" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><use href="#i-wa"/></svg></a><a href="#componentes" aria-label="Messenger"><svg viewBox="0 0 24 24"><use href="#i-ms"/></svg></a><a href="#componentes" aria-label="Llamar"><span class="msym">call</span></a></div>
+    <p class="t-cap" style="margin:0">Dock móvil: píldora blanca sólida que aparece después del hero y se esconde en el footer. Reservar es la única acción naranja; WhatsApp, Messenger y Llamar van en un solo tono. En escritorio, las mismas acciones en un riel vertical a la derecha con etiqueta al pasar el cursor.</p>
+  </div>
+  <div class="mock dark" style="display:flex;flex-direction:column;gap:12px">
+    <div class="t-ov" style="color:var(--sand-300)">Sección récord · fondo noche con textura topográfica</div>
+    <div class="stat"><div><b>854</b><small>metros sobre el Pacífico</small></div><div><b>18</b><small>años en Migriño</small></div><div><b>3M</b><small>visitantes</small></div></div>
+    <div class="t-bs" style="color:var(--sand-300)">La cifra se cuenta al entrar en pantalla, una sola vez. Con reducir movimiento, aparece fija.</div>
+    <span class="btn pri" style="align-self:flex-start">Reservar Sky Bike</span>
+  </div>
+  <div class="mock">
+    <div class="t-ov" style="margin-bottom:8px">Bento de categorías</div>
+    <div class="bento">
+      <div class="big" style="background-image:url(assets/parkpass.jpg)"><span><small>Todo incluido</small>Park Pass</span></div>
+      <div style="background-image:url(assets/skybike.jpg)"><span><small>Guinness</small>Sky Bike</span></div>
+      <div style="background-image:url(assets/canam.jpg)"><span><small>Extremo</small>UTV</span></div>
+      <div style="background-image:url(assets/atv.jpg)"><span>ATV</span></div>
+      <div style="background-image:url(assets/camel.jpg)"><span>Camellos</span></div>
+      <div style="background-image:url(assets/kids.jpg)"><span>Niños</span></div>
+    </div>
+  </div>
+  <div class="mock">
+    <div class="torn" style="background-image:url(assets/sbs.jpg)"><div class="cap"><span>Somos Cactus</span>18 años entre el desierto y el mar</div></div>
+    <p class="t-cap" style="margin:8px 0 0">Bloque con borde rasgado hecho con <code>mask-image</code>: reemplaza los PNG recortados del sitio actual y funciona con cualquier foto.</p>
+  </div>
+</div>
+<p>Estados que se diseñan como variantes, no como pantallas: skeleton de cards, vacío de filtros con un botón para limpiarlos, error de pago con reintento y la selección guardada, horario agotado tachado, día sin disponibilidad en el calendario, toast oscuro con blur. Las notas al pie y avisos (*) van como párrafo a todo el ancho que empieza con asterisco, nunca como letra chiquita flotando junto a un precio.</p>
+
+<h2 id="foto">9. Fotografía e iconos</h2>
+<ul>
+  <li><strong>Fotografía:</strong> luz de tarde, cielo azul, arena y polvo en movimiento, gente de espaldas o de perfil sonriendo, encuadre bajo para los vehículos, el horizonte del Pacífico siempre presente. Texto encima solo con degradado a noche y sombra suave de texto. WebP en tres tamaños (480, 960 y 1600), nada arriba de 250 KB en card ni 600 KB en hero.</li>
+  <li><strong>Promociones:</strong> una foto horizontal del parque y el texto en HTML encima o al lado. Nunca pósters con el texto pintado.</li>
+  <li><strong>Iconos de UI:</strong> Material Symbols Rounded, un solo set. Peso 400 por defecto (500 en controles chicos como cerrar), tamaño óptico igual al tamaño en px (20 a 48). Contorno para acciones y navegación; relleno (<code>FILL 1</code>) solo para iconos de estado, como el <code>check_circle</code> verde de "incluido" o la estrella de rating.</li>
+  <li><strong>Un solo tono:</strong> los iconos van en noche o dune 500, nunca de colores ni dentro de círculos de colores. El único icono a color es el check de "incluido" en verde. Los círculos de fondo, cuando existen, son arena 100.</li>
+  <li><strong>Chevrons:</strong> <code>chevron_right</code> para avanzar o abrir, <code>chevron_left</code> para regresar, <code>expand_more</code> para acordeones y selects. Nunca flecha con palito.</li>
+  <li><strong>Logos oficiales:</strong> WhatsApp, Messenger, Google, Apple Maps, Waze, Visa, Mastercard, Amex y PayPal se usan con su logo oficial, sin redibujar ni recolorear (WhatsApp y Messenger pueden ir en un solo tono dentro del dock y del riel).</li>
+  <li><strong>Sellos:</strong> Guinness World Records, Tripadvisor Travelers' Choice, Google, SEMARNAT PIMVS, FCCA. Monocromos en footer y barra de confianza, a color en Nosotros.</li>
+</ul>
+<h3>Material Symbols Rounded</h3>
+<div class="msrow">
+  <figure><span class="msym">chevron_right</span>chevron_right</figure>
+  <figure><span class="msym">expand_more</span>expand_more</figure>
+  <figure><span class="msym">close</span>close</figure>
+  <figure><span class="msym">schedule</span>schedule</figure>
+  <figure><span class="msym">person</span>person</figure>
+  <figure><span class="msym">event_available</span>event_available</figure>
+  <figure><span class="msym">airport_shuttle</span>airport_shuttle</figure>
+  <figure><span class="msym">call</span>call</figure>
+  <figure><span class="msym">tune</span>tune</figure>
+  <figure><span class="msym">share</span>share</figure>
+  <figure><span class="msym fill" style="color:var(--cactus-600)">check_circle</span>check_circle (relleno)</figure>
+  <figure><span class="msym fill" style="color:var(--rating)">star</span>star (relleno)</figure>
+</div>
+<h3>Logos oficiales</h3>
+<div class="logos">
+  <figure><span class="lg"><svg viewBox="0 0 24 24" style="fill:#25D366"><use href="#i-wa"/></svg></span>WhatsApp</figure>
+  <figure><span class="lg"><svg viewBox="0 0 24 24" style="fill:#0866FF"><use href="#i-ms"/></svg></span>Messenger</figure>
+  <figure><span class="lg"><svg viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.5 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.3l7.9 6.1C12.4 13.7 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.7 6c4.5-4.2 6.9-10.3 6.9-17.7z"/><path fill="#FBBC05" d="M10.5 28.6A14.5 14.5 0 0 1 9.5 24c0-1.6.3-3.1.8-4.6l-7.9-6.1A24 24 0 0 0 0 24c0 3.9.9 7.5 2.6 10.7l7.9-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.7-6c-2.1 1.4-4.9 2.3-8.2 2.3-6.3 0-11.6-4.2-13.5-10l-7.9 6.1C6.5 42.6 14.6 48 24 48z"/></svg></span>Google</figure>
+  <figure><span class="lg"><img src="assets/logos/google-maps.svg" alt=""></span>Google Maps</figure>
+  <figure><span class="lg"><img src="assets/logos/apple-maps.png" alt=""></span>Apple Maps</figure>
+  <figure><span class="lg"><img src="assets/logos/waze.svg" alt=""></span>Waze</figure>
+  <figure><span class="lg"><img src="assets/logos/visa.svg" alt=""></span>Visa</figure>
+  <figure><span class="lg"><img src="assets/logos/mastercard.svg" alt=""></span>Mastercard</figure>
+  <figure><span class="lg"><img src="assets/logos/amex.svg" alt=""></span>Amex</figure>
+  <figure><span class="lg"><img src="assets/logos/paypal.svg" alt=""></span>PayPal</figure>
+</div>
+<h3>Fotos reales del parque</h3>
+<p>Material de producción para diseñar; el banco completo está en <code>research/scrape/media/images/</code>.</p>
+<div class="photos">
+  <figure><img src="assets/skybike.jpg" alt=""><figcaption>Sky Bike sobre el Pacífico. Hero de ficha y card.</figcaption></figure>
+  <figure><img src="assets/atv.jpg" alt=""><figcaption>ATV en playa. Card de Migriño ATV.</figcaption></figure>
+  <figure><img src="assets/dunes.jpg" alt=""><figcaption>Dunas. Beach & Dunes ATV.</figcaption></figure>
+  <figure><img src="assets/canam.jpg" alt=""><figcaption>Can-Am X3 en la arena. Sección extremo.</figcaption></figure>
+  <figure><img src="assets/sbs.jpg" alt=""><figcaption>Side by Side. Bloque Somos Cactus.</figcaption></figure>
+  <figure><img src="assets/camel.jpg" alt=""><figcaption>Camellos en la playa. Card y Para niños.</figcaption></figure>
+  <figure><img src="assets/horse.jpg" alt=""><figcaption>Caballo al atardecer. Card.</figcaption></figure>
+  <figure><img src="assets/kids.jpg" alt=""><figcaption>Kids Club. Página Para niños.</figcaption></figure>
+  <figure><img src="assets/minirzr.jpg" alt=""><figcaption>Mini RZR. Card niños.</figcaption></figure>
+  <figure><img src="assets/whale.jpg" alt=""><figcaption>Ballena. Temporada nov a abr en la sección récord.</figcaption></figure>
+  <figure><img src="assets/balandra.jpg" alt=""><figcaption>Balandra. Tour de día completo.</figcaption></figure>
+  <figure><img src="assets/kc.jpg" alt=""><figcaption>Kids Club interior. Para niños.</figcaption></figure>
+</div>
+<h3>Sellos y activos de marca existentes</h3>
+<div class="seals">
+  <img src="assets/logo.png" alt="Logo Cactus Tours" style="height:64px">
+  <img src="assets/tripadvisor.jpg" alt="Tripadvisor Travelers' Choice">
+  <img src="assets/guinness.png" alt="Sello Record Holder Guinness" style="height:72px">
+  <span class="txt">Pendiente con el cliente: SEMARNAT PIMVS en SVG</span>
+</div>
+<h2 id="motion">10. Video y movimiento</h2>
+<p>Duraciones de 180 ms (botones, chips, controles), 340 ms (hojas y ventanas) y 520 a 640 ms (reveals) con <code>cubic-bezier(.22,1,.36,1)</code>. Header que se esconde al bajar y aparece al subir. Hojas inferiores que se cierran arrastrando hacia abajo. Dock y riel entran después del hero y salen al llegar al footer. Con reducir movimiento activado: sin reveals, sin contador, sin scroll suave y video en pausa con poster.</p>
+<h3>Qué hace que el sitio se sienta vivo</h3>
+<div class="alive">
+  <div><b>Video en el hero</b><small>12 s en loop, sin audio, poster primero. En ficha, el video del tour dentro de la galería.</small></div>
+  <div><b>Títulos por palabra</b><small>Cada palabra del título del hero entra con escalón, fade y un cuarto de em hacia arriba en 520 ms. El brush entra al final.</small></div>
+  <div><b>Cards escalonadas</b><small>Al entrar en pantalla, 14 px hacia arriba y fade en 640 ms con escalón entre cards. En hover la card sube 4 px y la foto hace zoom a 1.05 en 700 ms.</small></div>
+  <div><b>Cifras que cuentan</b><small>854, 18, 3M cuentan una sola vez al entrar en pantalla.</small></div>
+  <div><b>La ruta se sella</b><small>Las paradas de "Así se vive Cactus" se marcan conforme bajas, con el riel que crece, como en Capital Trip.</small></div>
+  <div><b>Línea de lectura</b><small>En blog y ficha, una línea naranja arriba avanza con el scroll, como en las notas de Red Bull.</small></div>
+  <div><b>Degradado que respira</b><small>El degradado sobre el hero se intensifica al hacer scroll para que el texto siga legible y la foto se hunda.</small></div>
+  <div><b>Header que se esconde</b><small>Baja y desaparece, sube y vuelve. Sobre foto es transparente; al hacer scroll gana fondo.</small></div>
+  <div><b>Galería inclinada</b><small>Las fotos entran rotando 2 grados hacia su posición final.</small></div>
+</div>
+<p>Degradados heredados de Capital Trip, adaptados a la paleta: sobre foto <code>linear-gradient(to top, rgba(28,35,31,.96) 0%, rgba(28,35,31,.78) 34%, rgba(28,35,31,.32) 62%, transparent 100%)</code>; corte lateral de carrusel <code>mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent)</code>; card sobre foto <code>linear-gradient(to bottom, transparent 55%, rgba(28,35,31,.55))</code>.</p>
+<h3>Hero, 12 segundos en loop</h3>
+<p>Corte de 12 s sin audio del video "Expect the Unexpected" del canal, en 16:9 para escritorio y 9:16 para móvil, con poster para el LCP. El video arranca después del primer render y nunca bloquea el texto. Si se cambia el video, se respeta la misma regla: sin audio, menos de 3 MB, loop limpio y zona oscura donde va el título.</p>
+<div class="story2">
+  <figure><div class="fr2" style="background-image:url(assets/hero-poster.jpg)"><div class="shade"></div></div><figcaption><b>0 ms</b><br>Poster con degradado a noche. El display ya es legible.</figcaption></figure>
+  <figure><div class="fr2" style="background-image:url(assets/hero-poster.jpg)"><div class="shade"></div><div class="ttl">Donde el desierto se lanza al mar</div></div><figcaption><b>0 a 320 ms</b><br>Overline, display y subtítulo entran con fade y 12 px hacia arriba, escalonados 60 ms.</figcaption></figure>
+  <figure><div class="fr2" style="background-image:url(assets/skybike.jpg)"><div class="shade"></div><div class="ttl">Donde el desierto se lanza al mar</div><div class="glass"></div></div><figcaption><b>320 a 640 ms</b><br>El video reemplaza al poster con crossfade. Los badges de rating aparecen desde abajo; el dock espera a que pases el hero.</figcaption></figure>
+  <figure><div class="fr2" style="background-image:url(assets/canam.jpg)"><div class="shade"></div><div class="ttl">854 m sobre el Pacífico</div></div><figcaption><b>Scroll</b><br>Al bajar, la sección récord en fondo noche cuenta las cifras y las líneas topográficas se desplazan a la mitad de la velocidad.</figcaption></figure>
+</div>
+<div class="grid2">
+  <div class="card"><h4>Vidrio</h4><p>Claro (<code>glass</code>): blanco al 60 % con <code>blur(20px) saturate(160%)</code>. Oscuro (<code>glass-dark</code>): noche al 38 % con blur 16, para etiquetas sobre foto. Botón de vidrio: blanco al 16 % con blur 16 y borde al 60 %. Sin soporte del filtro, fondo más opaco. Nunca vidrio sobre vidrio, nunca en cards.</p></div>
+  <div class="card"><h4>Papel rasgado y brush</h4><p>El borde rasgado es una máscara SVG reutilizable arriba o abajo de cualquier bloque fotográfico. La palabra en brush se renderiza con Caveat Brush, así que se traduce, escala y se lee con lector de pantalla. Adiós a las imágenes con texto.</p></div>
+  <div class="card"><h4>Una sección con protagonismo</h4><p>Solo el récord Guinness lleva animación de scroll, con fallback a estático. El resto del sitio son reveals con IntersectionObserver; una sección animada con intención por página.</p></div>
+  <div class="card"><h4>Micro</h4><p>Botón primario: hover sube 2 px, active escala .97. Chip de horario seleccionado: pulso de 1 s en el borde, una vez. Contador de personas: el precio de la barra cambia con un tick de 180 ms.</p></div>
+</div>
+
+<h2 id="copy">11. Tono y copy</h2>
+<ul>
+  <li><strong>Entre formal y amigable.</strong> De tú, claro y directo, sin modismos ni jerga sin contexto. Energía sin gritar: un signo de exclamación por página como máximo y nunca en botones.</li>
+  <li><strong>Frases cortas con verbo:</strong> "Te recogemos en tu hotel." "Tu lugar está apartado."</li>
+  <li><strong>Botones dicen lo que pasa:</strong> "Reservar · $150 USD", "Continuar", "Ver detalles". Nunca "Clic aquí" ni "Más".</li>
+  <li><strong>Cifras en lugar de adjetivos:</strong> 854 m, 18 años, 45 min de Cabo, reembolso con 48 h de anticipación.</li>
+  <li><strong>Títulos sin mayúsculas sostenidas:</strong> mayúscula inicial y nombres propios. El énfasis lo pone el diseño.</li>
+  <li><strong>Sin guiones largos.</strong> Se usan punto, coma, dos puntos o punto medio (·).</li>
+  <li><strong>Dudas en positivo:</strong> las preguntas frecuentes y las dudas se redactan desde lo que sí se puede ("¿Puedo llevar mi GoPro?" y no "¿Por qué no puedo usar mi celular?"). Nunca a la defensiva.</li>
+  <li><strong>Errores que explican y resuelven:</strong> "Revisa los datos de la tarjeta o prueba con otra. Tu selección sigue guardada."</li>
+  <li><strong>Notas al pie:</strong> las aclaraciones y avisos van como párrafo a todo el ancho que empieza con asterisco ("*Precio por persona con entrada al parque incluida."), nunca como letra diminuta pegada a un precio.</li>
+  <li><strong>Promociones en texto:</strong> cifra, título, condiciones, cupón y vigencia escritos en HTML, nunca pintados en una imagen.</li>
+  <li><strong>Nombres de producto:</strong> Sky Bike, Park Pass, Kids Club y Can-Am se quedan en inglés; lo demás se traduce (degustación de tequila, día completo).</li>
+  <li><strong>Estados vacíos con salida:</strong> "Con esos filtros no hay tours. Prueba quitando la edad mínima."</li>
+</ul>
+<div class="tbl"><table>
+  <tr><th>Sección</th><th>Actual</th><th>Propuesta</th></tr>
+  <tr><td>Hero</td><td>¡Vive la Adrenalina, Vive Cactus Tours!</td><td>Donde el desierto se lanza al mar.</td></tr>
+  <tr><td>Barra de beneficios</td><td>Transporte gratuito / Sin costos ocultos / Guías expertos / Pago seguro</td><td>Te recogemos en tu hotel · Precio total por persona · Reembolso con 48 h de anticipación · Kids Club gratuito</td></tr>
+  <tr><td>Récord</td><td>Párrafo de 120 palabras</td><td>854 metros pedaleando sobre el Pacífico. Récord Guinness. En temporada, con ballenas abajo.</td></tr>
+  <tr><td>Para niños</td><td>Regálale a tus hijos una experiencia que jamás olvidarán</td><td>Los niños también manejan. Mini RZR, camellos y Kids Club gratis para los más pequeños.</td></tr>
+  <tr><td>Celulares</td><td>250 palabras de política</td><td>Por seguridad no se usan celulares en el tour. Las GoPro sí. En tour privado, también el celular.</td></tr>
+</table></div>
+
+<h2 id="referencias">12. Qué tomamos de las referencias</h2>
+<p>Benchmark de sitios de tours y referencias visuales. Detalle en <code>docs/04-benchmark-mundial.md</code> y <code>docs/03-capital-trip-referencia.md</code>.</p>
+<div class="grid2">
+  <div class="card"><h4>Capital Trip (propio)</h4><p>Escala tipográfica por dispositivo, trip card con enlace expandido y amenidades 2x2, carrusel sangrado alineado al gutter, ficha con índice y sticky CTA, reserva en 4 pasos con resumen sticky, sistema de formularios. Se invierte el tema: de noche de festival a arena de día.</p></div>
+  <div class="card"><h4>Cabo Adventures y Wild Canyon</h4><p>Card con precio, duración y edad mínima; trust bar de promesas operativas; Park Pass como producto ancla. Lo que no: countdown de flash sale, precios tachados en todo el catálogo, mega menú.</p></div>
+  <div class="card"><h4>Apple, GoPro, Xcaret</h4><p>Liquid glass en botones sobre foto, paddles de carrusel, comparador de modelos (combos), control segmentado, hojas con asa; sticky buy bar con precio; selector de fecha y personas inline. Ningún competidor de Cabo tiene sticky bar de reserva en móvil.</p></div>
+  <div class="card"><h4>Tesla, Rivian, Arc'teryx</h4><p>Un panel por vertical con dos CTAs; cifras como prueba; secciones oscuras alternadas con video y storytelling narrativo antes del grid.</p></div>
+  <div class="card"><h4>Antigravity, Linear, Vercel</h4><p>Bento de categorías con un bloque grande, glass cards solo sobre fondo oscuro, hairlines en vez de sombras pesadas en fichas.</p></div>
+  <div class="card"><h4>Later, Neucast y Baymard</h4><p>Later: card de blog con sombra sólida de color y subrayado que recorre el título. Neucast: barra fija de filtros con panel lateral y mega menú con imágenes. Baymard: checkout cerrado sin menú ni footer y validación al salir del campo.</p></div>
+  <div class="card"><h4>O.A.R.S. y Much Better Adventures</h4><p>Escala de intensidad por tour, rating con conteo por card, líneas topográficas como textura de desierto y barra inferior de comparar.</p></div>
+</div>
+
+<h2 id="refsdaniel">13. Lo que le gusta a Daniel y dónde entra</h2>
+<p>Referencias que Daniel fue compartiendo durante el proyecto. No son dark mode: Red Bull es blanco y se siente poderoso por la foto, el display y el movimiento. Capital Trip es la referencia propia y la que más se hereda. Tabla completa en <code>docs/11-referencias-visuales-daniel.md</code>.</p>
+<div class="refs">
+  <figure><img src="assets/refs/01-polaris-about-prensa.jpg" alt=""><figcaption><b>Polaris · bloque + prensa</b>Bloque noche con display y foto a la derecha; franja de logos. → "Somos Cactus" y franja de sellos.</figcaption></figure>
+  <figure><img src="assets/refs/03-polaris-home-hero-buscador.jpg" alt=""><figcaption><b>Polaris · home</b>Hero en contenedor redondeado, barra flotante que cruza el borde, fila de iconos. → Hero del home.</figcaption></figure>
+  <figure><img src="assets/refs/02-polaris-categorias-grid.jpg" alt=""><figcaption><b>Polaris · categorías</b>Tiles con foto oscurecida y una palabra. → Categorías del home y del listado.</figcaption></figure>
+  <figure><img src="assets/refs/04-polaris-detalle-galeria-precio.jpg" alt=""><figcaption><b>Polaris · detalle</b>Galería 1+2, panel de precio con cabecera negra. → Ficha de tour.</figcaption></figure>
+  <figure><img src="assets/refs/06-airbnb-experiencias-grid.jpg" alt=""><figcaption><b>Airbnb · filas</b>Filas temáticas, controles en la cabecera, precio + rating en una línea, badge de cupos. → Filas del home y card.</figcaption></figure>
+  <figure><img src="assets/refs/07-airbnb-detalle-experiencia.jpg" alt=""><figcaption><b>Airbnb · detalle</b>Galería 2×2, columna sticky con rating, cancelación, incluye, precio. → Ficha en desktop.</figcaption></figure>
+  <figure><img src="assets/refs/05-carrusel-destinos-verticales.jpg" alt=""><figcaption><b>Carrusel vertical</b>Cards 2:3 y flecha circular flotante a media altura. → Carruseles de tours y blog.</figcaption></figure>
+  <figure><img src="assets/refs/08-redbull-megamenu.jpg" alt=""><figcaption><b>Red Bull · mega menú</b>Panel completo, nav en display a la izquierda, cards a la derecha, fila de fotos. → Mega menú "Tours".</figcaption></figure>
+  <figure><img src="assets/refs/09-redbull-atletas-cards.jpg" alt=""><figcaption><b>Red Bull · atletas</b>Foto de acción + avatar circular + nombre + disciplina. → Sección "Nuestros guías".</figcaption></figure>
+  <figure><img src="assets/refs/10-redbull-atleta-hero.jpg" alt=""><figcaption><b>Red Bull · hero de atleta</b>Foto a sangre, degradado, nombre abajo, nav en pill. → Hero de ficha y perfil de guía; header en pill.</figcaption></figure>
+  <figure><img src="assets/refs/11-redbull-nota-imagenes.jpg" alt=""><figcaption><b>Red Bull · nota</b>Columna estrecha, imágenes en par con pie, citas grandes, línea de progreso. → Blog detalle.</figcaption></figure>
+  <figure><img src="assets/refs/12-redbull-card-leer-mas.jpg" alt=""><figcaption><b>Red Bull · card</b>Imagen, título, extracto, categoría y tiempo de lectura. → Card de blog.</figcaption></figure>
+  <figure><img src="assets/refs/13-redbull-bloque-content-pool.jpg" alt=""><figcaption><b>Red Bull · bloque con collage</b>Texto a la izquierda, fotos inclinadas a la derecha. → Bloque de galería y UGC.</figcaption></figure>
+  <figure><img src="assets/refs/14-neucast-megamenu-imagenes.jpg" alt=""><figcaption><b>Neucast · mega menú (propio)</b>Miniaturas por categoría + panel destacado. → Mega menú de tours y panel de filtros.</figcaption></figure>
+</div>
+<div class="callout">
+  <p><strong>Capital Trip, la referencia propia.</strong> Se hereda el hero (foto a sangre, degradado a tinta, título abajo a la izquierda, card que cruza el borde), la jump nav de ficha, la galería inclinada "El TRIP se vive así", la ruta con paradas que se sellan, el sticky de precio y los reveals. Se cambia el tema: de noche de festival a blanco de día con la noche en pocos lugares. Ruta local: <code>Desktop/capital-trip/tours/edc-mx-2027-viaje-monterrey-saltillo/</code>.</p>
+</div>
+
+<h2 id="recursos">14. Recursos</h2>
+<p>Todo está en el repositorio <code>Desktop/cactus-tours</code>. La fuente de verdad de los valores es el código: si esta guía y <code>src/app.css</code> no coinciden, manda el código y se actualiza la guía.</p>
+<h3>Tokens y utilidades</h3>
+<ul>
+  <li><code>src/app.css</code>: <code>@theme</code> con colores, fuentes, radios (<code>s</code> 8, <code>m</code> 12, <code>l</code> 20, <code>xl</code> 28), sombras (<code>card</code>, <code>float</code>, <code>glass</code>) y la curva <code>ease-out-soft</code>.</li>
+  <li>Tipografía: <code>t-display-xl</code>, <code>t-display-l</code>, <code>t-display-m</code>, <code>t-h1</code> a <code>t-h3</code>, <code>t-lead</code>, <code>t-body</code>, <code>t-small</code>, <code>t-overline</code>, <code>t-price</code>, <code>t-accent</code>.</li>
+  <li>Botones y selección: <code>btn</code>, <code>btn-pri</code>, <code>btn-sec</code>, <code>btn-ter</code>, <code>btn-glass</code>, <code>btn-wa</code>, <code>btn-s</code>, <code>btn-l</code>, <code>paddle</code>, <code>chip</code>, <code>chip-on</code>, <code>badge</code>.</li>
+  <li>Formularios: <code>campo</code>, <code>control</code>, <code>campo-error</code>, <code>campo-ayuda</code>, <code>check</code>, <code>check-fila</code>.</li>
+  <li>Layout y superficies: <code>wrap</code>, <code>wrap-wide</code>, <code>section-y</code>, <code>pt-cabecera</code>, <code>glass</code>, <code>glass-dark</code>, <code>grad-dusk</code>, <code>grad-portada</code>, <code>hero-scrim</code>, <code>topo</code>, <code>torn-top</code>, <code>snap-row</code>, <code>fade-right</code>, <code>asa</code>.</li>
+  <li>Componentes en <code>src/lib/components/</code>: Header, MobileMenu, Dock, ContactRail, Hoja, ElegirTour, TourCard, GuideCard, PostCard, Calendario, Fila, Accordion, Puntos, VisorGaleria, MapaLlegada, ContactForm, PromoBar, Switch, Legal.</li>
+</ul>
+<h3>Tipografía e iconos</h3>
+<p><a href="https://fonts.google.com/specimen/Archivo">Archivo</a> variable para todo, <a href="https://fonts.google.com/specimen/Caveat+Brush">Caveat Brush</a> como acento y <a href="https://fonts.google.com/icons?icon.style=Rounded">Material Symbols Rounded</a> como set único de iconos.</p>
+<h3>Material propio del cliente</h3>
+<ul>
+  <li><code>research/scrape/media/images/</code>: fotos originales del parque, inventario con dimensiones en <code>api/image_inventory.json</code>.</li>
+  <li><code>research/scrape/media/videos/</code>: master del hero, cortes de 12 s en 16:9 y 9:16, poster. Lista de videos del canal en <code>research/videos-youtube.md</code>.</li>
+  <li><code>src/lib/data/</code>: tours con precios de producción, preguntas frecuentes, guías, vacantes, blog, legales, promociones y hoteles. Los precios del Figma no se usan.</li>
+  <li><code>research/scrape/text/</code>: el copy real del sitio actual en markdown (preguntas frecuentes, términos, privacidad, blog, fichas).</li>
+  <li><code>research/cliente/</code>: los dos decks de t2ó y su texto extraído.</li>
+</ul>
+<h3>Pendientes con el cliente</h3>
+<p>Cifras reales de reseñas de Google y Tripadvisor, sello SEMARNAT PIMVS, edades exactas de caballo y de acompañante en ATV y UTV, si el Park Pass se paga en línea o se aparta sin pago, y el texto y la foto de cada promoción con su vigencia. En el diseño se marcan como pendientes, no se inventan.</p>
+
+<h2 id="checklist">15. Antes de entregar un diseño</h2>
+<p>Lista rápida para revisar cualquier pantalla nueva o cambio antes de pasarlo a código.</p>
+<div class="grid2">
+  <div class="card"><h4>Sistema</h4><p>Solo tokens de esta guía: colores, tamaños de la escala, radios y sombras. Nada fuera de múltiplos de 4 salvo el gutter de 22. Títulos sin mayúsculas. Iconos de Material Symbols Rounded, en un tono.</p></div>
+  <div class="card"><h4>Acciones</h4><p>Un solo naranja y es para reservar. CTAs a todo el ancho en móvil y 50/50 si son dos. Chevrons, nunca flechas. Cada botón con sus cinco estados: normal, hover, presionado, foco y deshabilitado.</p></div>
+  <div class="card"><h4>Móvil primero</h4><p>Diseñada a 375 px antes que a 1440. Áreas táctiles de 44. Modales como hoja inferior con asa. Filas deslizables con desvanecido a la derecha. Probada con textos en inglés.</p></div>
+  <div class="card"><h4>Contenido</h4><p>Datos de producción o marcados como pendientes. Precio total con entrada incluida. Copy entre formal y amigable, sin guiones largos, dudas en positivo, notas al pie con asterisco a todo el ancho.</p></div>
+  <div class="card"><h4>Overlays y navegación</h4><p>Velo difuminado en todo overlay. Al navegar a otra página se aterriza arriba. En la reserva, WhatsApp solo como ayuda discreta en el resumen.</p></div>
+  <div class="card"><h4>Accesibilidad</h4><p>Contraste AA (el naranja nunca como texto sobre blanco), foco visible con teclado, textos alternativos en fotos con contenido, reducir movimiento respetado.</p></div>
+</div>
 </main>
 </div>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+mermaid.initialize({startOnLoad:true,theme:"base",themeVariables:{primaryColor:"#FFF1E0",primaryBorderColor:"#F7921E",primaryTextColor:"#1C231F",lineColor:"#8C7A62",fontFamily:"Archivo, sans-serif",fontSize:"13px"}});
+</script>
 </body>
 </html>

@@ -1,1 +1,0 @@
-import{t as e}from"../chunks/DJSytMpH.js";import{t}from"../chunks/pPOtiHz3.js";export{e as component,t as universal};
